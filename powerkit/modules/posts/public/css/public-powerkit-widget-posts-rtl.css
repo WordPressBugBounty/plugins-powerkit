@@ -1,0 +1,111 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+/**
+ * Environment for all styles (variables, additions, etc).
+ */
+/*--------------------------------------------------------------*/
+/*--------------------------------------------------------------*/
+.pk-widget-posts {
+	--pk-posts-thumbnail-width: 80px;
+	--pk-posts-thumbnail-border-radius: 100%;
+	--pk-posts-thumbnail-gutter: 2rem;
+	--pk-posts-number-color: #FFFFFF;
+	--pk-posts-number-font-size: 80%;
+	--pk-posts-number-top: 0;
+	--pk-posts-number-right: 0;
+	--pk-posts-number-left: initial;
+	--pk-posts-number-bottom: initial;
+	--pk-posts-number-width: 30px;
+	--pk-posts-number-height: 30px;
+	--pk-posts-number-line-height: 30px;
+	--pk-posts-number-border-radius: 100%;
+}
+
+/*--------------------------------------------------------------*/
+.pk-widget-posts .pk-post-item:not(:first-child) {
+	margin-top: 1rem;
+}
+
+.pk-widget-posts .pk-post-outer {
+	display: flex;
+}
+
+.pk-widget-posts .pk-post-thumbnail {
+	position: relative;
+	flex: 0 0 var(--pk-posts-thumbnail-width);
+	margin-left: var(--pk-posts-thumbnail-gutter);
+}
+
+.pk-widget-posts .pk-post-thumbnail img {
+	width: var(--pk-posts-thumbnail-width);
+	height: var(--pk-posts-thumbnail-width);
+	border-radius: var(--pk-posts-thumbnail-border-radius);
+	-o-object-fit: cover;
+	object-fit: cover;
+	font-family: 'object-fit: cover;';
+}
+
+.pk-widget-posts .pk-post-data {
+	flex-grow: 1;
+	width: 100%;
+}
+
+.pk-widget-posts .pk-post-number {
+	position: absolute;
+	top: var(--pk-posts-number-top);
+	right: var(--pk-posts-number-left);
+	left: var(--pk-posts-number-right);
+	bottom: var(--pk-posts-number-bottom);
+	width: var(--pk-posts-number-width);
+	height: var(--pk-posts-number-height);
+	line-height: var(--pk-posts-number-line-height);
+	color: var(--pk-posts-number-color);
+	text-align: center;
+	border-radius: var(--pk-posts-number-border-radius);
+	font-size: var(--pk-posts-number-font-size);
+}
+
+.pk-widget-posts .pk-post-data .meta-category {
+	display: inline-block;
+	margin-bottom: 0.25rem;
+}
+
+.pk-widget-posts .pk-post-data .entry-title {
+	margin-bottom: 0.25rem;
+}
+
+.pk-widget-posts .pk-post-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.pk-widget-posts .pk-post-meta .sep {
+	display: inline-block;
+	padding: 0 0.5rem;
+}
+
+.pk-widget-posts .pk-post-meta-hide {
+	display: none;
+}
+
+.pk-widget-posts-template-large .pk-post-item:not(:first-child) {
+	margin-top: 2rem;
+}
+
+.pk-widget-posts-template-large .pk-post-outer {
+	display: block;
+}
+
+.pk-widget-posts-template-large .pk-post-thumbnail {
+	margin-left: 0;
+	margin-bottom: 1rem;
+}
+
+.pk-widget-posts-template-large .pk-post-thumbnail img {
+	width: 100%;
+	height: auto;
+	border-radius: 0;
+}

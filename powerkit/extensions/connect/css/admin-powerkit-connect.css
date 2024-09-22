@@ -1,0 +1,141 @@
+.pk-instagram-manual-feed .pk-element-fields {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+	.pk-instagram-manual-feed .pk-element-fields {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (min-width: 1200px) {
+	.pk-instagram-manual-feed .pk-element-fields {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+.pk-instagram-manual-feed .pk-element {
+	position: relative;
+	border: 1px solid #CCCCCC;
+	background: #E5E5E5;
+	border: none;
+	margin: 0 3px 5px 0;
+	padding: 8px 0.5rem 8px 0;
+	font-size: 14px;
+	line-height: 1.2em;
+}
+
+.pk-instagram-manual-feed .ui-state-highlight {
+	display: block;
+	border: 1px dashed #CCCCCC;
+	background: #E5E5E5;
+	margin: 0 3px 5px 0;
+	padding: 8px 18px;
+	line-height: 1.2em;
+	height: 18px;
+}
+
+.pk-instagram-manual-feed .pk-element label {
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 0.75rem;
+	margin-bottom: 0.5rem;
+}
+
+.pk-instagram-manual-feed .pk-element input,
+.pk-instagram-manual-feed .pk-element textarea {
+	flex: 1;
+	margin-left: 0.5rem;
+}
+
+.pk-instagram-manual-feed .pk-element + .pk-element {
+	margin-top: 1rem;
+}
+
+.pk-instagram-manual-feed .pk-element-actions {
+	padding-left: 0.75rem;
+}
+
+.pk-instagram-manual-feed .pk-remove-element {
+	margin-left: 0.5rem;
+	font-size: 12px;
+	color: #d63638;
+}
+
+.pk-instagram-manual-feed .pk-remove-element:hover {
+	text-decoration: none;
+}
+
+/* ------------- */
+
+.pk-twitter-manual-feed .pk-element-fields {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+	.pk-twitter-manual-feed .pk-element-fields {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (min-width: 1200px) {
+	.pk-twitter-manual-feed .pk-element-fields {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+.pk-twitter-manual-feed .pk-element {
+	position: relative;
+	border: 1px solid #CCCCCC;
+	background: #E5E5E5;
+	border: none;
+	margin: 0 3px 5px 0;
+	padding: 8px 0.5rem 8px 0;
+	font-size: 14px;
+	line-height: 1.2em;
+}
+
+.pk-twitter-manual-feed .ui-state-highlight {
+	display: block;
+	border: 1px dashed #CCCCCC;
+	background: #E5E5E5;
+	margin: 0 3px 5px 0;
+	padding: 8px 18px;
+	line-height: 1.2em;
+	height: 18px;
+}
+
+.pk-twitter-manual-feed .pk-element label {
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 0.75rem;
+	margin-bottom: 0.5rem;
+}
+
+.pk-twitter-manual-feed .pk-element input,
+.pk-twitter-manual-feed .pk-element textarea {
+	flex: 1;
+	margin-left: 0.5rem;
+}
+
+.pk-twitter-manual-feed .pk-element + .pk-element {
+	margin-top: 1rem;
+}
+
+.pk-twitter-manual-feed .pk-element-actions {
+	padding-left: 0.75rem;
+}
+
+.pk-twitter-manual-feed .pk-remove-element {
+	margin-left: 0.5rem;
+	font-size: 12px;
+	color: #d63638;
+}
+
+.pk-twitter-manual-feed .pk-remove-element:hover {
+	text-decoration: none;
+}

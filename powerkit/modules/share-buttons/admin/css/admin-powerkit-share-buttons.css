@@ -1,0 +1,87 @@
+.nav-tab-advanced {
+	float: right;
+}
+
+.nav-tab-advanced:not(.nav-tab-active) {
+	background: #FFFFFF;
+}
+
+.pk-share-buttons-wrap .form-table + hr {
+	margin: 2rem 0;
+}
+
+.pk-share-buttons-wrap .form-table tr {
+	display: none;
+}
+
+.pk-share-buttons-wrap .form-table tr.visible {
+	display: table-row;
+}
+
+.pk-share-buttons-wrap .form-table tr.simple th, .pk-share-buttons-wrap .form-table tr.simple td {
+	padding: 10px 0 0;
+}
+
+.pk-share-buttons-wrap .social-sortable {
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.pk-share-buttons-wrap .social-sortable li {
+	position: relative;
+	border: 1px solid #CCCCCC;
+	background: #E5E5E5;
+	display: none;
+	border: none;
+	margin: 0 3px 5px 3px;
+	padding: 8px 18px;
+	font-size: 14px;
+	line-height: 1.2em;
+	min-width: 200px;
+	height: 18px;
+	cursor: pointer;
+}
+
+.pk-share-buttons-wrap .social-sortable li.ui-state-highlight {
+	display: block;
+	border: 1px dashed #CCCCCC;
+	background: #E5E5E5;
+	padding: 8px 18px;
+	line-height: 1.2em;
+	height: 18px;
+}
+
+.pk-share-buttons-wrap .social-sortable li span {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 14px;
+}
+
+.pk-share-buttons-wrap .social-sortable li input {
+	display: none;
+}
+
+.pk-share-buttons-wrap .social-sortable li:hover {
+	opacity: 0.6;
+}
+
+.pk-share-buttons-source {
+	width: 100%;
+}
+
+.pk-share-buttons-source .share-item {
+	display: inline-block;
+	width: 100%;
+	max-width: 300px;
+}
+
+.pk-share-buttons-source:after {
+	display: table;
+	clear: both;
+	content: '';
+}

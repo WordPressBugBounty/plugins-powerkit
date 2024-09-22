@@ -1,0 +1,54 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+/**
+ * Environment for all styles (variables, additions, etc).
+ */
+/*--------------------------------------------------------------*/
+/*--------------------------------------------------------------*/
+.pk-lazyload {
+	--pk-lazyload-background: #ced4da;
+}
+
+/*--------------------------------------------------------------*/
+.pk-lazyload {
+	background-color: var(--pk-lazyload-background);
+}
+
+.pk-lazyload.pk-lqip {
+	filter: blur(20px);
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);
+	transition: 0.25s filter linear;
+}
+
+.pk-lazyload.pk-lazyload-unstyled {
+	background-color: transparent;
+	-webkit-animation: none;
+	animation: none;
+}
+
+@-webkit-keyframes animate-gradient {
+	0% {
+		background-position: 100% 50%;
+	}
+	50% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+@keyframes animate-gradient {
+	0% {
+		background-position: 100% 50%;
+	}
+	50% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
