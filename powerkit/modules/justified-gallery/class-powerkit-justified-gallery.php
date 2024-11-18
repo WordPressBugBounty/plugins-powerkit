@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name            = esc_html__( 'Justified Gallery', 'powerkit' );
-			$this->desc            = esc_html__( 'Create beautiful tiled galleries with the Justified Gallery module. Control the image height and padding between images per gallery or globally.', 'powerkit' );
+			$this->name            = powerkit_esc_html__( 'Justified Gallery', 'powerkit' );
+			$this->desc            = powerkit_esc_html__( 'Create beautiful tiled galleries with the Justified Gallery module. Control the image height and padding between images per gallery or globally.', 'powerkit' );
 			$this->slug            = 'justified_gallery';
 			$this->type            = 'default';
 			$this->category        = 'basic';
@@ -26,11 +26,11 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled         = true;
 			$this->links           = array(
 				array(
-					'name' => esc_html__( 'Go to settings', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Go to settings', 'powerkit' ),
 					'url'  => admin_url( sprintf( 'options-media.php#%s', powerkit_get_page_slug( $this->slug ) ) ),
 				),
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/content-presentation/justified-gallery/',
 					'target' => '_blank',
 				),

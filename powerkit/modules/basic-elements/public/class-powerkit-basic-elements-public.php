@@ -18,9 +18,8 @@ class Powerkit_Basic_Elements_Public extends Powerkit_Module_Public {
 	 * Initialize
 	 */
 	public function initialize() {
+		add_action( 'init', array( $this, 'register_shortcodes' ) );
 		add_action( 'init', array( $this, 'register_custom_shortcodes' ) );
-
-		$this->register_shortcodes();
 	}
 
 	/**
@@ -46,7 +45,7 @@ class Powerkit_Basic_Elements_Public extends Powerkit_Module_Public {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function register_shortcodes() {
+	public function register_shortcodes() {
 
 		// Get all shortcodes.
 		$sections = apply_filters( 'powerkit_basic_shortcodes_ui_args', array() );

@@ -16,7 +16,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Post Format UI', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Post Format UI', 'powerkit' );
 			$this->desc     = null;
 			$this->slug     = 'post_format_ui';
 			$this->type     = 'default';

@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Share Buttons', 'powerkit' );
-			$this->desc     = esc_html__( 'Display share buttons in theme-predefined or standard locations. Select from various social networks and add per-button and the total share counts with just a few clicks.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Share Buttons', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'Display share buttons in theme-predefined or standard locations. Select from various social networks and add per-button and the total share counts with just a few clicks.', 'powerkit' );
 			$this->slug     = 'share_buttons';
 			$this->type     = 'default';
 			$this->category = 'social';
@@ -26,15 +26,15 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled  = true;
 			$this->links    = array(
 				array(
-					'name' => esc_html__( 'Go to settings', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Go to settings', 'powerkit' ),
 					'url'  => powerkit_get_page_url( $this->slug ),
 				),
 				array(
-					'name' => esc_html__( 'Clear cache', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Clear cache', 'powerkit' ),
 					'url'  => powerkit_get_page_url( $this->slug . '&action=powerkit_reset_cache' ),
 				),
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/social-integrations/share-buttons/',
 					'target' => '_blank',
 				),

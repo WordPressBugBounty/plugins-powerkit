@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Pinterest Integration', 'powerkit' );
-			$this->desc     = esc_html__( 'Display your Pinterest Board widget in your sidebar or post content via shortcode. Enable Pin It buttons on single images in post content and all post galleries for the easy pinning of your images to Pinterest boards.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Pinterest Integration', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'Display your Pinterest Board widget in your sidebar or post content via shortcode. Enable Pin It buttons on single images in post content and all post galleries for the easy pinning of your images to Pinterest boards.', 'powerkit' );
 			$this->slug     = 'pinterest_integration';
 			$this->type     = 'default';
 			$this->category = 'social';
@@ -26,11 +26,11 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled  = true;
 			$this->links    = array(
 				array(
-					'name' => esc_html__( 'Go to settings', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Go to settings', 'powerkit' ),
 					'url'  => admin_url( sprintf( 'options-media.php#%s', powerkit_get_page_slug( $this->slug ) ) ),
 				),
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/social-integrations/pinterest-integration/',
 					'target' => '_blank',
 				),

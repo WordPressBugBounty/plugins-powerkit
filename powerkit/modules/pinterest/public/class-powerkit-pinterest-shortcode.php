@@ -41,24 +41,26 @@ add_shortcode( 'powerkit_pinterest_board', 'powerkit_pinterest_board_shortcode' 
 /**
  * Map Pinterest Board Shortcode into the Basic Shortcodes Plugin
  */
-if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) :
+if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) {
 
-	powerkit_basic_shortcodes_register( array(
-		'name'         => 'pinterest_board',
-		'title'        => esc_html__( 'Pinterest Board', 'powerkit' ),
-		'priority'     => 150,
-		'base'         => 'powerkit_pinterest_board',
-		'autoregister' => false,
-		'fields'       => array(
-			array(
-				'type'  => 'input',
-				'name'  => 'href',
-				'label' => esc_html__( 'Pinterest board URL', 'powerkit' ),
+	add_action( 'init', function () {
+
+		powerkit_basic_shortcodes_register( array(
+			'name'         => 'pinterest_board',
+			'title'        => esc_html__( 'Pinterest Board', 'powerkit' ),
+			'priority'     => 150,
+			'base'         => 'powerkit_pinterest_board',
+			'autoregister' => false,
+			'fields'       => array(
+				array(
+					'type'  => 'input',
+					'name'  => 'href',
+					'label' => esc_html__( 'Pinterest board URL', 'powerkit' ),
+				),
 			),
-		),
-	) );
-
-endif;
+		) );
+	});
+}
 
 /**
  * Pinterest Profile Shortcode
@@ -92,21 +94,23 @@ add_shortcode( 'powerkit_pinterest_profile', 'powerkit_pinterest_profile_shortco
 /**
  * Map Pinterest Profile Shortcode into the Basic Shortcodes Plugin
  */
-if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) :
+if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) {
 
-	powerkit_basic_shortcodes_register( array(
-		'name'         => 'pinterest_profile',
-		'title'        => esc_html__( 'Pinterest Profile', 'powerkit' ),
-		'priority'     => 150,
-		'base'         => 'powerkit_pinterest_profile',
-		'autoregister' => false,
-		'fields'       => array(
-			array(
-				'type'  => 'input',
-				'name'  => 'href',
-				'label' => esc_html__( 'Pinterest profile URL', 'powerkit' ),
+	add_action( 'init', function () {
+
+		powerkit_basic_shortcodes_register( array(
+			'name'         => 'pinterest_profile',
+			'title'        => esc_html__( 'Pinterest Profile', 'powerkit' ),
+			'priority'     => 150,
+			'base'         => 'powerkit_pinterest_profile',
+			'autoregister' => false,
+			'fields'       => array(
+				array(
+					'type'  => 'input',
+					'name'  => 'href',
+					'label' => esc_html__( 'Pinterest profile URL', 'powerkit' ),
+				),
 			),
-		),
-	) );
-
-endif;
+		) );
+	});
+}

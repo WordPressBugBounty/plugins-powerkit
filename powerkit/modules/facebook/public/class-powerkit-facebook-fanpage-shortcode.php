@@ -59,45 +59,47 @@ add_shortcode( 'powerkit_facebook_fanpage', 'powerkit_facebook_fanpage_shortcode
 /**
  * Map Facebook Fanpage Shortcode into the Basic Shortcodes Plugin
  */
-if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) :
+if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) {
 
-	powerkit_basic_shortcodes_register( array(
-		'name'         => 'facebook_fanpage',
-		'title'        => esc_html__( 'Facebook Fanpage', 'powerkit' ),
-		'priority'     => 150,
-		'base'         => 'powerkit_facebook_fanpage',
-		'autoregister' => false,
-		'fields'       => array(
-			array(
-				'type'  => 'input',
-				'name'  => 'href',
-				'label' => esc_html__( 'Facebook fanpage URL', 'powerkit' ),
-			),
-			array(
-				'type'    => 'checkbox',
-				'name'    => 'hide_cover',
-				'label'   => esc_html__( 'Hide cover', 'powerkit' ),
-				'default' => false,
-			),
-			array(
-				'type'    => 'checkbox',
-				'name'    => 'show_facepile',
-				'label'   => esc_html__( 'Show facepile', 'powerkit' ),
-				'default' => false,
-			),
-			array(
-				'type'    => 'checkbox',
-				'name'    => 'show_posts',
-				'label'   => esc_html__( 'Show posts', 'powerkit' ),
-				'default' => false,
-			),
-			array(
-				'type'    => 'checkbox',
-				'name'    => 'small_header',
-				'label'   => esc_html__( 'Small header', 'powerkit' ),
-				'default' => false,
-			),
-		),
-	) );
+	add_action( 'init', function () {
 
-endif;
+		powerkit_basic_shortcodes_register( array(
+			'name'         => 'facebook_fanpage',
+			'title'        => esc_html__( 'Facebook Fanpage', 'powerkit' ),
+			'priority'     => 150,
+			'base'         => 'powerkit_facebook_fanpage',
+			'autoregister' => false,
+			'fields'       => array(
+				array(
+					'type'  => 'input',
+					'name'  => 'href',
+					'label' => esc_html__( 'Facebook fanpage URL', 'powerkit' ),
+				),
+				array(
+					'type'    => 'checkbox',
+					'name'    => 'hide_cover',
+					'label'   => esc_html__( 'Hide cover', 'powerkit' ),
+					'default' => false,
+				),
+				array(
+					'type'    => 'checkbox',
+					'name'    => 'show_facepile',
+					'label'   => esc_html__( 'Show facepile', 'powerkit' ),
+					'default' => false,
+				),
+				array(
+					'type'    => 'checkbox',
+					'name'    => 'show_posts',
+					'label'   => esc_html__( 'Show posts', 'powerkit' ),
+					'default' => false,
+				),
+				array(
+					'type'    => 'checkbox',
+					'name'    => 'small_header',
+					'label'   => esc_html__( 'Small header', 'powerkit' ),
+					'default' => false,
+				),
+			),
+		) );
+	});
+}

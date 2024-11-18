@@ -16,22 +16,22 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Retina Images', 'powerkit' );
-			$this->desc     = esc_html__( 'Make your images ultra-crisp on Retina screens with the Retina Images module integrated in Powerkit.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Retina Images', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'Make your images ultra-crisp on Retina screens with the Retina Images module integrated in Powerkit.', 'powerkit' );
 			$this->slug     = 'retina';
 			$this->type     = 'default';
 			$this->category = 'basic';
 			$this->priority = 1010;
 			$this->public   = true;
 			$this->enabled  = false;
-			$this->badge    = esc_html__( 'Advanced', 'powerkit' );
+			$this->badge    = powerkit_esc_html__( 'Advanced', 'powerkit' );
 			$this->links    = array(
 				array(
-					'name' => esc_html__( 'Go to settings', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Go to settings', 'powerkit' ),
 					'url'  => admin_url( sprintf( 'options-media.php#%s', powerkit_get_page_slug( $this->slug ) ) ),
 				),
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/image-optimization/retina-images/',
 					'target' => '_blank',
 				),

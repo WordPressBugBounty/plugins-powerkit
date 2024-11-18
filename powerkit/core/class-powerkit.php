@@ -49,14 +49,13 @@ if ( ! class_exists( 'Powerkit' ) ) {
 			}
 
 			// Get plugin data.
-			$plugin_data = get_plugin_data( POWERKIT_PATH . '/powerkit.php' );
+			$plugin_data = get_plugin_data( POWERKIT_PATH . '/powerkit.php', false, false );
 
 			// Vars.
 			$this->version = $plugin_data['Version'];
 
 			// Settings.
 			$this->settings = array(
-				'name'          => esc_html__( 'Powerkit', 'powerkit' ),
 				'version'       => $plugin_data['Version'],
 				'documentation' => $plugin_data['AuthorURI'] . '/documentation/powerkit',
 			);

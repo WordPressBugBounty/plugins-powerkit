@@ -39,9 +39,9 @@ add_shortcode( 'powerkit_instagram', 'powerkit_instagram_shortcode' );
 /**
  * Map Instagram Shortcode into the Basic Shortcodes Plugin
  */
-if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) :
+if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) {
 
-	add_action( 'init', function() {
+	add_action( 'init', function () {
 
 		$shortcode_map = array(
 			'name'         => 'instagram',
@@ -121,5 +121,4 @@ if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) :
 
 		powerkit_basic_shortcodes_register( $shortcode_map );
 	});
-
-endif;
+}

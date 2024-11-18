@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Opt-in Forms', 'powerkit' );
-			$this->desc     = esc_html__( 'Easily add opt-in (subscription) forms to your website and grow your subscribers’ list with the Opt-In Forms module.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Opt-in Forms', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'Easily add opt-in (subscription) forms to your website and grow your subscribers’ list with the Opt-In Forms module.', 'powerkit' );
 			$this->slug     = 'opt_in_forms';
 			$this->type     = 'default';
 			$this->category = 'forms';
@@ -26,11 +26,11 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled  = true;
 			$this->links    = array(
 				array(
-					'name' => esc_html__( 'Go to settings', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Go to settings', 'powerkit' ),
 					'url'  => powerkit_get_page_url( $this->slug ),
 				),
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/marketing/opt-in-forms/',
 					'target' => '_blank',
 				),

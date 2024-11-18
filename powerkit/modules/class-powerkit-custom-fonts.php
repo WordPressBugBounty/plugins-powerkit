@@ -32,25 +32,25 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name            = esc_html__( 'Custom Fonts', 'powerkit' );
-			$this->desc            = esc_html__( 'Adds the ability to download custom fonts.', 'powerkit' );
+			$this->name            = powerkit_esc_html__( 'Custom Fonts', 'powerkit' );
+			$this->desc            = powerkit_esc_html__( 'Adds the ability to download custom fonts.', 'powerkit' );
 			$this->slug            = 'custom_fonts';
 			$this->type            = 'default';
 			$this->category        = 'basic';
 			$this->priority        = 1040;
 			$this->public          = true;
 			$this->enabled         = false;
-			$this->badge           = esc_html__( 'Advanced', 'powerkit' );
+			$this->badge           = powerkit_esc_html__( 'Advanced', 'powerkit' );
 			$this->load_extensions = array(
 				'fonts',
 			);
 			$this->links           = array(
 				array(
-					'name' => esc_html__( 'Go to settings', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Go to settings', 'powerkit' ),
 					'url'  => powerkit_get_page_url( 'fonts&tab=' . $this->slug, 'themes' ),
 				),
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/content-presentation/custom-fonts/',
 					'target' => '_blank',
 				),

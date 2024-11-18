@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Header and Footer Scripts', 'powerkit' );
-			$this->desc     = esc_html__( 'You insert code like Google Analytics, custom CSS, Facebook Pixel, and more to your WordPress site header and footer.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Header and Footer Scripts', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'You insert code like Google Analytics, custom CSS, Facebook Pixel, and more to your WordPress site header and footer.', 'powerkit' );
 			$this->slug     = 'headers_footers';
 			$this->type     = 'default';
 			$this->category = 'tools';
@@ -26,7 +26,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled  = false;
 			$this->links    = array(
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/headers-footers/',
 					'target' => '_blank',
 				),

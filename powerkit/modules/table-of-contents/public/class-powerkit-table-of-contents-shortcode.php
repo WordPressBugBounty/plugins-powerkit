@@ -38,9 +38,9 @@ add_shortcode( 'powerkit_toc', 'powerkit_toc_shortcode' );
 /**
  * Map Shortcode
  */
-if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) :
+if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) {
 
-	add_action( 'init', function() {
+	add_action( 'init', function () {
 
 		$shortcode_map = array(
 			'name'         => 'toc',
@@ -93,7 +93,5 @@ if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) :
 		);
 
 		powerkit_basic_shortcodes_register( $shortcode_map );
-
-	});
-
-endif;
+	} );
+}

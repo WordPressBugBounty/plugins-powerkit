@@ -9,72 +9,73 @@
 /**
  * Progress Bars
  */
-powerkit_basic_shortcodes_register( array(
-	'name'         => 'progressbars',
-	'title'        => esc_html__( 'Progress Bars', 'powerkit' ),
-	'priority'     => 60,
-	'base'         => 'powerkit_progressbar',
-	'autoregister' => true,
-	'fields'       => array(
-		array(
-			'type'  => 'section',
-			'label' => esc_html__( 'Options', 'powerkit' ),
-		),
-		array(
-			'type'    => 'input',
-			'name'    => 'value',
-			'label'   => esc_html__( 'Value', 'powerkit' ),
-			'default' => '25',
-			'suffix'  => ' %',
-			'desc'    => '(0-100)',
-		),
-		array(
-			'type'  => 'section',
-			'label' => esc_html__( 'Style', 'powerkit' ),
-		),
-		array(
-			'type'    => 'input',
-			'name'    => 'height',
-			'label'   => esc_html__( 'Height (thickness)', 'powerkit' ),
-			'default' => '20',
-			'suffix'  => ' px',
-		),
-		array(
-			'type'    => 'radio',
-			'name'    => 'color',
-			'label'   => esc_html__( 'Color', 'powerkit' ),
-			'style'   => 'vertical',
-			'default' => 'primary',
-			'options' => array(
-				'primary'   => esc_html__( 'Primary', 'powerkit' ),
-				'secondary' => esc_html__( 'Secondary', 'powerkit' ),
-				'success'   => esc_html__( 'Success', 'powerkit' ),
-				'info'      => esc_html__( 'Info', 'powerkit' ),
-				'warning'   => esc_html__( 'Warning', 'powerkit' ),
-				'danger'    => esc_html__( 'Danger', 'powerkit' ),
+add_action( 'init', function () {
+	powerkit_basic_shortcodes_register( array(
+		'name'         => 'progressbars',
+		'title'        => esc_html__( 'Progress Bars', 'powerkit' ),
+		'priority'     => 60,
+		'base'         => 'powerkit_progressbar',
+		'autoregister' => true,
+		'fields'       => array(
+			array(
+				'type'  => 'section',
+				'label' => esc_html__( 'Options', 'powerkit' ),
+			),
+			array(
+				'type'    => 'input',
+				'name'    => 'value',
+				'label'   => esc_html__( 'Value', 'powerkit' ),
+				'default' => '25',
+				'suffix'  => ' %',
+				'desc'    => '(0-100)',
+			),
+			array(
+				'type'  => 'section',
+				'label' => esc_html__( 'Style', 'powerkit' ),
+			),
+			array(
+				'type'    => 'input',
+				'name'    => 'height',
+				'label'   => esc_html__( 'Height (thickness)', 'powerkit' ),
+				'default' => '20',
+				'suffix'  => ' px',
+			),
+			array(
+				'type'    => 'radio',
+				'name'    => 'color',
+				'label'   => esc_html__( 'Color', 'powerkit' ),
+				'style'   => 'vertical',
+				'default' => 'primary',
+				'options' => array(
+					'primary'   => esc_html__( 'Primary', 'powerkit' ),
+					'secondary' => esc_html__( 'Secondary', 'powerkit' ),
+					'success'   => esc_html__( 'Success', 'powerkit' ),
+					'info'      => esc_html__( 'Info', 'powerkit' ),
+					'warning'   => esc_html__( 'Warning', 'powerkit' ),
+					'danger'    => esc_html__( 'Danger', 'powerkit' ),
+				),
+			),
+			array(
+				'type'    => 'checkbox',
+				'name'    => 'display_value',
+				'label'   => esc_html__( 'Display value', 'powerkit' ),
+				'default' => false,
+			),
+			array(
+				'type'    => 'checkbox',
+				'name'    => 'striped',
+				'label'   => esc_html__( 'Striped', 'powerkit' ),
+				'default' => false,
+			),
+			array(
+				'type'    => 'checkbox',
+				'name'    => 'animated',
+				'label'   => esc_html__( 'Animated', 'powerkit' ),
+				'default' => false,
 			),
 		),
-		array(
-			'type'    => 'checkbox',
-			'name'    => 'display_value',
-			'label'   => esc_html__( 'Display value', 'powerkit' ),
-			'default' => false,
-		),
-		array(
-			'type'    => 'checkbox',
-			'name'    => 'striped',
-			'label'   => esc_html__( 'Striped', 'powerkit' ),
-			'default' => false,
-		),
-		array(
-			'type'    => 'checkbox',
-			'name'    => 'animated',
-			'label'   => esc_html__( 'Animated', 'powerkit' ),
-			'default' => false,
-		),
-	),
-) );
-
+	) );
+});
 
 /**
  * Progress Bar Shortcode

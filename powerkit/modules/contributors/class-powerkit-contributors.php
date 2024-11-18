@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Contributors', 'powerkit' );
-			$this->desc     = esc_html__( 'Display a list of your site authors (contributors) in your sidebar, including author name, bio,  and avatar in multiple available layouts.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Contributors', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'Display a list of your site authors (contributors) in your sidebar, including author name, bio,  and avatar in multiple available layouts.', 'powerkit' );
 			$this->slug     = 'contributors';
 			$this->type     = 'default';
 			$this->category = 'content';
@@ -26,7 +26,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled  = true;
 			$this->links    = array(
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/contributors/',
 					'target' => '_blank',
 				),

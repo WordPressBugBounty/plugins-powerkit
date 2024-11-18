@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Posts', 'powerkit' );
-			$this->desc     = esc_html__( 'Display a list of posts in your sidebar, including post meta and preview image in multiple available layouts.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Posts', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'Display a list of posts in your sidebar, including post meta and preview image in multiple available layouts.', 'powerkit' );
 			$this->slug     = 'posts';
 			$this->type     = 'default';
 			$this->category = 'content';
@@ -26,7 +26,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled  = true;
 			$this->links    = array(
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/posts/',
 					'target' => '_blank',
 				),

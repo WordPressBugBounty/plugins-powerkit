@@ -9,60 +9,61 @@
 /**
  * Alerts
  */
-powerkit_basic_shortcodes_register( array(
-	'name'         => 'alerts',
-	'title'        => esc_html__( 'Alerts', 'powerkit' ),
-	'priority'     => 30,
-	'base'         => 'powerkit_alert',
-	'autoregister' => true,
-	'fields'       => array(
-		array(
-			'type'  => 'section',
-			'label' => esc_html__( 'Options', 'powerkit' ),
-		),
-		array(
-			'type'    => 'radio',
-			'name'    => 'type',
-			'label'   => esc_html__( 'Type', 'powerkit' ),
-			'style'   => 'vertical',
-			'default' => 'info',
-			'options' => array(
-				'danger'  => esc_html__( 'Danger', 'powerkit' ),
-				'info'    => esc_html__( 'Info', 'powerkit' ),
-				'link'    => esc_html__( 'Link', 'powerkit' ),
-				'success' => esc_html__( 'Success', 'powerkit' ),
-				'warning' => esc_html__( 'Warning', 'powerkit' ),
+add_action( 'init', function () {
+	powerkit_basic_shortcodes_register( array(
+		'name'         => 'alerts',
+		'title'        => esc_html__( 'Alerts', 'powerkit' ),
+		'priority'     => 30,
+		'base'         => 'powerkit_alert',
+		'autoregister' => true,
+		'fields'       => array(
+			array(
+				'type'  => 'section',
+				'label' => esc_html__( 'Options', 'powerkit' ),
+			),
+			array(
+				'type'    => 'radio',
+				'name'    => 'type',
+				'label'   => esc_html__( 'Type', 'powerkit' ),
+				'style'   => 'vertical',
+				'default' => 'info',
+				'options' => array(
+					'danger'  => esc_html__( 'Danger', 'powerkit' ),
+					'info'    => esc_html__( 'Info', 'powerkit' ),
+					'link'    => esc_html__( 'Link', 'powerkit' ),
+					'success' => esc_html__( 'Success', 'powerkit' ),
+					'warning' => esc_html__( 'Warning', 'powerkit' ),
+				),
+			),
+			array(
+				'type'    => 'checkbox',
+				'name'    => 'dismissible',
+				'label'   => esc_html__( 'Display close button', 'powerkit' ),
+				'default' => false,
+			),
+			array(
+				'type'    => 'checkbox',
+				'name'    => 'multiline',
+				'label'   => esc_html__( 'Multiline', 'powerkit' ),
+				'default' => false,
+			),
+			array(
+				'type'  => 'section',
+				'label' => esc_html__( 'Content', 'powerkit' ),
+			),
+			array(
+				'type'    => 'content',
+				'name'    => 'content',
+				'label'   => esc_html__( 'Content', 'powerkit' ),
+				'default' => '',
+				'attrs'   => array(
+					'class' => 'widefat',
+					'rows'  => 6,
+				),
 			),
 		),
-		array(
-			'type'    => 'checkbox',
-			'name'    => 'dismissible',
-			'label'   => esc_html__( 'Display close button', 'powerkit' ),
-			'default' => false,
-		),
-		array(
-			'type'    => 'checkbox',
-			'name'    => 'multiline',
-			'label'   => esc_html__( 'Multiline', 'powerkit' ),
-			'default' => false,
-		),
-		array(
-			'type'  => 'section',
-			'label' => esc_html__( 'Content', 'powerkit' ),
-		),
-		array(
-			'type'    => 'content',
-			'name'    => 'content',
-			'label'   => esc_html__( 'Content', 'powerkit' ),
-			'default' => '',
-			'attrs'   => array(
-				'class' => 'widefat',
-				'rows'  => 6,
-			),
-		),
-	),
-) );
-
+	) );
+} );
 
 /**
  * Alert Shortcode
@@ -73,8 +74,8 @@ powerkit_basic_shortcodes_register( array(
  * @return string           Shortcode result HTML.
  */
 function powerkit_basic_shortcodes_alert( $output, $atts, $content ) {
-	$dm_class  = null;
-	$dm_button = null;
+	$dm_class  = __return_empty_string();
+	$dm_button = __return_empty_string();
 
 	if ( 'true' === $atts['dismissible'] ) {
 		$dm_class  .= ' pk-alert-dismissible';
@@ -93,7 +94,7 @@ function powerkit_basic_shortcodes_alert( $output, $atts, $content ) {
 		esc_attr( $atts['type'] ),
 		esc_attr( $dm_class ),
 		wp_kses( $dm_button, 'post' ),
-		wp_kses( $content, 'post' ),
+		wp_kses( $content, 'post' )
 	);
 
 	return $output;

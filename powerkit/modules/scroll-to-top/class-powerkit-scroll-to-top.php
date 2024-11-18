@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Scroll To Top Button', 'powerkit' );
-			$this->desc     = esc_html__( 'A simple and light-weight Scroll To Top button will appear automatically as soon as a user scrolls past the first screen.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Scroll To Top Button', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'A simple and light-weight Scroll To Top button will appear automatically as soon as a user scrolls past the first screen.', 'powerkit' );
 			$this->slug     = 'scroll_to_top';
 			$this->type     = 'default';
 			$this->category = 'basic';
@@ -26,7 +26,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled  = true;
 			$this->links    = array(
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/utilities/scroll-to-top-button/',
 					'target' => '_blank',
 				),

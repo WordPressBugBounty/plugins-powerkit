@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Table of Contents', 'powerkit' );
-			$this->desc     = esc_html__( 'Display table of contents automatically with a shortcode or in a widget based on the page headings.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Table of Contents', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'Display table of contents automatically with a shortcode or in a widget based on the page headings.', 'powerkit' );
 			$this->slug     = 'table_of_contents';
 			$this->type     = 'default';
 			$this->category = 'content';
@@ -26,7 +26,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled  = true;
 			$this->links    = array(
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/content-presentation/table-of-contents/',
 					'target' => '_blank',
 				),

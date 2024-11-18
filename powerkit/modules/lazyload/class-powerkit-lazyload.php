@@ -16,22 +16,22 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Lazy Load', 'powerkit' );
-			$this->desc     = esc_html__( 'The Lazy Load module enables loading images when a user scrolls close to them, making images load only when needed and saving the user’s bandwidth.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Lazy Load', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'The Lazy Load module enables loading images when a user scrolls close to them, making images load only when needed and saving the user’s bandwidth.', 'powerkit' );
 			$this->slug     = 'lazyload';
 			$this->type     = 'default';
 			$this->category = 'basic';
 			$this->priority = 1020;
 			$this->public   = true;
 			$this->enabled  = false;
-			$this->badge    = esc_html__( 'Advanced', 'powerkit' );
+			$this->badge    = powerkit_esc_html__( 'Advanced', 'powerkit' );
 			$this->links    = array(
 				array(
-					'name' => esc_html__( 'Go to settings', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Go to settings', 'powerkit' ),
 					'url'  => admin_url( sprintf( 'options-media.php#%s', powerkit_get_page_slug( $this->slug ) ) ),
 				),
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/image-optimization/lazy-load/',
 					'target' => '_blank',
 				),

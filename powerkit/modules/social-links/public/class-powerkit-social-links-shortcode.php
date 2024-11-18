@@ -70,9 +70,9 @@ add_shortcode( 'powerkit_social_links', 'powerkit_social_links_shortcode' );
 /**
  * Map Social Links Shortcode into the Basic Shortcodes Plugin
  */
-if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) :
+if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) {
 
-	add_action( 'init', function() {
+	add_action( 'init', function () {
 
 		$shortcode_map = array(
 			'name'         => 'links',
@@ -134,7 +134,5 @@ if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) :
 		}
 
 		powerkit_basic_shortcodes_register( $shortcode_map );
-
-	});
-
-endif;
+	} );
+}

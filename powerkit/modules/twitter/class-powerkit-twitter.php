@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name            = esc_html__( 'Twitter Integration', 'powerkit' );
-			$this->desc            = esc_html__( 'Display your Twitter feed in your sidebar with a widget or post content via shortcode, including your Twitter profile image, number of followers, as well as number of replies and likes per each tweet in the feed.', 'powerkit' );
+			$this->name            = powerkit_esc_html__( 'Twitter Integration', 'powerkit' );
+			$this->desc            = powerkit_esc_html__( 'Display your Twitter feed in your sidebar with a widget or post content via shortcode, including your Twitter profile image, number of followers, as well as number of replies and likes per each tweet in the feed.', 'powerkit' );
 			$this->slug            = 'twitter_integration';
 			$this->type            = 'default';
 			$this->category        = 'social';
@@ -29,11 +29,11 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			);
 			$this->links           = array(
 				array(
-					'name' => esc_html__( 'Clear cache', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Clear cache', 'powerkit' ),
 					'url'  => powerkit_get_page_url( $this->slug . '&action=powerkit_reset_cache' ),
 				),
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/social-integrations/twitter-integration/',
 					'target' => '_blank',
 				),

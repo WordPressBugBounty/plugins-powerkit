@@ -9,53 +9,54 @@
 /**
  * Collapsibles
  */
-powerkit_basic_shortcodes_register( array(
-	'name'         => 'collapsibles',
-	'title'        => esc_html__( 'Collapsibles', 'powerkit' ),
-	'priority'     => 50,
-	'base'         => 'powerkit_collapsibles',
-	'autoregister' => true,
-	'fields'       => array(
-		array(
-			'type'  => 'section',
-			'label' => esc_html__( 'Content', 'powerkit' ),
-		),
-		array(
-			'type'         => 'repeater',
-			'base'         => 'powerkit_collapsible',
-			'autoregister' => true,
-			'label'        => esc_html__( 'Collapsibles', 'powerkit' ),
-			'fields'       => array(
-				array(
-					'type'    => 'input',
-					'name'    => 'title',
-					'label'   => esc_html__( 'Title', 'powerkit' ),
-					'default' => '',
-					'attrs'   => array(
-						'class' => 'widefat',
+add_action( 'init', function () {
+	powerkit_basic_shortcodes_register( array(
+		'name'         => 'collapsibles',
+		'title'        => esc_html__( 'Collapsibles', 'powerkit' ),
+		'priority'     => 50,
+		'base'         => 'powerkit_collapsibles',
+		'autoregister' => true,
+		'fields'       => array(
+			array(
+				'type'  => 'section',
+				'label' => esc_html__( 'Content', 'powerkit' ),
+			),
+			array(
+				'type'         => 'repeater',
+				'base'         => 'powerkit_collapsible',
+				'autoregister' => true,
+				'label'        => esc_html__( 'Collapsibles', 'powerkit' ),
+				'fields'       => array(
+					array(
+						'type'    => 'input',
+						'name'    => 'title',
+						'label'   => esc_html__( 'Title', 'powerkit' ),
+						'default' => '',
+						'attrs'   => array(
+							'class' => 'widefat',
+						),
 					),
-				),
-				array(
-					'type'    => 'content',
-					'name'    => 'content',
-					'label'   => esc_html__( 'Content', 'powerkit' ),
-					'default' => '',
-					'attrs'   => array(
-						'class' => 'widefat',
-						'rows'  => 6,
+					array(
+						'type'    => 'content',
+						'name'    => 'content',
+						'label'   => esc_html__( 'Content', 'powerkit' ),
+						'default' => '',
+						'attrs'   => array(
+							'class' => 'widefat',
+							'rows'  => 6,
+						),
 					),
-				),
-				array(
-					'type'    => 'checkbox',
-					'name'    => 'opened',
-					'label'   => esc_html__( 'Opened', 'powerkit' ),
-					'default' => false,
+					array(
+						'type'    => 'checkbox',
+						'name'    => 'opened',
+						'label'   => esc_html__( 'Opened', 'powerkit' ),
+						'default' => false,
+					),
 				),
 			),
 		),
-	),
-) );
-
+	) );
+});
 
 /**
  * Collapsibles Shortcode

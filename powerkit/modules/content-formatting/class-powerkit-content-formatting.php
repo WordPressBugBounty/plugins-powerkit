@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Content Formatting', 'powerkit' );
-			$this->desc     = esc_html__( 'A few nice extra content formatting features: numbered headings, styled lists, badges, drop-caps, and content blocks.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Content Formatting', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'A few nice extra content formatting features: numbered headings, styled lists, badges, drop-caps, and content blocks.', 'powerkit' );
 			$this->slug     = 'content_formatting';
 			$this->type     = 'default';
 			$this->category = 'content';
@@ -26,7 +26,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled  = true;
 			$this->links    = array(
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/content-presentation/content-formatting/',
 					'target' => '_blank',
 				),

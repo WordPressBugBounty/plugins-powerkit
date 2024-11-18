@@ -9,73 +9,74 @@
 /**
  * Tabs
  */
-powerkit_basic_shortcodes_register( array(
-	'name'         => 'tabs',
-	'title'        => esc_html__( 'Tabs', 'powerkit' ),
-	'priority'     => 40,
-	'base'         => 'powerkit_tabs',
-	'autoregister' => true,
-	'fields'       => array(
-		array(
-			'type'  => 'section',
-			'label' => esc_html__( 'Options', 'powerkit' ),
-		),
-		array(
-			'type'    => 'radio',
-			'name'    => 'type',
-			'label'   => esc_html__( 'Type', 'powerkit' ),
-			'style'   => 'horizontal',
-			'default' => 'tabs',
-			'options' => array(
-				'tabs'  => esc_html__( 'Tabs', 'powerkit' ),
-				'pills' => esc_html__( 'Pills', 'powerkit' ),
+add_action( 'init', function () {
+	powerkit_basic_shortcodes_register( array(
+		'name'         => 'tabs',
+		'title'        => esc_html__( 'Tabs', 'powerkit' ),
+		'priority'     => 40,
+		'base'         => 'powerkit_tabs',
+		'autoregister' => true,
+		'fields'       => array(
+			array(
+				'type'  => 'section',
+				'label' => esc_html__( 'Options', 'powerkit' ),
 			),
-		),
-		array(
-			'type'    => 'radio',
-			'name'    => 'nav',
-			'label'   => esc_html__( 'Navigation type', 'powerkit' ),
-			'style'   => 'horizontal',
-			'default' => 'horizontal',
-			'options' => array(
-				'horizontal' => esc_html__( 'Horizontal', 'powerkit' ),
-				'vertical'   => esc_html__( 'Vertical', 'powerkit' ),
-			),
-		),
-		array(
-			'type'  => 'section',
-			'label' => esc_html__( 'Content', 'powerkit' ),
-		),
-		array(
-			'type'         => 'repeater',
-			'base'         => 'powerkit_tab',
-			'autoregister' => true,
-			'label'        => esc_html__( 'Tabs', 'powerkit' ),
-			'fields'       => array(
-				array(
-					'type'    => 'input',
-					'name'    => 'title',
-					'label'   => esc_html__( 'Title', 'powerkit' ),
-					'default' => '',
-					'attrs'   => array(
-						'class' => 'widefat',
-					),
-				),
-				array(
-					'type'    => 'content',
-					'name'    => 'content',
-					'label'   => esc_html__( 'Content', 'powerkit' ),
-					'default' => '',
-					'attrs'   => array(
-						'class' => 'widefat',
-						'rows'  => 6,
-					),
+			array(
+				'type'    => 'radio',
+				'name'    => 'type',
+				'label'   => esc_html__( 'Type', 'powerkit' ),
+				'style'   => 'horizontal',
+				'default' => 'tabs',
+				'options' => array(
+					'tabs'  => esc_html__( 'Tabs', 'powerkit' ),
+					'pills' => esc_html__( 'Pills', 'powerkit' ),
 				),
 			),
+			array(
+				'type'    => 'radio',
+				'name'    => 'nav',
+				'label'   => esc_html__( 'Navigation type', 'powerkit' ),
+				'style'   => 'horizontal',
+				'default' => 'horizontal',
+				'options' => array(
+					'horizontal' => esc_html__( 'Horizontal', 'powerkit' ),
+					'vertical'   => esc_html__( 'Vertical', 'powerkit' ),
+				),
+			),
+			array(
+				'type'  => 'section',
+				'label' => esc_html__( 'Content', 'powerkit' ),
+			),
+			array(
+				'type'         => 'repeater',
+				'base'         => 'powerkit_tab',
+				'autoregister' => true,
+				'label'        => esc_html__( 'Tabs', 'powerkit' ),
+				'fields'       => array(
+					array(
+						'type'    => 'input',
+						'name'    => 'title',
+						'label'   => esc_html__( 'Title', 'powerkit' ),
+						'default' => '',
+						'attrs'   => array(
+							'class' => 'widefat',
+						),
+					),
+					array(
+						'type'    => 'content',
+						'name'    => 'content',
+						'label'   => esc_html__( 'Content', 'powerkit' ),
+						'default' => '',
+						'attrs'   => array(
+							'class' => 'widefat',
+							'rows'  => 6,
+						),
+					),
+				),
+			),
 		),
-	),
-) );
-
+	) );
+});
 
 /**
  * Tabs Wrap Shortcode

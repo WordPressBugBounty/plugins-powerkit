@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'About Widget', 'powerkit' );
-			$this->desc     = esc_html__( 'Display Image, Text and Social Accounts.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'About Widget', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'Display Image, Text and Social Accounts.', 'powerkit' );
 			$this->slug     = 'widget_about';
 			$this->type     = 'default';
 			$this->category = 'widget';

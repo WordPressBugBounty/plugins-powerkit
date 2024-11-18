@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Basic Elements', 'powerkit' );
-			$this->desc     = esc_html__( 'Basic shortcodes with a shortcode generator right in the WordPress editor.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Basic Elements', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'Basic shortcodes with a shortcode generator right in the WordPress editor.', 'powerkit' );
 			$this->slug     = 'basic_elements';
 			$this->type     = 'default';
 			$this->category = 'basic';
@@ -27,7 +27,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 
 			$this->links = array(
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/content-presentation/basic-elements/',
 					'target' => '_blank',
 				),

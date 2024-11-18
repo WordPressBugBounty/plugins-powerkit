@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Lightbox', 'powerkit' );
-			$this->desc     = esc_html__( 'Instead of opening images in a new window display them in a fullscreen Lightbox for a distraction-free user experience.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Lightbox', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'Instead of opening images in a new window display them in a fullscreen Lightbox for a distraction-free user experience.', 'powerkit' );
 			$this->slug     = 'lightbox';
 			$this->type     = 'default';
 			$this->category = 'basic';
@@ -26,11 +26,11 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled  = true;
 			$this->links    = array(
 				array(
-					'name' => esc_html__( 'Go to settings', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Go to settings', 'powerkit' ),
 					'url'  => admin_url( sprintf( 'options-media.php#%s', powerkit_get_page_slug( $this->slug ) ) ),
 				),
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/content-presentation/lightbox/',
 					'target' => '_blank',
 				),

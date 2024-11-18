@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Reading Time', 'powerkit' );
-			$this->desc     = esc_html__( 'Let’s you easily add an estimated reading time to your WordPress posts.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Reading Time', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'Let’s you easily add an estimated reading time to your WordPress posts.', 'powerkit' );
 			$this->slug     = 'reading_time';
 			$this->type     = 'default';
 			$this->category = 'tools';
@@ -26,7 +26,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled  = true;
 			$this->links    = array(
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/reading-time/',
 					'target' => '_blank',
 				),

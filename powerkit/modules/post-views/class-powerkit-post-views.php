@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Post Views', 'powerkit' );
-			$this->desc     = esc_html__( 'This module links to your Google Analytics account to retrieve the pageviews for your posts.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Post Views', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'This module links to your Google Analytics account to retrieve the pageviews for your posts.', 'powerkit' );
 			$this->slug     = 'post_views';
 			$this->type     = 'default';
 			$this->category = 'tools';
@@ -41,22 +41,16 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 				}, 10, 2 );
 
 				// Set message.
-				ob_start();
-				?>
-				<div class="update-message notice inline notice-warning notice-alt">
-					<?php esc_html_e( 'Please deactivate the Post Views Counter plugin.', 'powerkit' ); ?>
-				</div>
-				<?php
-				$this->desc .= ob_get_clean();
+				$this->desc .= sprintf( '<div class="update-message notice inline notice-warning notice-alt">%s</div>', powerkit_esc_html__( 'Please deactivate the Post Views Counter plugin.', 'powerkit' ) );
 			} else {
 
 				$this->links = array(
 					array(
-						'name' => esc_html__( 'Go to settings', 'powerkit' ),
+						'name' => powerkit_esc_html__( 'Go to settings', 'powerkit' ),
 						'url'  => powerkit_get_page_url( $this->slug ),
 					),
 					array(
-						'name'   => esc_html__( 'View documentation', 'powerkit' ),
+						'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 						'url'    => powerkit_get_setting( 'documentation' ) . '/post-views/',
 						'target' => '_blank',
 					),

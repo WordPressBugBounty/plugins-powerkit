@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name            = esc_html__( 'Facebook Integration', 'powerkit' );
-			$this->desc            = esc_html__( 'Display your Facebook Fanpage widget in your sidebar or post content via a shortcode. Enable Facebook comments next to or instead of WordPress comments.', 'powerkit' );
+			$this->name            = powerkit_esc_html__( 'Facebook Integration', 'powerkit' );
+			$this->desc            = powerkit_esc_html__( 'Display your Facebook Fanpage widget in your sidebar or post content via a shortcode. Enable Facebook comments next to or instead of WordPress comments.', 'powerkit' );
 			$this->slug            = 'facebook_integration';
 			$this->type            = 'default';
 			$this->category        = 'social';
@@ -29,11 +29,11 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			);
 			$this->links           = array(
 				array(
-					'name' => esc_html__( 'Go to settings', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Go to settings', 'powerkit' ),
 					'url'  => admin_url( sprintf( 'options-discussion.php#%s', powerkit_get_page_slug( $this->slug ) ) ),
 				),
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/social-integrations/facebook-integration/',
 					'target' => '_blank',
 				),

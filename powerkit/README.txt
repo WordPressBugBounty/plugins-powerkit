@@ -1,9 +1,9 @@
 === Powerkit – Supercharge your WordPress Site ===
 Tags: share buttons, social links, slider, gallery, lazyload
 Requires at least: 4.0
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.4
-Stable tag: 2.9.4
+Stable tag: 2.9.5
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -82,6 +82,9 @@ Sure! Powerkit is developer-friendly. There're numerous hooks and filters, so ex
 4. Custom Fonts.
 
 == Changelog ==
+
+= 2.9.5 =
+* Added compatibility with WordPress 6.7
 
 = 2.9.4 =
 * Added compatibility with WordPress 6.6

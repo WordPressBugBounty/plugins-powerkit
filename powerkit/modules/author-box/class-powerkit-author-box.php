@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Author Box', 'powerkit' );
-			$this->desc     = esc_html__( 'Display a post author box in your sidebar, including author name, bio and avatar in multiple available layouts.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Author Box', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'Display a post author box in your sidebar, including author name, bio and avatar in multiple available layouts.', 'powerkit' );
 			$this->slug     = 'author_box';
 			$this->type     = 'default';
 			$this->category = 'widget';
@@ -26,7 +26,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled  = true;
 			$this->links    = array(
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/author-box/',
 					'target' => '_blank',
 				),

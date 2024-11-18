@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name            = esc_html__( 'Social Links', 'powerkit' );
-			$this->desc            = esc_html__( 'Display a list of links to your social accounts with beautiful icons and followers’ counts in pre-defined theme locations, sidebar widget or post content via shortcode. Add social links for post authors with the help of the new user contact fields.', 'powerkit' );
+			$this->name            = powerkit_esc_html__( 'Social Links', 'powerkit' );
+			$this->desc            = powerkit_esc_html__( 'Display a list of links to your social accounts with beautiful icons and followers’ counts in pre-defined theme locations, sidebar widget or post content via shortcode. Add social links for post authors with the help of the new user contact fields.', 'powerkit' );
 			$this->slug            = 'social_links';
 			$this->type            = 'default';
 			$this->category        = 'social';
@@ -30,19 +30,19 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 
 			$this->links = array(
 				array(
-					'name' => esc_html__( 'Go to settings', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Go to settings', 'powerkit' ),
 					'url'  => powerkit_get_page_url( $this->slug ),
 				),
 				array(
-					'name' => esc_html__( 'Connect', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Connect', 'powerkit' ),
 					'url'  => powerkit_get_page_url( 'connect' ),
 				),
 				array(
-					'name' => esc_html__( 'Clear cache', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Clear cache', 'powerkit' ),
 					'url'  => powerkit_get_page_url( $this->slug . '&action=powerkit_reset_cache' ),
 				),
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/social-integrations/social-links/',
 					'target' => '_blank',
 				),

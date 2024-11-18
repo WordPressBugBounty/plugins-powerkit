@@ -122,9 +122,9 @@ add_shortcode( 'powerkit_posts', 'powerkit_inline_posts_shortcode' );
 /**
  * Map Social Links Shortcode into the Basic Shortcodes Plugin
  */
-if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) :
+if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) {
 
-	add_action( 'init', function() {
+	add_action( 'init', function () {
 
 		$shortcode_map = array(
 			'name'         => 'inline_posts',
@@ -239,7 +239,5 @@ if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) :
 		}
 
 		powerkit_basic_shortcodes_register( $shortcode_map );
-
 	});
-
-endif;
+}

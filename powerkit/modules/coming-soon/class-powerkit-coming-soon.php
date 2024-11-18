@@ -16,8 +16,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register module
 		 */
 		public function register() {
-			$this->name     = esc_html__( 'Coming Soon', 'powerkit' );
-			$this->desc     = esc_html__( 'Coming soon module to perfectly manage your coming soon, under construction website, under maintenance mode website and offline website.', 'powerkit' );
+			$this->name     = powerkit_esc_html__( 'Coming Soon', 'powerkit' );
+			$this->desc     = powerkit_esc_html__( 'Coming soon module to perfectly manage your coming soon, under construction website, under maintenance mode website and offline website.', 'powerkit' );
 			$this->slug     = 'coming_soon';
 			$this->type     = 'default';
 			$this->category = 'tools';
@@ -26,11 +26,11 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$this->enabled  = true;
 			$this->links    = array(
 				array(
-					'name' => esc_html__( 'Go to settings', 'powerkit' ),
+					'name' => powerkit_esc_html__( 'Go to settings', 'powerkit' ),
 					'url'  => powerkit_get_page_url( $this->slug ),
 				),
 				array(
-					'name'   => esc_html__( 'View documentation', 'powerkit' ),
+					'name'   => powerkit_esc_html__( 'View documentation', 'powerkit' ),
 					'url'    => powerkit_get_setting( 'documentation' ) . '/coming-soon/',
 					'target' => '_blank',
 				),

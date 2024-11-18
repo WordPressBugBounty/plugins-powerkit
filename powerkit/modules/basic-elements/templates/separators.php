@@ -9,41 +9,42 @@
 /**
  * Separators
  */
-powerkit_basic_shortcodes_register( array(
-	'name'         => 'separators',
-	'title'        => esc_html__( 'Separators', 'powerkit' ),
-	'priority'     => 10,
-	'base'         => 'powerkit_separator',
-	'autoregister' => true,
-	'fields'       => array(
-		array(
-			'type'  => 'section',
-			'label' => esc_html__( 'Options', 'powerkit' ),
-		),
-		array(
-			'type'    => 'radio',
-			'name'    => 'style',
-			'label'   => esc_html__( 'Style', 'powerkit' ),
-			'style'   => 'vertical',
-			'default' => 'solid',
-			'options' => array(
-				'solid'  => esc_html__( 'Solid', 'powerkit' ),
-				'double' => esc_html__( 'Double', 'powerkit' ),
-				'dotted' => esc_html__( 'Dotted', 'powerkit' ),
-				'dashed' => esc_html__( 'Dashed', 'powerkit' ),
-				'blank'  => esc_html__( 'Blank (empty space)', 'powerkit' ),
+add_action( 'init', function () {
+	powerkit_basic_shortcodes_register( array(
+		'name'         => 'separators',
+		'title'        => esc_html__( 'Separators', 'powerkit' ),
+		'priority'     => 10,
+		'base'         => 'powerkit_separator',
+		'autoregister' => true,
+		'fields'       => array(
+			array(
+				'type'  => 'section',
+				'label' => esc_html__( 'Options', 'powerkit' ),
+			),
+			array(
+				'type'    => 'radio',
+				'name'    => 'style',
+				'label'   => esc_html__( 'Style', 'powerkit' ),
+				'style'   => 'vertical',
+				'default' => 'solid',
+				'options' => array(
+					'solid'  => esc_html__( 'Solid', 'powerkit' ),
+					'double' => esc_html__( 'Double', 'powerkit' ),
+					'dotted' => esc_html__( 'Dotted', 'powerkit' ),
+					'dashed' => esc_html__( 'Dashed', 'powerkit' ),
+					'blank'  => esc_html__( 'Blank (empty space)', 'powerkit' ),
+				),
+			),
+			array(
+				'type'    => 'input',
+				'name'    => 'height',
+				'label'   => esc_html__( 'Height', 'powerkit' ),
+				'default' => '',
+				'suffix'  => ' px',
 			),
 		),
-		array(
-			'type'    => 'input',
-			'name'    => 'height',
-			'label'   => esc_html__( 'Height', 'powerkit' ),
-			'default' => '',
-			'suffix'  => ' px',
-		),
-	),
-) );
-
+	) );
+});
 
 /**
  * Separator Shortcode
