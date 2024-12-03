@@ -38,7 +38,7 @@ class Powerkit_Typekit_Fonts_Public extends Powerkit_Module_Public {
 		add_filter( 'powerkit_fonts_list', array( $this, 'typekit_fonts' ), 20 );
 		add_filter( 'csco_customizer_fonts_choices', array( $this, 'csco_typekit_fonts' ), 20 );
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'editor_enqueue_scripts' ) );
+		add_action( 'enqueue_block_assets', array( $this, 'editor_enqueue_scripts' ) );
 		add_filter( 'init', array( $this, 'set_load_method' ) );
 		add_filter( 'init', array( $this, 'kirki_support' ) );
 		add_filter( 'elementor/fonts/groups', array( $this, 'elementor_group' ) );
@@ -217,14 +217,13 @@ class Powerkit_Typekit_Fonts_Public extends Powerkit_Module_Public {
 
 	/**
 	 * Register fonts in the editor.
-	 *
-	 * @param string $page Current page.
 	 */
-	public function editor_enqueue_scripts( $page ) {
-
-		if ( 'post.php' === $page || 'post-new.php' === $page ) {
-			$this->wp_enqueue_scripts();
+	public function editor_enqueue_scripts() {
+		if ( ! ( is_admin() && ! is_customize_preview() ) ) {
+			return;
 		}
+
+		$this->wp_enqueue_scripts();
 	}
 
 	/**

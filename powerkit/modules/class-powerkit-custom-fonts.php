@@ -66,8 +66,8 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			add_filter( 'upload_mimes', array( $this, 'allow_mimes' ) );
 			add_filter( 'powerkit_fonts_register_settings', array( $this, 'register_settings' ), 10 );
 			add_action( 'customize_controls_print_styles', array( $this, 'frontend_enqueue' ), 100 );
-			add_action( 'wp_head', array( $this, 'frontend_enqueue' ), 100 );
-			add_action( 'admin_head', array( $this, 'editor_enqueue' ), 100 );
+			add_action( 'wp_enqueue_scripts', array( $this, 'frontend_enqueue' ), 100 );
+			add_action( 'enqueue_block_assets', array( $this, 'editor_enqueue' ), 100 );
 			add_filter( 'init', array( $this, 'set_load_method' ) );
 			add_filter( 'elementor/fonts/groups', array( $this, 'elementor_group' ) );
 			add_filter( 'elementor/fonts/additional_fonts', array( $this, 'add_elementor_fonts' ) );
@@ -650,11 +650,11 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Register fonts in the editor.
 		 */
 		public function editor_enqueue() {
-			global $pagenow;
-
-			if ( 'post.php' === $pagenow || 'post-new.php' === $pagenow ) {
-				$this->frontend_enqueue();
+			if ( ! ( is_admin() && ! is_customize_preview() ) ) {
+				return;
 			}
+
+			$this->frontend_enqueue();
 		}
 
 		/**
@@ -663,14 +663,13 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * @since 1.0.0
 		 */
 		public function frontend_enqueue() {
-
 			$custom_fonts = get_option( 'powerkit_custom_fonts_list' );
 
 			if ( is_array( $custom_fonts ) && $custom_fonts ) {
 
 				$exclude = array();
 
-				$font_face = null;
+				$font_face = __return_empty_string();
 
 				foreach ( $custom_fonts as $key => $item ) {
 
@@ -700,9 +699,11 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 				}
 
 				if ( $font_face ) {
-					?>
-						<style><?php print( $font_face ); // XSS. ?></style>
-					<?php
+					wp_register_style( 'pk-custom-inline-fonts', false, array(), csco_get_theme_data( 'Version' ) );
+
+					wp_enqueue_style( 'pk-custom-inline-fonts' );
+
+					wp_add_inline_style( 'pk-custom-inline-fonts', $font_face );
 				}
 			}
 		}

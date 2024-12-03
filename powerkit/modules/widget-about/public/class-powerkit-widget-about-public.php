@@ -18,7 +18,7 @@ class Powerkit_Widget_About_Public extends Powerkit_Module_Public {
 	 * Initialize
 	 */
 	public function initialize() {
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+		add_action( 'enqueue_block_assets', array( $this, 'admin_enqueue_scripts' ) );
 	}
 
 	/**
@@ -35,6 +35,10 @@ class Powerkit_Widget_About_Public extends Powerkit_Module_Public {
 	 * Register the stylesheets for the admin-facing side of the site.
 	 */
 	public function admin_enqueue_scripts() {
+		if ( ! ( is_admin() && ! is_customize_preview() ) ) {
+			return;
+		}
+
 		wp_enqueue_style( 'powerkit-widget-about', powerkit_style( plugin_dir_url( __FILE__ ) . 'css/public-powerkit-widget-about.css' ), array(), powerkit_get_setting( 'version' ), 'all' );
 
 		// Add RTL support.

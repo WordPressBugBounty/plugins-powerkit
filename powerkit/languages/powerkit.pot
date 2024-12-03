@@ -3319,7 +3319,7 @@ msgstr ""
 msgid "Font kits synchronized."
 msgstr ""
 
-#: modules/typekit-fonts/public/class-powerkit-typekit-fonts-public.php:105, modules/typekit-fonts/public/class-powerkit-typekit-fonts-public.php:139, modules/typekit-fonts/public/class-powerkit-typekit-fonts-public.php:239
+#: modules/typekit-fonts/public/class-powerkit-typekit-fonts-public.php:105, modules/typekit-fonts/public/class-powerkit-typekit-fonts-public.php:139, modules/typekit-fonts/public/class-powerkit-typekit-fonts-public.php:238
 msgid "Typekit"
 msgstr ""
 

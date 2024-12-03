@@ -89,7 +89,7 @@ if ( ! class_exists( 'Powerkit' ) ) {
 			add_action( 'powerkit_plugin_activation', array( $this, 'activation' ) );
 			add_action( 'plugins_loaded', array( $this, 'check_version' ) );
 			add_action( 'amp_post_template_css', array( $this, 'amp_enqueue_styles' ) );
-			add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ), 5 );
+			add_action( 'enqueue_block_assets', array( $this, 'admin_enqueue_scripts' ), 5 );
 			add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ), 5 );
 			add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
 			add_filter( 'style_loader_tag', array( $this, 'style_loader_tag' ), 10, 2 );
@@ -208,10 +208,12 @@ if ( ! class_exists( 'Powerkit' ) ) {
 
 		/**
 		 * This function will register scripts and styles for admin dashboard.
-		 *
-		 * @param string $page Current page.
 		 */
-		public function admin_enqueue_scripts( $page ) {
+		public function admin_enqueue_scripts() {
+			if ( ! ( is_admin() && ! is_customize_preview() ) ) {
+				return;
+			}
+
 			wp_enqueue_style( 'powerkit', POWERKIT_URL . 'assets/css/powerkit.css', array(), powerkit_get_setting( 'version' ) );
 		}
 

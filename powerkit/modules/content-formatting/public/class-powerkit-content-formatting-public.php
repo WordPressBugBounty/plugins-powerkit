@@ -17,16 +17,18 @@ class Powerkit_Content_Formatting_Public extends Powerkit_Module_Public {
 	 * Initialize
 	 */
 	public function initialize() {
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ), 6 );
+		add_action( 'enqueue_block_assets', array( $this, 'admin_enqueue_scripts' ), 6 );
 		add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ), 6 );
 	}
 
 	/**
 	 * This function will register scripts and styles for admin dashboard.
-	 *
-	 * @param string $page Current page.
 	 */
-	public function admin_enqueue_scripts( $page ) {
+	public function admin_enqueue_scripts() {
+		if ( ! ( is_admin() && ! is_customize_preview() ) ) {
+			return;
+		}
+
 		wp_enqueue_style( 'powerkit-content-formatting', powerkit_style( plugin_dir_url( __FILE__ ) . 'css/public-powerkit-content-formatting.css' ), array(), powerkit_get_setting( 'version' ) );
 	}
 
