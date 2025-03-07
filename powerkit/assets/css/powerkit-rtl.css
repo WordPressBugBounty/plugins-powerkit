@@ -28,6 +28,10 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.pk-icon-bluesky:before {
+	content: "\e94d";
+}
+
 .pk-icon-twitter:before {
 	content: "\e94c";
 }

@@ -356,6 +356,10 @@
 	color: #f52928;
 }
 
+.pk-social-links-bluesky .pk-social-links-link:hover {
+	color: #4f93f0;
+}
+
 .pk-social-links-strava .pk-social-links-link:hover {
 	color: #FC4C02;
 }
@@ -1511,6 +1515,22 @@
 	color: #f75a59 !important;
 }
 
+.pk-social-links-scheme-bold .pk-social-links-bluesky .pk-social-links-link {
+	color: #4f93f0;
+}
+
+.pk-social-links-scheme-bold .pk-social-links-bluesky .pk-social-links-link:hover .pk-social-links-icon {
+	color: #7eb0f4;
+}
+
+.is-style-pk-social-links-bold.cnvs-block-social-links .pk-social-links-bluesky .pk-social-links-link {
+	color: #4f93f0 !important;
+}
+
+.is-style-pk-social-links-bold.cnvs-block-social-links .pk-social-links-bluesky .pk-social-links-link:hover .pk-social-links-icon {
+	color: #7eb0f4 !important;
+}
+
 .pk-social-links-scheme-bold .pk-social-links-strava .pk-social-links-link {
 	color: #FC4C02;
 }
@@ -1833,6 +1853,10 @@
 
 .is-style-pk-social-links-inverse.cnvs-block-social-links .pk-social-links-flipboard .pk-social-links-link:hover .pk-social-links-icon {
 	color: #f52928 !important;
+}
+
+.is-style-pk-social-links-inverse.cnvs-block-social-links .pk-social-links-bluesky .pk-social-links-link:hover .pk-social-links-icon {
+	color: #4f93f0 !important;
 }
 
 .is-style-pk-social-links-inverse.cnvs-block-social-links .pk-social-links-strava .pk-social-links-link:hover .pk-social-links-icon {
@@ -2196,6 +2220,11 @@
 .pk-social-links-scheme-light-bg .pk-social-links-flipboard .pk-social-links-link:hover,
 .is-style-pk-social-links-light-bg .pk-social-links-flipboard .pk-social-links-link:hover {
 	background-color: #f52928;
+}
+
+.pk-social-links-scheme-light-bg .pk-social-links-bluesky .pk-social-links-link:hover,
+.is-style-pk-social-links-light-bg .pk-social-links-bluesky .pk-social-links-link:hover {
+	background-color: #4f93f0;
 }
 
 .pk-social-links-scheme-light-bg .pk-social-links-strava .pk-social-links-link:hover,
@@ -2845,6 +2874,16 @@
 	background-color: #f75a59;
 }
 
+.pk-social-links-scheme-bold-bg .pk-social-links-bluesky .pk-social-links-link,
+.is-style-pk-social-links-bold-bg .pk-social-links-bluesky .pk-social-links-link {
+	background-color: #4f93f0;
+}
+
+.pk-social-links-scheme-bold-bg .pk-social-links-bluesky .pk-social-links-link:hover,
+.is-style-pk-social-links-bold-bg .pk-social-links-bluesky .pk-social-links-link:hover {
+	background-color: #7eb0f4;
+}
+
 .pk-social-links-scheme-bold-bg .pk-social-links-strava .pk-social-links-link,
 .is-style-pk-social-links-bold-bg .pk-social-links-strava .pk-social-links-link {
 	background-color: #FC4C02;
@@ -3418,6 +3457,14 @@
 
 .is-style-pk-social-links-light-rounded .pk-social-links-flipboard .pk-social-links-link:hover .pk-social-links-icon {
 	color: #f75a59 !important;
+}
+
+.is-style-pk-social-links-light-rounded .pk-social-links-bluesky .pk-social-links-link {
+	color: #4f93f0 !important;
+}
+
+.is-style-pk-social-links-light-rounded .pk-social-links-bluesky .pk-social-links-link:hover .pk-social-links-icon {
+	color: #7eb0f4 !important;
 }
 
 .is-style-pk-social-links-light-rounded .pk-social-links-strava .pk-social-links-link {
@@ -4079,6 +4126,16 @@
 .pk-social-links-scheme-bold-rounded .pk-social-links-flipboard .pk-social-links-link:hover .pk-social-links-icon,
 .is-style-pk-social-links-bold-rounded .pk-social-links-flipboard .pk-social-links-link:hover .pk-social-links-icon {
 	background-color: #f75a59;
+}
+
+.pk-social-links-scheme-bold-rounded .pk-social-links-bluesky .pk-social-links-icon,
+.is-style-pk-social-links-bold-rounded .pk-social-links-bluesky .pk-social-links-icon {
+	background-color: #4f93f0;
+}
+
+.pk-social-links-scheme-bold-rounded .pk-social-links-bluesky .pk-social-links-link:hover .pk-social-links-icon,
+.is-style-pk-social-links-bold-rounded .pk-social-links-bluesky .pk-social-links-link:hover .pk-social-links-icon {
+	background-color: #7eb0f4;
 }
 
 .pk-social-links-scheme-bold-rounded .pk-social-links-strava .pk-social-links-icon,

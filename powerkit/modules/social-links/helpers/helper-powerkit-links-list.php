@@ -362,6 +362,19 @@ function powerkit_social_links_list( $list = array() ) {
 		),
 	);
 
+	// Bluesky.
+	$list['bluesky'] = array(
+		'mode'   => 'simple',
+		'id'     => 'bluesky',
+		'name'   => esc_html__( 'Bluesky', 'powerkit' ),
+		'label'  => esc_html__( 'Followers', 'powerkit' ),
+		'link'   => '%powerkit_social_links_bluesky_url%',
+		'fields' => array(
+			'powerkit_social_links_bluesky_url'      => esc_html__( 'Bluesky URL', 'powerkit' ),
+			'powerkit_social_links_bluesky_override' => esc_html__( 'Manual Count Override', 'powerkit' ),
+		),
+	);
+
 	// Tumblr.
 	$list['tumblr'] = array(
 		'mode'   => 'simple',

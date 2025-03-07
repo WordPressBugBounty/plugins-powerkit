@@ -1,4 +1,4 @@
-# Copyright (C) 2024 powerkit
+# Copyright (C) 2025 powerkit
 # This file is distributed under the same license as the powerkit package.
 msgid ""
 msgstr ""
@@ -544,7 +544,7 @@ msgstr ""
 msgid "Please use this ID in settings when requested."
 msgstr ""
 
-#: extensions/connect/tab-instagram.php:62, extensions/connect/tab-twitter.php:51, modules/social-links/helpers/helper-powerkit-links-list.php:422, modules/social-links/helpers/helper-powerkit-links-list.php:434
+#: extensions/connect/tab-instagram.php:62, extensions/connect/tab-twitter.php:51, modules/social-links/helpers/helper-powerkit-links-list.php:435, modules/social-links/helpers/helper-powerkit-links-list.php:447
 msgid "Username"
 msgstr ""
 
@@ -552,7 +552,7 @@ msgstr ""
 msgid "Following"
 msgstr ""
 
-#: extensions/connect/tab-instagram.php:92, extensions/connect/tab-twitter.php:81, modules/instagram/public/instagram-template.php:68, modules/social-links/helpers/helper-powerkit-links-list.php:35, modules/social-links/helpers/helper-powerkit-links-list.php:48, modules/social-links/helpers/helper-powerkit-links-list.php:61, modules/social-links/helpers/helper-powerkit-links-list.php:100, modules/social-links/helpers/helper-powerkit-links-list.php:113, modules/social-links/helpers/helper-powerkit-links-list.php:126, modules/social-links/helpers/helper-powerkit-links-list.php:139, modules/social-links/helpers/helper-powerkit-links-list.php:165, modules/social-links/helpers/helper-powerkit-links-list.php:178, modules/social-links/helpers/helper-powerkit-links-list.php:191, modules/social-links/helpers/helper-powerkit-links-list.php:204, modules/social-links/helpers/helper-powerkit-links-list.php:233, modules/social-links/helpers/helper-powerkit-links-list.php:282, modules/social-links/helpers/helper-powerkit-links-list.php:306, modules/social-links/helpers/helper-powerkit-links-list.php:344, modules/social-links/helpers/helper-powerkit-links-list.php:357, modules/social-links/helpers/helper-powerkit-links-list.php:370, modules/social-links/helpers/helper-powerkit-links-list.php:407, modules/social-links/helpers/helper-powerkit-links-list.php:443, modules/social-links/helpers/helper-powerkit-links-list.php:455, modules/social-links/helpers/helper-powerkit-links-list.php:467, modules/social-links/helpers/helper-powerkit-links-list.php:479, modules/social-links/helpers/helper-powerkit-links-list.php:491, modules/social-links/helpers/helper-powerkit-links-list.php:503, modules/social-links/helpers/helper-powerkit-links-list.php:515, modules/social-links/helpers/helper-powerkit-links-list.php:527, modules/social-links/helpers/helper-powerkit-links-list.php:539, modules/social-links/helpers/helper-powerkit-links-list.php:551, modules/social-links/helpers/helper-powerkit-links-list.php:563, modules/social-links/helpers/helper-powerkit-links-list.php:575, modules/social-links/helpers/helper-powerkit-links-list.php:587, modules/social-links/helpers/helper-powerkit-links-list.php:599, modules/social-links/helpers/helper-powerkit-links-list.php:611, modules/social-links/helpers/helper-powerkit-links-list.php:623, modules/social-links/helpers/helper-powerkit-links-list.php:635, modules/social-links/helpers/helper-powerkit-links-list.php:647, modules/social-links/helpers/helper-powerkit-links-list.php:659, modules/social-links/helpers/helper-powerkit-links-list.php:671, modules/social-links/helpers/helper-powerkit-links-list.php:683, modules/social-links/helpers/helper-powerkit-links-list.php:695, modules/social-links/helpers/helper-powerkit-links-list.php:707, modules/social-links/helpers/helper-powerkit-links-list.php:719, modules/social-links/helpers/helper-powerkit-links-list.php:731, modules/social-links/helpers/helper-powerkit-links-list.php:743, modules/social-links/helpers/helper-powerkit-links-list.php:755, modules/social-links/helpers/helper-powerkit-links-list.php:767, modules/twitter/public/twitter-template.php:68
+#: extensions/connect/tab-instagram.php:92, extensions/connect/tab-twitter.php:81, modules/instagram/public/instagram-template.php:68, modules/social-links/helpers/helper-powerkit-links-list.php:35, modules/social-links/helpers/helper-powerkit-links-list.php:48, modules/social-links/helpers/helper-powerkit-links-list.php:61, modules/social-links/helpers/helper-powerkit-links-list.php:100, modules/social-links/helpers/helper-powerkit-links-list.php:113, modules/social-links/helpers/helper-powerkit-links-list.php:126, modules/social-links/helpers/helper-powerkit-links-list.php:139, modules/social-links/helpers/helper-powerkit-links-list.php:165, modules/social-links/helpers/helper-powerkit-links-list.php:178, modules/social-links/helpers/helper-powerkit-links-list.php:191, modules/social-links/helpers/helper-powerkit-links-list.php:204, modules/social-links/helpers/helper-powerkit-links-list.php:233, modules/social-links/helpers/helper-powerkit-links-list.php:282, modules/social-links/helpers/helper-powerkit-links-list.php:306, modules/social-links/helpers/helper-powerkit-links-list.php:344, modules/social-links/helpers/helper-powerkit-links-list.php:357, modules/social-links/helpers/helper-powerkit-links-list.php:370, modules/social-links/helpers/helper-powerkit-links-list.php:383, modules/social-links/helpers/helper-powerkit-links-list.php:420, modules/social-links/helpers/helper-powerkit-links-list.php:456, modules/social-links/helpers/helper-powerkit-links-list.php:468, modules/social-links/helpers/helper-powerkit-links-list.php:480, modules/social-links/helpers/helper-powerkit-links-list.php:492, modules/social-links/helpers/helper-powerkit-links-list.php:504, modules/social-links/helpers/helper-powerkit-links-list.php:516, modules/social-links/helpers/helper-powerkit-links-list.php:528, modules/social-links/helpers/helper-powerkit-links-list.php:540, modules/social-links/helpers/helper-powerkit-links-list.php:552, modules/social-links/helpers/helper-powerkit-links-list.php:564, modules/social-links/helpers/helper-powerkit-links-list.php:576, modules/social-links/helpers/helper-powerkit-links-list.php:588, modules/social-links/helpers/helper-powerkit-links-list.php:600, modules/social-links/helpers/helper-powerkit-links-list.php:612, modules/social-links/helpers/helper-powerkit-links-list.php:624, modules/social-links/helpers/helper-powerkit-links-list.php:636, modules/social-links/helpers/helper-powerkit-links-list.php:648, modules/social-links/helpers/helper-powerkit-links-list.php:660, modules/social-links/helpers/helper-powerkit-links-list.php:672, modules/social-links/helpers/helper-powerkit-links-list.php:684, modules/social-links/helpers/helper-powerkit-links-list.php:696, modules/social-links/helpers/helper-powerkit-links-list.php:708, modules/social-links/helpers/helper-powerkit-links-list.php:720, modules/social-links/helpers/helper-powerkit-links-list.php:732, modules/social-links/helpers/helper-powerkit-links-list.php:744, modules/social-links/helpers/helper-powerkit-links-list.php:756, modules/social-links/helpers/helper-powerkit-links-list.php:768, modules/social-links/helpers/helper-powerkit-links-list.php:780, modules/twitter/public/twitter-template.php:68
 msgid "Followers"
 msgstr ""
 
@@ -644,7 +644,7 @@ msgstr ""
 msgid "Use This File"
 msgstr ""
 
-#: extensions/gallery/class-powerkit-gallery.php:254, modules/basic-elements/templates/alerts.php:27, modules/basic-elements/templates/tabs.php:27, modules/social-links/helpers/helper-powerkit-links-list.php:215, modules/social-links/helpers/helper-powerkit-links-list.php:391
+#: extensions/gallery/class-powerkit-gallery.php:254, modules/basic-elements/templates/alerts.php:27, modules/basic-elements/templates/tabs.php:27, modules/social-links/helpers/helper-powerkit-links-list.php:215, modules/social-links/helpers/helper-powerkit-links-list.php:404
 msgid "Type"
 msgstr ""
 
@@ -1525,7 +1525,7 @@ msgstr ""
 msgid "Open links in:"
 msgstr ""
 
-#: modules/instagram/public/instagram-template.php:115, modules/social-links/helpers/helper-powerkit-links-list.php:258, modules/social-links/helpers/helper-powerkit-links-list.php:319, modules/social-links/helpers/helper-powerkit-links-list.php:332, modules/social-links/helpers/helper-powerkit-links-list.php:419, modules/social-links/helpers/helper-powerkit-links-list.php:431, modules/twitter/public/twitter-template.php:130
+#: modules/instagram/public/instagram-template.php:115, modules/social-links/helpers/helper-powerkit-links-list.php:258, modules/social-links/helpers/helper-powerkit-links-list.php:319, modules/social-links/helpers/helper-powerkit-links-list.php:332, modules/social-links/helpers/helper-powerkit-links-list.php:432, modules/social-links/helpers/helper-powerkit-links-list.php:444, modules/twitter/public/twitter-template.php:130
 msgid "Follow"
 msgstr ""
 
@@ -2314,7 +2314,7 @@ msgstr ""
 msgid "Share Link"
 msgstr ""
 
-#: modules/share-buttons/helpers/helper-powerkit-buttons-list.php:233, modules/social-links/helpers/helper-powerkit-links-list.php:814
+#: modules/share-buttons/helpers/helper-powerkit-buttons-list.php:233, modules/social-links/helpers/helper-powerkit-links-list.php:827
 msgid "Mail"
 msgstr ""
 
@@ -2334,7 +2334,7 @@ msgstr ""
 msgid "Pocket"
 msgstr ""
 
-#: modules/share-buttons/helpers/helper-powerkit-buttons-list.php:353, modules/social-links/helpers/helper-powerkit-links-list.php:802
+#: modules/share-buttons/helpers/helper-powerkit-buttons-list.php:353, modules/social-links/helpers/helper-powerkit-links-list.php:815
 msgid "WhatsApp"
 msgstr ""
 
@@ -2342,7 +2342,7 @@ msgstr ""
 msgid "Facebook Messenger"
 msgstr ""
 
-#: modules/share-buttons/helpers/helper-powerkit-buttons-list.php:401, modules/social-links/helpers/helper-powerkit-links-list.php:790
+#: modules/share-buttons/helpers/helper-powerkit-buttons-list.php:401, modules/social-links/helpers/helper-powerkit-links-list.php:803
 msgid "Viber"
 msgstr ""
 
@@ -2366,7 +2366,7 @@ msgstr ""
 msgid "Line"
 msgstr ""
 
-#: modules/share-buttons/helpers/helper-powerkit-buttons-list.php:529, modules/social-links/helpers/helper-powerkit-links-list.php:381
+#: modules/share-buttons/helpers/helper-powerkit-buttons-list.php:529, modules/social-links/helpers/helper-powerkit-links-list.php:394
 msgid "Reddit"
 msgstr ""
 
@@ -2374,7 +2374,7 @@ msgstr ""
 msgid "Mix.com"
 msgstr ""
 
-#: modules/share-buttons/helpers/helper-powerkit-buttons-list.php:586, modules/social-links/helpers/helper-powerkit-links-list.php:766
+#: modules/share-buttons/helpers/helper-powerkit-buttons-list.php:586, modules/social-links/helpers/helper-powerkit-links-list.php:779
 msgid "Flipboard"
 msgstr ""
 
@@ -2522,7 +2522,7 @@ msgstr ""
 msgid "Facebook User"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:26, modules/social-links/helpers/helper-powerkit-links-list.php:39, modules/social-links/helpers/helper-powerkit-links-list.php:52, modules/social-links/helpers/helper-powerkit-links-list.php:62, modules/social-links/helpers/helper-powerkit-links-list.php:66, modules/social-links/helpers/helper-powerkit-links-list.php:91, modules/social-links/helpers/helper-powerkit-links-list.php:104, modules/social-links/helpers/helper-powerkit-links-list.php:117, modules/social-links/helpers/helper-powerkit-links-list.php:130, modules/social-links/helpers/helper-powerkit-links-list.php:169, modules/social-links/helpers/helper-powerkit-links-list.php:182, modules/social-links/helpers/helper-powerkit-links-list.php:195, modules/social-links/helpers/helper-powerkit-links-list.php:224, modules/social-links/helpers/helper-powerkit-links-list.php:249, modules/social-links/helpers/helper-powerkit-links-list.php:310, modules/social-links/helpers/helper-powerkit-links-list.php:323, modules/social-links/helpers/helper-powerkit-links-list.php:348, modules/social-links/helpers/helper-powerkit-links-list.php:361, modules/social-links/helpers/helper-powerkit-links-list.php:398
+#: modules/social-links/helpers/helper-powerkit-links-list.php:26, modules/social-links/helpers/helper-powerkit-links-list.php:39, modules/social-links/helpers/helper-powerkit-links-list.php:52, modules/social-links/helpers/helper-powerkit-links-list.php:62, modules/social-links/helpers/helper-powerkit-links-list.php:66, modules/social-links/helpers/helper-powerkit-links-list.php:91, modules/social-links/helpers/helper-powerkit-links-list.php:104, modules/social-links/helpers/helper-powerkit-links-list.php:117, modules/social-links/helpers/helper-powerkit-links-list.php:130, modules/social-links/helpers/helper-powerkit-links-list.php:169, modules/social-links/helpers/helper-powerkit-links-list.php:182, modules/social-links/helpers/helper-powerkit-links-list.php:195, modules/social-links/helpers/helper-powerkit-links-list.php:224, modules/social-links/helpers/helper-powerkit-links-list.php:249, modules/social-links/helpers/helper-powerkit-links-list.php:310, modules/social-links/helpers/helper-powerkit-links-list.php:323, modules/social-links/helpers/helper-powerkit-links-list.php:348, modules/social-links/helpers/helper-powerkit-links-list.php:361, modules/social-links/helpers/helper-powerkit-links-list.php:374, modules/social-links/helpers/helper-powerkit-links-list.php:411
 msgid "Manual Count Override"
 msgstr ""
 
@@ -2542,7 +2542,7 @@ msgstr ""
 msgid "YouTube"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:75, modules/social-links/helpers/helper-powerkit-links-list.php:382
+#: modules/social-links/helpers/helper-powerkit-links-list.php:75, modules/social-links/helpers/helper-powerkit-links-list.php:395
 msgid "Subscribers"
 msgstr ""
 
@@ -2550,7 +2550,7 @@ msgstr ""
 msgid "YouTube Channel Type"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:86, modules/social-links/helpers/helper-powerkit-links-list.php:151, modules/social-links/helpers/helper-powerkit-links-list.php:245, modules/social-links/helpers/helper-powerkit-links-list.php:394
+#: modules/social-links/helpers/helper-powerkit-links-list.php:86, modules/social-links/helpers/helper-powerkit-links-list.php:151, modules/social-links/helpers/helper-powerkit-links-list.php:245, modules/social-links/helpers/helper-powerkit-links-list.php:407
 msgid "User"
 msgstr ""
 
@@ -2618,11 +2618,11 @@ msgstr ""
 msgid "Behance User ID"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:190, modules/social-links/helpers/helper-powerkit-links-list.php:574
+#: modules/social-links/helpers/helper-powerkit-links-list.php:190, modules/social-links/helpers/helper-powerkit-links-list.php:587
 msgid "GitHub"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:194, modules/social-links/helpers/helper-powerkit-links-list.php:578
+#: modules/social-links/helpers/helper-powerkit-links-list.php:194, modules/social-links/helpers/helper-powerkit-links-list.php:591
 msgid "GitHub User ID"
 msgstr ""
 
@@ -2719,278 +2719,286 @@ msgid "Strava User ID"
 msgstr ""
 
 #: modules/social-links/helpers/helper-powerkit-links-list.php:369
-msgid "Tumblr"
+msgid "Bluesky"
 msgstr ""
 
 #: modules/social-links/helpers/helper-powerkit-links-list.php:373
+msgid "Bluesky URL"
+msgstr ""
+
+#: modules/social-links/helpers/helper-powerkit-links-list.php:382
+msgid "Tumblr"
+msgstr ""
+
+#: modules/social-links/helpers/helper-powerkit-links-list.php:386
 msgid "Tumblr URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:393
+#: modules/social-links/helpers/helper-powerkit-links-list.php:406
 msgid "Subreddit"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:397
+#: modules/social-links/helpers/helper-powerkit-links-list.php:410
 msgid "Subreddit Name or Reddit User "
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:406
+#: modules/social-links/helpers/helper-powerkit-links-list.php:419
 msgid "Bloglovin"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:410
+#: modules/social-links/helpers/helper-powerkit-links-list.php:423
 msgid "Bloglovin URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:418
+#: modules/social-links/helpers/helper-powerkit-links-list.php:431
 msgid "Weibo"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:430
+#: modules/social-links/helpers/helper-powerkit-links-list.php:443
 msgid "WeChat"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:442
+#: modules/social-links/helpers/helper-powerkit-links-list.php:455
 msgid "TikTok"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:446
+#: modules/social-links/helpers/helper-powerkit-links-list.php:459
 msgid "TikTok URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:454
+#: modules/social-links/helpers/helper-powerkit-links-list.php:467
 msgid "Discord"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:458
+#: modules/social-links/helpers/helper-powerkit-links-list.php:471
 msgid "Discord URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:466
+#: modules/social-links/helpers/helper-powerkit-links-list.php:479
 msgid "Steam"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:470
+#: modules/social-links/helpers/helper-powerkit-links-list.php:483
 msgid "Steam URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:478
+#: modules/social-links/helpers/helper-powerkit-links-list.php:491
 msgid "TripAdvisor"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:482
+#: modules/social-links/helpers/helper-powerkit-links-list.php:495
 msgid "TripAdvisor URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:490
+#: modules/social-links/helpers/helper-powerkit-links-list.php:503
 msgid "Thumbtack"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:494
+#: modules/social-links/helpers/helper-powerkit-links-list.php:507
 msgid "Thumbtack URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:502
+#: modules/social-links/helpers/helper-powerkit-links-list.php:515
 msgid "Android"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:506
+#: modules/social-links/helpers/helper-powerkit-links-list.php:519
 msgid "Android URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:514
+#: modules/social-links/helpers/helper-powerkit-links-list.php:527
 msgid "Apple"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:518
+#: modules/social-links/helpers/helper-powerkit-links-list.php:531
 msgid "Apple URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:526
+#: modules/social-links/helpers/helper-powerkit-links-list.php:539
 msgid "Meetup"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:530
+#: modules/social-links/helpers/helper-powerkit-links-list.php:543
 msgid "Meetup URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:538
+#: modules/social-links/helpers/helper-powerkit-links-list.php:551
 msgid "500px"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:542
+#: modules/social-links/helpers/helper-powerkit-links-list.php:555
 msgid "500px URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:550
+#: modules/social-links/helpers/helper-powerkit-links-list.php:563
 msgid "Yelp"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:554
+#: modules/social-links/helpers/helper-powerkit-links-list.php:567
 msgid "Yelp URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:562
+#: modules/social-links/helpers/helper-powerkit-links-list.php:575
 msgid "CodePen"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:566
+#: modules/social-links/helpers/helper-powerkit-links-list.php:579
 msgid "CodePen URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:586
+#: modules/social-links/helpers/helper-powerkit-links-list.php:599
 msgid "GitLab"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:590
+#: modules/social-links/helpers/helper-powerkit-links-list.php:603
 msgid "GitLab URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:598
+#: modules/social-links/helpers/helper-powerkit-links-list.php:611
 msgid "Bitbucket"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:602
+#: modules/social-links/helpers/helper-powerkit-links-list.php:615
 msgid "Bitbucket URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:610
+#: modules/social-links/helpers/helper-powerkit-links-list.php:623
 msgid "freeCodeCamp"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:614
+#: modules/social-links/helpers/helper-powerkit-links-list.php:627
 msgid "freeCodeCamp URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:622
+#: modules/social-links/helpers/helper-powerkit-links-list.php:635
 msgid "JSFiddle"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:626
+#: modules/social-links/helpers/helper-powerkit-links-list.php:639
 msgid "JSFiddle URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:634
+#: modules/social-links/helpers/helper-powerkit-links-list.php:647
 msgid "Delicious"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:638
+#: modules/social-links/helpers/helper-powerkit-links-list.php:651
 msgid "Delicious URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:646
+#: modules/social-links/helpers/helper-powerkit-links-list.php:659
 msgid "DeviantArt"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:650
+#: modules/social-links/helpers/helper-powerkit-links-list.php:663
 msgid "DeviantArt URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:658
+#: modules/social-links/helpers/helper-powerkit-links-list.php:671
 msgid "Foursquare"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:662
+#: modules/social-links/helpers/helper-powerkit-links-list.php:675
 msgid "Foursquare URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:670
+#: modules/social-links/helpers/helper-powerkit-links-list.php:683
 msgid "Houzz"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:674
+#: modules/social-links/helpers/helper-powerkit-links-list.php:687
 msgid "Houzz URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:682
+#: modules/social-links/helpers/helper-powerkit-links-list.php:695
 msgid "Product Hunt"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:686
+#: modules/social-links/helpers/helper-powerkit-links-list.php:699
 msgid "Product Hunt URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:694
+#: modules/social-links/helpers/helper-powerkit-links-list.php:707
 msgid "Slideshare"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:698
+#: modules/social-links/helpers/helper-powerkit-links-list.php:711
 msgid "Slideshare URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:706
+#: modules/social-links/helpers/helper-powerkit-links-list.php:719
 msgid "Goodreads"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:710
+#: modules/social-links/helpers/helper-powerkit-links-list.php:723
 msgid "Goodreads URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:718
+#: modules/social-links/helpers/helper-powerkit-links-list.php:731
 msgid "Mastodon"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:722
+#: modules/social-links/helpers/helper-powerkit-links-list.php:735
 msgid "Mastodon URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:730
+#: modules/social-links/helpers/helper-powerkit-links-list.php:743
 msgid "PixelFed"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:734
+#: modules/social-links/helpers/helper-powerkit-links-list.php:747
 msgid "PixelFed URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:742
+#: modules/social-links/helpers/helper-powerkit-links-list.php:755
 msgid "Micro.blog"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:746
+#: modules/social-links/helpers/helper-powerkit-links-list.php:759
 msgid "Micro.blog URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:754
+#: modules/social-links/helpers/helper-powerkit-links-list.php:767
 msgid "Google News"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:758
+#: modules/social-links/helpers/helper-powerkit-links-list.php:771
 msgid "Google News URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:770
+#: modules/social-links/helpers/helper-powerkit-links-list.php:783
 msgid "Flipboard URL"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:778, modules/social-links/helpers/helper-powerkit-links-list.php:782, modules/social-links/helpers/helper-powerkit-links-list.php:794, modules/social-links/helpers/helper-powerkit-links-list.php:806
+#: modules/social-links/helpers/helper-powerkit-links-list.php:791, modules/social-links/helpers/helper-powerkit-links-list.php:795, modules/social-links/helpers/helper-powerkit-links-list.php:807, modules/social-links/helpers/helper-powerkit-links-list.php:819
 msgid "Phone"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:779
+#: modules/social-links/helpers/helper-powerkit-links-list.php:792
 msgid "phone"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:791, modules/social-links/helpers/helper-powerkit-links-list.php:803
+#: modules/social-links/helpers/helper-powerkit-links-list.php:804, modules/social-links/helpers/helper-powerkit-links-list.php:816
 msgid "Call"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:815
+#: modules/social-links/helpers/helper-powerkit-links-list.php:828
 msgid "Send"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:818
+#: modules/social-links/helpers/helper-powerkit-links-list.php:831
 msgid "Email"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:826
+#: modules/social-links/helpers/helper-powerkit-links-list.php:839
 msgid "RSS"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:827
+#: modules/social-links/helpers/helper-powerkit-links-list.php:840
 msgid "Feed"
 msgstr ""
 
-#: modules/social-links/helpers/helper-powerkit-links-list.php:830
+#: modules/social-links/helpers/helper-powerkit-links-list.php:843
 msgid "RSS URL"
 msgstr ""
 
