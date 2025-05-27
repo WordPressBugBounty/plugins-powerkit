@@ -172,7 +172,7 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
-#: core/core-powerkit-helpers.php:729, core/core-powerkit-helpers.php:742, extensions/gallery/class-powerkit-gallery.php:224, extensions/gallery/class-powerkit-gallery.php:245, modules/author-box/public/class-powerkit-author-box-public.php:47, modules/basic-elements/templates/buttons.php:32, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:153, modules/social-links/public/class-powerkit-social-links-block.php:80
+#: core/core-powerkit-helpers.php:729, core/core-powerkit-helpers.php:742, extensions/gallery/class-powerkit-gallery.php:224, extensions/gallery/class-powerkit-gallery.php:245, modules/author-box/public/class-powerkit-author-box-public.php:47, modules/basic-elements/templates/buttons.php:32, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:151, modules/social-links/public/class-powerkit-social-links-block.php:80
 msgid "Default"
 msgstr ""
 
@@ -420,7 +420,7 @@ msgstr ""
 msgid "Font successfully deleted."
 msgstr ""
 
-#: modules/class-powerkit-custom-fonts.php:646, modules/coming-soon/admin/class-powerkit-coming-soon-admin.php:217, modules/headers-footers/admin/class-powerkit-headers-footers-admin.php:105, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:166, modules/post-views/admin/class-powerkit-post-views-admin.php:231, modules/share-buttons/admin/class-powerkit-share-buttons-admin.php:623, modules/social-links/admin/class-powerkit-social-links-admin.php:303, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:155, modules/typekit-fonts/admin/class-powerkit-typekit-fonts-admin.php:240
+#: modules/class-powerkit-custom-fonts.php:646, modules/coming-soon/admin/class-powerkit-coming-soon-admin.php:217, modules/headers-footers/admin/class-powerkit-headers-footers-admin.php:105, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:408, modules/post-views/admin/class-powerkit-post-views-admin.php:231, modules/share-buttons/admin/class-powerkit-share-buttons-admin.php:623, modules/social-links/admin/class-powerkit-social-links-admin.php:303, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:155, modules/typekit-fonts/admin/class-powerkit-typekit-fonts-admin.php:240
 msgid "Settings saved."
 msgstr ""
 
@@ -428,7 +428,7 @@ msgstr ""
 msgid "Connect"
 msgstr ""
 
-#: extensions/connect/class-powerkit-connect.php:54, extensions/fonts/class-powerkit-fonts.php:60, modules/coming-soon/admin/class-powerkit-coming-soon-admin.php:111, modules/headers-footers/admin/class-powerkit-headers-footers-admin.php:41, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:41, modules/post-views/admin/class-powerkit-post-views-admin.php:57, modules/share-buttons/admin/class-powerkit-share-buttons-admin.php:135, modules/social-links/admin/class-powerkit-social-links-admin.php:85, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:41
+#: extensions/connect/class-powerkit-connect.php:54, extensions/fonts/class-powerkit-fonts.php:60, modules/coming-soon/admin/class-powerkit-coming-soon-admin.php:111, modules/headers-footers/admin/class-powerkit-headers-footers-admin.php:41, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:74, modules/post-views/admin/class-powerkit-post-views-admin.php:57, modules/share-buttons/admin/class-powerkit-share-buttons-admin.php:135, modules/social-links/admin/class-powerkit-social-links-admin.php:85, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:41
 msgid "You do not have sufficient rights to view this page."
 msgstr ""
 
@@ -436,7 +436,7 @@ msgstr ""
 msgid "The list of social network settings is empty!!!"
 msgstr ""
 
-#: extensions/connect/class-powerkit-connect.php:148, modules/coming-soon/admin/class-powerkit-coming-soon-admin.php:184, modules/headers-footers/admin/class-powerkit-headers-footers-admin.php:80, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:132, modules/post-views/admin/class-powerkit-post-views-admin.php:179, modules/share-buttons/admin/class-powerkit-share-buttons-admin.php:496, modules/social-links/admin/class-powerkit-social-links-admin.php:235, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:107
+#: extensions/connect/class-powerkit-connect.php:148, modules/coming-soon/admin/class-powerkit-coming-soon-admin.php:184, modules/headers-footers/admin/class-powerkit-headers-footers-admin.php:80, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:336, modules/post-views/admin/class-powerkit-post-views-admin.php:179, modules/share-buttons/admin/class-powerkit-share-buttons-admin.php:496, modules/social-links/admin/class-powerkit-social-links-admin.php:235, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:107
 msgid "Save changes"
 msgstr ""
 
@@ -688,7 +688,7 @@ msgstr ""
 msgid "Author not found."
 msgstr ""
 
-#: modules/author-box/public/class-powerkit-author-box-widget.php:179, modules/contributors/public/class-powerkit-contributors-widget.php:95, modules/facebook/public/class-powerkit-facebook-fanpage-widget.php:137, modules/featured-categories/public/class-powerkit-featured-categories-widget.php:114, modules/instagram/public/class-powerkit-instagram-widget.php:116, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:108, modules/pinterest/public/class-powerkit-pinterest-board-widget.php:104, modules/pinterest/public/class-powerkit-pinterest-profile-widget.php:104, modules/posts/public/class-powerkit-posts-widget.php:211, modules/social-links/public/class-powerkit-social-links-widget.php:121, modules/table-of-contents/public/class-powerkit-table-of-contents-widget.php:101, modules/twitter/public/class-powerkit-twitter-widget.php:110, modules/widget-about/public/class-powerkit-widget-about-init.php:106
+#: modules/author-box/public/class-powerkit-author-box-widget.php:179, modules/contributors/public/class-powerkit-contributors-widget.php:95, modules/facebook/public/class-powerkit-facebook-fanpage-widget.php:137, modules/featured-categories/public/class-powerkit-featured-categories-widget.php:114, modules/instagram/public/class-powerkit-instagram-widget.php:116, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:109, modules/pinterest/public/class-powerkit-pinterest-board-widget.php:104, modules/pinterest/public/class-powerkit-pinterest-profile-widget.php:104, modules/posts/public/class-powerkit-posts-widget.php:211, modules/social-links/public/class-powerkit-social-links-widget.php:121, modules/table-of-contents/public/class-powerkit-table-of-contents-widget.php:101, modules/twitter/public/class-powerkit-twitter-widget.php:110, modules/widget-about/public/class-powerkit-widget-about-init.php:106
 msgid "Title:"
 msgstr ""
 
@@ -700,23 +700,23 @@ msgstr ""
 msgid "Author:"
 msgstr ""
 
-#: modules/author-box/public/class-powerkit-author-box-widget.php:216, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:112
+#: modules/author-box/public/class-powerkit-author-box-widget.php:216, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:113
 msgid "Select or upload background image"
 msgstr ""
 
-#: modules/author-box/public/class-powerkit-author-box-widget.php:216, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:112
+#: modules/author-box/public/class-powerkit-author-box-widget.php:216, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:113
 msgid "Set background image"
 msgstr ""
 
-#: modules/author-box/public/class-powerkit-author-box-widget.php:218, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:114
+#: modules/author-box/public/class-powerkit-author-box-widget.php:218, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:115
 msgid "Background image:"
 msgstr ""
 
-#: modules/author-box/public/class-powerkit-author-box-widget.php:231, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:127, modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:167
+#: modules/author-box/public/class-powerkit-author-box-widget.php:231, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:128, modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:167
 msgid "Add Image"
 msgstr ""
 
-#: modules/author-box/public/class-powerkit-author-box-widget.php:232, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:128
+#: modules/author-box/public/class-powerkit-author-box-widget.php:232, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:129
 msgid "Remove Image"
 msgstr ""
 
@@ -844,7 +844,7 @@ msgstr ""
 msgid "Open in new window/tab"
 msgstr ""
 
-#: modules/basic-elements/templates/buttons.php:82, modules/basic-elements/templates/collapsibles.php:33, modules/basic-elements/templates/tabs.php:59, modules/inline-posts/public/class-powerkit-inline-posts-shortcode.php:139, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:62, modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:219, modules/social-links/admin/class-powerkit-social-links-admin.php:188, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:61, modules/table-of-contents/public/class-powerkit-table-of-contents-block.php:94, modules/table-of-contents/public/class-powerkit-table-of-contents-shortcode.php:55
+#: modules/basic-elements/templates/buttons.php:82, modules/basic-elements/templates/collapsibles.php:33, modules/basic-elements/templates/tabs.php:59, modules/inline-posts/public/class-powerkit-inline-posts-shortcode.php:139, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:63, modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:219, modules/social-links/admin/class-powerkit-social-links-admin.php:188, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:61, modules/table-of-contents/public/class-powerkit-table-of-contents-block.php:94, modules/table-of-contents/public/class-powerkit-table-of-contents-shortcode.php:55
 msgid "Title"
 msgstr ""
 
@@ -969,7 +969,7 @@ msgstr ""
 msgid "Content from Page"
 msgstr ""
 
-#: modules/coming-soon/admin/class-powerkit-coming-soon-admin.php:149, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:99, modules/typekit-fonts/admin/class-powerkit-typekit-fonts-admin.php:87
+#: modules/coming-soon/admin/class-powerkit-coming-soon-admin.php:149, modules/typekit-fonts/admin/class-powerkit-typekit-fonts-admin.php:87
 msgid "- not selected -"
 msgstr ""
 
@@ -1633,59 +1633,167 @@ msgstr ""
 msgid "of"
 msgstr ""
 
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:30, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:30, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:48
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:63, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:63, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:84
 msgid "Opt-in Forms"
 msgstr ""
 
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:52
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:93, modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:80, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:78
+msgid "Subscription Service"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:96, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:108, modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:85, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:81, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:141
 msgid "MailChimp"
 msgstr ""
 
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:58
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:97, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:177, modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:86, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:82, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:142
+msgid "Kit.com"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:98, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:229, modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:87, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:83, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:143
+msgid "MailerLite"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:99, modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:88, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:84, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:144
+msgid "Custom"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:114, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:183, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:235
 msgid "API Key"
 msgstr ""
 
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:64, modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:84, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:78, modules/share-buttons/admin/class-powerkit-share-buttons-admin.php:473, modules/typekit-fonts/admin/class-powerkit-typekit-fonts-admin.php:62
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:117
+msgid "Refresh Lists"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:123, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:192, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:246, modules/share-buttons/admin/class-powerkit-share-buttons-admin.php:473, modules/typekit-fonts/admin/class-powerkit-typekit-fonts-admin.php:62
 msgid "Log in to your"
 msgstr ""
 
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:64, modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:84, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:78
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:123
 msgid "MailChimp account"
 msgstr ""
 
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:65
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:124
 msgid "Click your profile name to expand the Account Panel, and choose Account."
 msgstr ""
 
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:66
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:125
 msgid "Click the Extras drop-down menu and choose API keys."
 msgstr ""
 
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:67
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:126
 msgid "Copy an existing API key or click the Create A Key button."
 msgstr ""
 
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:68
-msgid "Name your key descriptively, so you know what application uses that key."
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:127
+msgid "Click \"Refresh Lists\" button after entering your API key to load your audiences."
 msgstr ""
 
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:107
-msgid "Invalid API Key or MailChimp access error!"
-msgstr ""
-
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:96
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:133
 msgid "Default Audience"
 msgstr ""
 
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:114
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:136
+msgid "— Select an Audience —"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:168
 msgid "Enable Double opt-in"
 msgstr ""
 
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:121
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:186
+msgid "Refresh Forms"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:192
+msgid "Kit.com account"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:193
+msgid "Click on your profile icon and go to Settings."
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:194
+msgid "Navigate to the Developer section."
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:195
+msgid "Copy the V3 Public API Key."
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:200
+msgid "Default Form"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:203, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:258
+msgid "— Select a Form —"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:220
+msgid "Select a form from your Kit.com account. If you don't see your forms, click \"Refresh Forms\" after entering your API key."
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:239
+msgid "Refresh Groups"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:246
+msgid "MailerLite account"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:247
+msgid "Go to Integrations → API from the main menu."
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:248
+msgid "Copy your API key or generate a new one if needed."
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:249
+msgid "Click \"Refresh Groups\" button after entering your API key to load your groups."
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:255
+msgid "Default Group"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:276
+msgid "Select a group from your MailerLite account. If you don't see your groups, click \"Refresh Groups\" after entering your API key."
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:285
+msgid "Custom Form"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:291
+msgid "Form Action URL"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:296
+msgid "Email Field Name"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:301
+msgid "Name Field Name"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:306
+msgid "Hidden Fields"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:309
+msgid "Enter hidden fields in format: field_name=value (one per line)"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:317
+msgid "Common Settings"
+msgstr ""
+
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:325
 msgid "Data Privacy Checkbox Label"
 msgstr ""
 
-#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:122
+#: modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:326
 msgid "Enter the contents that should display as a label for the data privacy checkbox. Leave blank to disable."
 msgstr ""
 
@@ -1693,117 +1801,156 @@ msgstr ""
 msgid "By checking this box, you confirm that you have read and are agreeing to our terms of use regarding the storage of the data submitted through this form."
 msgstr ""
 
-#: modules/opt-in-forms/helpers/helper-powerkit-opt-in-forms.php:85
+#: modules/opt-in-forms/helpers/helper-powerkit-opt-in-forms.php:119
 msgid "This client has not been approved to access this resource."
 msgstr ""
 
-#. translators: MailChimp Settings.
-#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:115
-msgid "Please add your MailChimp Token in <object><a href=\"%s\" target=\"_blank\">Opt-In Forms Settings</a></object>."
+#: modules/opt-in-forms/helpers/helper-powerkit-opt-in-forms.php:186
+msgid "Unable to connect to Kit.com API."
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:111
-msgid "Please select the \"List\" for your subscription form in <object><a href=\"%s\" target=\"_blank\">Opt-In Forms Settings</a></object>."
+#: modules/opt-in-forms/helpers/helper-powerkit-opt-in-forms.php:275
+msgid "Unable to connect to MailerLite API."
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:89
-msgid "Enter your name"
-msgstr ""
-
-#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:92
-msgid "Enter your email"
-msgstr ""
-
-#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:94
-msgid "Subscribe"
-msgstr ""
-
-#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:145
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:108
 msgid "Something is wrong with your list ID."
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:149
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:112
 msgid "Email is invalid."
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:187
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:175, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:214, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:260
 msgid "You are already subscribed."
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:183
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:171
 msgid "You have successfully subscribed. Confirm the subscription in your mailbox."
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:179
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:167, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:223, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:220, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:258
 msgid "You have successfully subscribed."
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:215
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:228, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:262
+msgid "An error occurred while subscribing."
+msgstr ""
+
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:218
+msgid "You have successfully subscribed, confirm your subscription by email."
+msgstr ""
+
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:216
+msgid "You are already subscribed, confirm your subscription by email."
+msgstr ""
+
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:283
 msgid "Please confirm that you agree with our policies."
+msgstr ""
+
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:285
+msgid "Server error occurred. Please try again later."
+msgstr ""
+
+#. translators: MailChimp Settings.
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:360
+msgid "Please add your MailChimp Token in <object><a href=\"%s\" target=\"_blank\">Opt-In Forms Settings</a></object>."
+msgstr ""
+
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:356
+msgid "Please select the \"List\" for your subscription form in <object><a href=\"%s\" target=\"_blank\">Opt-In Forms Settings</a></object>."
+msgstr ""
+
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:334, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:409, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:484, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:562
+msgid "Enter your name"
+msgstr ""
+
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:337, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:412, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:487, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:565
+msgid "Enter your email"
+msgstr ""
+
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:339, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:414, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:489, modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:567
+msgid "Subscribe"
+msgstr ""
+
+#. translators: Kit.com Settings.
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:435
+msgid "Please add your Kit.com Token in <object><a href=\"%s\" target=\"_blank\">Opt-In Forms Settings</a></object>."
+msgstr ""
+
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:431
+msgid "Please select the Kit.com Form in <object><a href=\"%s\" target=\"_blank\">Opt-In Forms Settings</a></object>."
+msgstr ""
+
+#. translators: MailerLite Settings.
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:510
+msgid "Please add your MailerLite Token in <object><a href=\"%s\" target=\"_blank\">Opt-In Forms Settings</a></object>."
+msgstr ""
+
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:506
+msgid "Please select the MailerLite Group ID in <object><a href=\"%s\" target=\"_blank\">Opt-In Forms Settings</a></object>."
+msgstr ""
+
+#. translators: Custom Settings.
+#: modules/opt-in-forms/public/class-powerkit-opt-in-forms-public.php:582
+msgid "Please set a form action URL in <object><a href=\"%s\" target=\"_blank\">Opt-In Forms Settings</a></object>."
 msgstr ""
 
 #: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:49
 msgid "Opt-In Form"
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:80, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:77
-msgid "List ID"
+#: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:93, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:90
+msgid "List/Form/Group ID"
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:82
-msgid "If empty, List ID from Settings &rarr; Opt-In Forms will be used."
+#: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:94, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:91, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:152
+msgid "If empty, the default ID from Settings → Opt-In Forms will be used."
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:85, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:79
-msgid "Go to your Lists."
-msgstr ""
-
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:86, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:80
-msgid "Select the desired list and in the drop-down menu and go to Settings."
-msgstr ""
-
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:87, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:81
-msgid "Copy your list ID from the field “Unique ID for list …”."
-msgstr ""
-
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:96
+#: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:101
 msgid "Display First Name Field"
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:97, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:87, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:167
-msgid "Make sure you map the field in the MailChimp settings"
+#: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:102, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:97, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:158
+msgid "Make sure the name field is supported by your selected service"
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:105
+#: modules/opt-in-forms/public/class-powerkit-subscription-form-block.php:109
 msgid "Color Legend"
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:54, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:30, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:47
+#: modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:55, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:30, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:48
 msgid "Subscription Form"
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:67
+#: modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:68
 msgid "Background image ID"
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:72
+#: modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:73
 msgid "Message"
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:86, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:166
+#: modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:96, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:157
 msgid "Display first name field"
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:41
+#: modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:42
 msgid "Add a subscription form to your sidebar."
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:133
+#: modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:134
 msgid "Subscribe message:"
 msgstr ""
 
-#: modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:151
-msgid "List:"
+#: modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:139
+msgid "Subscription Service:"
+msgstr ""
+
+#: modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:150
+msgid "List/Form/Group ID:"
 msgstr ""
 
 #: modules/pinterest/admin/class-powerkit-pinterest-admin.php:31

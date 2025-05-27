@@ -3,7 +3,7 @@ Tags: share buttons, social links, slider, gallery, lazyload
 Requires at least: 4.0
 Tested up to: 6.8
 Requires PHP: 5.4
-Stable tag: 2.9.8
+Stable tag: 3.0.0
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -82,6 +82,15 @@ Sure! Powerkit is developer-friendly. There're numerous hooks and filters, so ex
 4. Custom Fonts.
 
 == Changelog ==
+
+= 3.0.0 =
+* Added support for Kit.com in Opt-In Forms
+* Added support for MailerLite in Opt-In Forms
+* Added support for Custom forms in Opt-In Forms
+* Updated Opt-In Forms documentation with new services
+
+= 2.9.9 =
+* Minor improvements
 
 = 2.9.8 =
 * Added compatibility with WordPress 6.8

@@ -14,6 +14,40 @@ function powerkit_mailchimp_get_privacy_text() {
 }
 
 /**
+ * Get selected subscription service
+ */
+function powerkit_get_subscription_service() {
+	return get_option( 'powerkit_subscription_service', 'mailchimp' );
+}
+
+/**
+ * Parse custom hidden fields.
+ */
+function powerkit_parse_custom_fields() {
+	$hidden_fields = get_option( 'powerkit_custom_hidden_fields', '' );
+
+	$fields = array();
+
+	if ( ! empty( $hidden_fields ) ) {
+		$lines = explode( "\n", $hidden_fields );
+
+		foreach ( $lines as $line ) {
+			$line = trim( $line );
+			if ( empty( $line ) ) {
+				continue;
+			}
+
+			$parts = explode( '=', $line, 2 );
+			if ( count( $parts ) === 2 ) {
+				$fields[ trim( $parts[0] ) ] = trim( $parts[1] );
+			}
+		}
+	}
+
+	return $fields;
+}
+
+/**
  * Get headers for mailchimp request.
  */
 function powerkit_mailchimp_headers() {
@@ -86,4 +120,189 @@ function powerkit_mailchimp_request( $http_verb = 'GET', $method = 'lists', $dat
 	}
 
 	return $response;
+}
+
+/**
+ * Get headers for MailFitKit request.
+ */
+function powerkit_kit_headers() {
+	$token = get_option( 'powerkit_kit_token' );
+
+	$headers                  = array();
+	$headers['Authorization'] = 'Bearer ' . $token;
+	$headers['Accept']        = 'application/json';
+	$headers['Content-Type']  = 'application/json';
+
+	return $headers;
+}
+
+/**
+ * Performs the underlying HTTP request for Kit.com API.
+ *
+ * @param string $http_verb The HTTP verb to use: get, post, put, patch, delete.
+ * @param string $endpoint  The API endpoint to be called.
+ * @param array  $data      Assoc array of parameters to be passed.
+ */
+function powerkit_kit_request( $http_verb = 'GET', $endpoint = 'forms', $data = array() ) {
+	$token = get_option( 'powerkit_kit_token' );
+
+	if ( ! $token ) {
+		return false;
+	}
+
+	$url = 'https://api.convertkit.com/v3/' . ltrim( $endpoint, '/' );
+
+	if ( 'GET' === $http_verb ) {
+		$url = add_query_arg( array( 'api_key' => $token ), $url );
+	}
+
+	$args = array(
+		'method'    => $http_verb,
+		'headers'   => powerkit_kit_headers(),
+		'timeout'   => 15,
+		'sslverify' => true,
+	);
+
+	if ( ! empty( $data ) ) {
+		if ( in_array( $http_verb, array( 'GET', 'DELETE' ), true ) ) {
+			$url = add_query_arg( $data, $url );
+		} else {
+			if ( ! isset( $data['api_key'] ) ) {
+				$data['api_key'] = $token;
+			}
+			$args['body'] = wp_json_encode( $data );
+		}
+	}
+
+	// Perform request.
+	$response = wp_remote_request( $url, $args );
+
+	// Process response.
+	if ( ! is_wp_error( $response ) ) {
+		$response = wp_remote_retrieve_body( $response );
+
+		$response = json_decode( $response, true );
+	} else {
+		powerkit_alert_warning( esc_html__( 'Unable to connect to Kit.com API.', 'powerkit' ) );
+	}
+
+	return $response;
+}
+
+/**
+ * Get Kit.com Forms from API
+ *
+ * @return array List of forms with ID and name
+ */
+function powerkit_kit_get_forms() {
+	$forms = array();
+	$token = get_option( 'powerkit_kit_token' );
+
+	if ( ! $token ) {
+		return $forms;
+	}
+
+	$response = powerkit_kit_request( 'GET', 'forms', array() );
+
+	if ( isset( $response['forms'] ) && is_array( $response['forms'] ) ) {
+		foreach ( $response['forms'] as $form ) {
+			if ( isset( $form['id'] ) && isset( $form['name'] ) ) {
+				$forms[] = array(
+					'id'   => $form['id'],
+					'name' => $form['name'],
+				);
+			}
+		}
+	}
+
+	return $forms;
+}
+
+/**
+ * Get headers for MailerLite request.
+ */
+function powerkit_mailerlite_headers() {
+	$token = get_option( 'powerkit_mailerlite_token' );
+
+	$headers                        = array();
+	$headers['X-MailerLite-ApiKey'] = $token;
+	$headers['Accept']              = 'application/json';
+	$headers['Content-Type']        = 'application/json';
+
+	return $headers;
+}
+
+/**
+ * Performs the underlying HTTP request for MailerLite API.
+ *
+ * @param string $http_verb The HTTP verb to use: get, post, put, patch, delete.
+ * @param string $endpoint  The API endpoint to be called.
+ * @param array  $data      Assoc array of parameters to be passed.
+ */
+function powerkit_mailerlite_request( $http_verb = 'GET', $endpoint = 'groups', $data = array() ) {
+	$token = get_option( 'powerkit_mailerlite_token' );
+
+	if ( ! $token ) {
+		return false;
+	}
+
+	$url = 'https://api.mailerlite.com/api/v2/' . ltrim( $endpoint, '/' );
+
+	$args = array(
+		'url'       => $url,
+		'method'    => $http_verb,
+		'headers'   => powerkit_mailerlite_headers(),
+		'timeout'   => 10,
+		'sslverify' => true,
+	);
+
+	if ( ! empty( $data ) ) {
+		if ( in_array( $http_verb, array( 'GET', 'DELETE' ), true ) ) {
+			$url = add_query_arg( $data, $url );
+		} else {
+			$args['body'] = wp_json_encode( $data );
+		}
+	}
+
+	// Perform request.
+	$response = wp_remote_request( $url, $args );
+
+	// Process response.
+	if ( ! is_wp_error( $response ) ) {
+		$response = wp_remote_retrieve_body( $response );
+		$response = json_decode( $response, true );
+	} else {
+		powerkit_alert_warning( esc_html__( 'Unable to connect to MailerLite API.', 'powerkit' ) );
+	}
+
+	return $response;
+}
+
+/**
+ * Get MailerLite Groups from API
+ *
+ * @return array List of groups with ID and name
+ */
+function powerkit_mailerlite_get_groups() {
+	$groups = array();
+	$token  = get_option( 'powerkit_mailerlite_token' );
+
+	if ( ! $token ) {
+		return $groups;
+	}
+
+	$response = powerkit_mailerlite_request( 'GET', 'groups', array() );
+
+	if ( is_array( $response ) && ! empty( $response ) ) {
+		foreach ( $response as $group ) {
+			if ( isset( $group['id'] ) && isset( $group['name'] ) ) {
+				$groups[] = array(
+					'id'   => (string) $group['id'],
+					'name' => $group['name'],
+				);
+			}
+		}
+	}
+
+	return $groups;
 }

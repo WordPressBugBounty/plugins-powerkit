@@ -34,6 +34,7 @@ class Powerkit_Subscription_Form_Widget extends WP_Widget {
 			'list_id'      => null,
 			'type'         => 'widget',
 			'display_name' => false,
+			'service'      => powerkit_get_subscription_service(),
 		) );
 
 		$widget_details = array(
@@ -133,38 +134,28 @@ class Powerkit_Subscription_Form_Widget extends WP_Widget {
 			<p><label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php esc_html_e( 'Subscribe message:', 'powerkit' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>" type="text" value="<?php echo esc_attr( $params['text'] ); ?>" /></p>
 
-			<!-- List -->
-			<?php
-			$token = get_option( 'powerkit_mailchimp_token' );
+			<!-- Subscription Service -->
+			<p>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'service' ) ); ?>"><?php esc_html_e( 'Subscription Service:', 'powerkit' ); ?></label>
+				<select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'service' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'service' ) ); ?>">
+					<option value="mailchimp" <?php selected( 'mailchimp', $params['service'] ); ?>><?php esc_html_e( 'MailChimp', 'powerkit' ); ?></option>
+					<option value="kit" <?php selected( 'kit', $params['service'] ); ?>><?php esc_html_e( 'Kit.com', 'powerkit' ); ?></option>
+					<option value="mailerlite" <?php selected( 'mailerlite', $params['service'] ); ?>><?php esc_html_e( 'MailerLite', 'powerkit' ); ?></option>
+					<option value="custom" <?php selected( 'custom', $params['service'] ); ?>><?php esc_html_e( 'Custom', 'powerkit' ); ?></option>
+				</select>
+			</p>
 
-			if ( $token ) {
-
-				$data = powerkit_mailchimp_request( 'GET', 'lists', array(
-					'sort_field' => 'date_created',
-					'sort_dir'   => 'DESC',
-					'count'      => 1000,
-				) );
-
-				if ( is_array( $data ) && isset( $data['lists'] ) && $data['lists'] ) {
-				?>
-
-					<p><label for="<?php echo esc_attr( $this->get_field_id( 'list_id' ) ); ?>"><?php esc_html_e( 'List:', 'powerkit' ); ?></label>
-						<select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'list_id' ) ); ?>" id="<?php echo esc_attr( $this->get_field_name( 'list_id' ) ); ?>">
-							<option value="default"><?php esc_html_e( 'Default', 'powerkit' ); ?></option>
-							<?php foreach ( $data['lists'] as $item ) : ?>
-								<option <?php selected( $item['id'], $params['list_id'] ); ?> value="<?php echo esc_attr( $item['id'] ); ?>"><?php echo esc_html( $item['name'] ); ?></option>
-							<?php endforeach; ?>
-						</select>
-					</p>
-				<?php
-				}
-			}
-			?>
+			<!-- List/Form/Group ID field for all services -->
+			<p>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'list_id' ) ); ?>"><?php esc_html_e( 'List/Form/Group ID:', 'powerkit' ); ?></label>
+				<input class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'list_id' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'list_id' ) ); ?>" type="text" value="<?php echo esc_attr( $params['list_id'] ); ?>" placeholder="<?php esc_attr_e( 'Default', 'powerkit' ); ?>">
+				<span class="description"><?php esc_html_e( 'If empty, the default ID from Settings → Opt-In Forms will be used.', 'powerkit' ); ?></span>
+			</p>
 
 			<!-- Display first name field -->
 			<p><input id="<?php echo esc_attr( $this->get_field_id( 'display_name' ) ); ?>" class="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'display_name' ) ); ?>" type="checkbox" <?php checked( (bool) $params['display_name'] ); ?> />
 			<label for="<?php echo esc_attr( $this->get_field_id( 'display_name' ) ); ?>"><?php esc_html_e( 'Display first name field', 'powerkit' ); ?></label>
-			<span class="howto">(<?php esc_html_e( 'Make sure you map the field in the MailChimp settings', 'powerkit' ); ?>)</span></p>
+			<span class="howto">(<?php esc_html_e( 'Make sure the name field is supported by your selected service', 'powerkit' ); ?>)</span></p>
 		<?php
 	}
 

@@ -24,6 +24,7 @@ $params = array(
 	'bg_image_id'  => 0,
 	'list_id'      => $attributes['listId'],
 	'display_name' => $attributes['showName'],
+	'service'      => isset( $attributes['service'] ) ? $attributes['service'] : powerkit_get_subscription_service(),
 );
 
 echo '<div class="' . esc_attr( $attributes['className'] ) . '" ' . ( isset( $attributes['anchor'] ) ? ' id="' . esc_attr( $attributes['anchor'] ) . '"' : '' ) . '>';

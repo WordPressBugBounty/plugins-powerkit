@@ -26,6 +26,7 @@ function powerkit_subscription_shortcode( $atts, $content = '' ) {
 		'list_id'     => 'default',
 		'type'        => 'block',
 		'display_name' => false,
+		'service'     => powerkit_get_subscription_service(),
 	), $atts ) );
 
 	ob_start();
@@ -72,19 +73,28 @@ if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) {
 					'label' => esc_html__( 'Message', 'powerkit' ),
 				),
 				array(
+					'type'    => 'select',
+					'name'    => 'service',
+					'label'   => esc_html__( 'Subscription Service', 'powerkit' ),
+					'default' => powerkit_get_subscription_service(),
+					'options' => array(
+						'mailchimp'  => esc_html__( 'MailChimp', 'powerkit' ),
+						'kit'        => esc_html__( 'Kit.com', 'powerkit' ),
+						'mailerlite' => esc_html__( 'MailerLite', 'powerkit' ),
+						'custom'     => esc_html__( 'Custom', 'powerkit' ),
+					),
+				),
+				array(
 					'type'  => 'input',
 					'name'  => 'list_id',
-					'label' => esc_html__( 'List ID', 'powerkit' ),
-					'desc'  => '1. ' . esc_html__( 'Log in to your', 'powerkit' ) . ' ' . sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( 'https://mailchimp.com' ), esc_html__( 'MailChimp account', 'powerkit' ) )
-							. '<br>2. ' . esc_html__( 'Go to your Lists.', 'powerkit' )
-							. '<br>3. ' . esc_html__( 'Select the desired list and in the drop-down menu and go to Settings.', 'powerkit' )
-							. '<br>4. ' . esc_html__( 'Copy your list ID from the field “Unique ID for list …”.', 'powerkit' ),
+					'label' => esc_html__( 'List/Form/Group ID', 'powerkit' ),
+					'desc'  => esc_html__( 'If empty, the default ID from Settings → Opt-In Forms will be used.', 'powerkit' ),
 				),
 				array(
 					'type'    => 'checkbox',
 					'name'    => 'display_name',
 					'label'   => esc_html__( 'Display first name field', 'powerkit' ),
-					'desc'    => esc_html__( 'Make sure you map the field in the MailChimp settings', 'powerkit' ),
+					'desc'    => esc_html__( 'Make sure the name field is supported by your selected service', 'powerkit' ),
 					'default' => false,
 				),
 			),

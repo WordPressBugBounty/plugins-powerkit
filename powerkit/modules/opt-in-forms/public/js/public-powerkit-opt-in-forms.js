@@ -8,12 +8,29 @@
 	$( document ).on( 'submit', '.pk-subscribe-form-wrap form', function( e ) {
 
 		var form = $( this );
+		var formWrap = $( form ).closest('.pk-subscribe-form-wrap');
+		var service = formWrap.data('service') || 'mailchimp';
+
+		// If form is custom, let the native form submission happen
+		if (service === 'custom') {
+			// Check privacy first
+			var privacy = $( formWrap ).find( 'input[name="pk-privacy"]' );
+
+			if ( $( privacy ).length > 0 && ! $( privacy ).prop( 'checked' ) ) {
+				e.preventDefault();
+				$( privacy ).parent().after( '<p class="pk-alert pk-alert-warning">' + window.opt_in.warning_privacy + '</p>' );
+				return false;
+			}
+
+			// Continue with the native form submission
+			return true;
+		}
 
 		// Remove messages.
-		$( form ).closest('.pk-subscribe-form-wrap').find( '.pk-alert' ).remove();
+		$( formWrap ).find( '.pk-alert' ).remove();
 
 		// Policies.
-		var privacy = $( form ).closest( '.pk-subscribe-form-wrap' ).find( 'input[name="pk-privacy"]' );
+		var privacy = $( formWrap ).find( 'input[name="pk-privacy"]' );
 
 		if ( $( privacy ).length > 0 && ! $( privacy ).prop( 'checked' ) ) {
 			$( privacy ).parent().after( '<p class="pk-alert pk-alert-warning">' + window.opt_in.warning_privacy + '</p>' );
