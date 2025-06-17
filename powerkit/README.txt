@@ -3,7 +3,7 @@ Tags: share buttons, social links, slider, gallery, lazyload
 Requires at least: 4.0
 Tested up to: 6.8
 Requires PHP: 5.4
-Stable tag: 3.0.0
+Stable tag: 3.0.1
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -82,6 +82,9 @@ Sure! Powerkit is developer-friendly. There're numerous hooks and filters, so ex
 4. Custom Fonts.
 
 == Changelog ==
+
+= 3.0.1 =
+* Fixed Custom Fonts (PHP Warning)
 
 = 3.0.0 =
 * Added support for Kit.com in Opt-In Forms

@@ -699,7 +699,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 				}
 
 				if ( $font_face ) {
-					wp_register_style( 'pk-custom-inline-fonts', false, array(), csco_get_theme_data( 'Version' ) );
+					wp_register_style( 'pk-custom-inline-fonts', false, array(), POWERKIT_VERSION );
 
 					wp_enqueue_style( 'pk-custom-inline-fonts' );
 
