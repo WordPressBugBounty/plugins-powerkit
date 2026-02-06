@@ -1,6 +1,6 @@
 <?php
 /**
- * Twitter Template
+ * X (Twitter) Template
  *
  * @link       https://codesupply.co
  * @since      1.0.0
@@ -29,7 +29,7 @@ function powerkit_twitter_default_template( $tweets, $params ) {
 				<div class="pk-twitter-header">
 					<div class="pk-twitter-container">
 						<?php if ( $tweets['avatar_1x'] ) { ?>
-							<a href="<?php echo esc_url( sprintf( 'https://twitter.com/%s/', $tweets['username'] ) ); ?>" class="pk-twitter-link" target="_blank">
+							<a href="<?php echo esc_url( sprintf( 'https://x.com/%s/', $tweets['username'] ) ); ?>" class="pk-twitter-link" target="_blank">
 								<?php
 									$image_avatar = sprintf(
 										'<img src="%s" srcset="%s" alt="avatar" class="pk-twitter-avatar">',
@@ -45,14 +45,14 @@ function powerkit_twitter_default_template( $tweets, $params ) {
 
 						<div class="pk-twitter-info">
 							<<?php echo esc_html( $tag ); ?> class="pk-twitter-name pk-title pk-font-heading">
-								<a href="<?php echo esc_url( sprintf( 'https://twitter.com/%s/', $tweets['username'] ) ); ?>" target="_blank">
+								<a href="<?php echo esc_url( sprintf( 'https://x.com/%s/', $tweets['username'] ) ); ?>" target="_blank">
 									<?php echo esc_html( $tweets['name'] ); ?>
 								</a>
 							</<?php echo esc_html( $tag ); ?>>
 
 							<?php if ( $tweets['name'] !== $tweets['username'] ) { ?>
 								<span class="pk-twitter-username pk-color-secondary">
-									<a href="<?php echo esc_url( sprintf( 'https://twitter.com/%s/', $tweets['username'] ) ); ?>" target="_blank">
+									<a href="<?php echo esc_url( sprintf( 'https://x.com/%s/', $tweets['username'] ) ); ?>" target="_blank">
 									@<?php echo wp_kses_post( $tweets['username'] ); ?>
 									</a>
 								</span>
@@ -88,25 +88,25 @@ function powerkit_twitter_default_template( $tweets, $params ) {
 						?>
 							<div class="pk-twitter-tweet">
 								<div class="pk-twitter-content pk-color-secondary"><?php echo wp_kses_post( $text ); ?></div>
-								<a href="https://twitter.com/<?php echo esc_attr( $tweets['username'] ); ?>/status/<?php echo esc_attr( $tweet['tweet_id'] ); ?>" class="pk-twitter-time pk-font-secondary timestamp" target="_blank"><?php echo esc_html( $time ); ?></a>
+								<a href="https://x.com/<?php echo esc_attr( $tweets['username'] ); ?>/status/<?php echo esc_attr( $tweet['tweet_id'] ); ?>" class="pk-twitter-time pk-font-secondary timestamp" target="_blank"><?php echo esc_html( $time ); ?></a>
 
 								<div class="pk-twitter-actions">
 									<ul>
 										<li>
-											<a onClick="window.open('https://twitter.com/intent/tweet?in_reply_to=<?php echo esc_attr( $tweet['tweet_id'] ); ?>','Twitter','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="tweet-reply" href="https://twitter.com/intent/tweet?in_reply_to=<?php echo esc_attr( $tweet['tweet_id'] ); ?>">
+											<a onClick="window.open('https://x.com/intent/tweet?in_reply_to=<?php echo esc_attr( $tweet['tweet_id'] ); ?>','X','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="tweet-reply" href="https://x.com/intent/tweet?in_reply_to=<?php echo esc_attr( $tweet['tweet_id'] ); ?>">
 												<i class="pk-icon pk-icon-reply"></i>
 												<span class="pk-twitter-label pk-twitter-reply"><?php esc_html_e( 'Reply', 'powerkit' ); ?></span>
 											</a>
 										</li>
 										<li>
-											<a onClick="window.open('https://twitter.com/intent/retweet?tweet_id=<?php echo esc_attr( $tweet['tweet_id'] ); ?>','Twitter','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="tweet-retweet" href="https://twitter.com/intent/retweet?tweet_id=<?php echo esc_attr( $tweet['tweet_id'] ); ?>">
+											<a onClick="window.open('https://x.com/intent/retweet?tweet_id=<?php echo esc_attr( $tweet['tweet_id'] ); ?>','X','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="tweet-retweet" href="https://x.com/intent/retweet?tweet_id=<?php echo esc_attr( $tweet['tweet_id'] ); ?>">
 												<i class="pk-icon pk-icon-retweet"></i>
 												<span class="pk-twitter-count"><?php echo wp_kses_post( $tweet['retweets'] ? $tweet['retweets'] : '' ); ?></span>
 												<span class="pk-twitter-label pk-twitter-retweet"><?php esc_html_e( 'Retweet', 'powerkit' ); ?></span>
 											</a>
 										</li>
 										<li>
-											<a onClick="window.open('https://twitter.com/intent/favorite?tweet_id=<?php echo esc_attr( $tweet['tweet_id'] ); ?>','Twitter','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="tweet-favorite" href="https://twitter.com/intent/favorite?tweet_id=<?php echo esc_attr( $tweet['tweet_id'] ); ?>">
+											<a onClick="window.open('https://x.com/intent/favorite?tweet_id=<?php echo esc_attr( $tweet['tweet_id'] ); ?>','X','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" class="tweet-favorite" href="https://x.com/intent/favorite?tweet_id=<?php echo esc_attr( $tweet['tweet_id'] ); ?>">
 												<i class="pk-icon pk-icon-like"></i>
 												<span class="pk-twitter-label pk-twitter-favorite"><?php esc_html_e( 'Favorite', 'powerkit' ); ?></span>
 											</a>
@@ -116,7 +116,7 @@ function powerkit_twitter_default_template( $tweets, $params ) {
 
 							</div>
 						<?php
-						$counter++;
+						++$counter;
 					}
 				} else {
 					powerkit_alert_warning( sprintf( __( 'The list is empty. To display the feed, add elements on the <a href="%s" target="_blank">settings page</a>.', 'powerkit' ), admin_url( 'options-general.php?page=powerkit_connect&tab=twitter' ) ) );
@@ -126,13 +126,13 @@ function powerkit_twitter_default_template( $tweets, $params ) {
 
 			<?php
 			if ( $params['button'] ) {
-				$href = sprintf( 'https://twitter.com/%s/', $tweets['username'] );
+				$href = sprintf( 'https://x.com/%s/', $tweets['username'] );
 				$text = apply_filters( 'powerkit_twitter_follow', esc_html__( 'Follow', 'powerkit' ) );
 
-				if ( isset( $params[ 'is_block' ] ) && isset( $params[ 'block_attrs' ] ) && $params[ 'is_block' ] ) {
+				if ( isset( $params['is_block'] ) && isset( $params['block_attrs'] ) && $params['is_block'] ) {
 					?>
 					<div class="pk-twitter-footer">
-						<?php powerkit_print_gutenberg_blocks_button( $text, $href, '_blank', 'button', $params[ 'block_attrs' ] ); ?>
+						<?php powerkit_print_gutenberg_blocks_button( $text, $href, '_blank', 'button', $params['block_attrs'] ); ?>
 					</div>
 					<?php
 				} else {

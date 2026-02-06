@@ -360,6 +360,10 @@
 	color: #4f93f0;
 }
 
+.pk-social-links-threads .pk-social-links-link:hover {
+	color: #000000;
+}
+
 .pk-social-links-strava .pk-social-links-link:hover {
 	color: #FC4C02;
 }
@@ -1531,6 +1535,22 @@
 	color: #7eb0f4 !important;
 }
 
+.pk-social-links-scheme-bold .pk-social-links-threads .pk-social-links-link {
+	color: #000000;
+}
+
+.pk-social-links-scheme-bold .pk-social-links-threads .pk-social-links-link:hover .pk-social-links-icon {
+	color: #1a1919;
+}
+
+.is-style-pk-social-links-bold.cnvs-block-social-links .pk-social-links-threads .pk-social-links-link {
+	color: #000000 !important;
+}
+
+.is-style-pk-social-links-bold.cnvs-block-social-links .pk-social-links-threads .pk-social-links-link:hover .pk-social-links-icon {
+	color: #1a1919 !important;
+}
+
 .pk-social-links-scheme-bold .pk-social-links-strava .pk-social-links-link {
 	color: #FC4C02;
 }
@@ -1857,6 +1877,10 @@
 
 .is-style-pk-social-links-inverse.cnvs-block-social-links .pk-social-links-bluesky .pk-social-links-link:hover .pk-social-links-icon {
 	color: #4f93f0 !important;
+}
+
+.is-style-pk-social-links-inverse.cnvs-block-social-links .pk-social-links-threads .pk-social-links-link:hover .pk-social-links-icon {
+	color: #000000 !important;
 }
 
 .is-style-pk-social-links-inverse.cnvs-block-social-links .pk-social-links-strava .pk-social-links-link:hover .pk-social-links-icon {
@@ -2225,6 +2249,11 @@
 .pk-social-links-scheme-light-bg .pk-social-links-bluesky .pk-social-links-link:hover,
 .is-style-pk-social-links-light-bg .pk-social-links-bluesky .pk-social-links-link:hover {
 	background-color: #4f93f0;
+}
+
+.pk-social-links-scheme-light-bg .pk-social-links-threads .pk-social-links-link:hover,
+.is-style-pk-social-links-light-bg .pk-social-links-threads .pk-social-links-link:hover {
+	background-color: #000000;
 }
 
 .pk-social-links-scheme-light-bg .pk-social-links-strava .pk-social-links-link:hover,
@@ -2884,6 +2913,16 @@
 	background-color: #7eb0f4;
 }
 
+.pk-social-links-scheme-bold-bg .pk-social-links-threads .pk-social-links-link,
+.is-style-pk-social-links-bold-bg .pk-social-links-threads .pk-social-links-link {
+	background-color: #000000;
+}
+
+.pk-social-links-scheme-bold-bg .pk-social-links-threads .pk-social-links-link:hover,
+.is-style-pk-social-links-bold-bg .pk-social-links-threads .pk-social-links-link:hover {
+	background-color: #1a1919;
+}
+
 .pk-social-links-scheme-bold-bg .pk-social-links-strava .pk-social-links-link,
 .is-style-pk-social-links-bold-bg .pk-social-links-strava .pk-social-links-link {
 	background-color: #FC4C02;
@@ -3465,6 +3504,14 @@
 
 .is-style-pk-social-links-light-rounded .pk-social-links-bluesky .pk-social-links-link:hover .pk-social-links-icon {
 	color: #7eb0f4 !important;
+}
+
+.is-style-pk-social-links-light-rounded .pk-social-links-threads .pk-social-links-link {
+	color: #000000 !important;
+}
+
+.is-style-pk-social-links-light-rounded .pk-social-links-threads .pk-social-links-link:hover .pk-social-links-icon {
+	color: #1a1919 !important;
 }
 
 .is-style-pk-social-links-light-rounded .pk-social-links-strava .pk-social-links-link {
@@ -4136,6 +4183,16 @@
 .pk-social-links-scheme-bold-rounded .pk-social-links-bluesky .pk-social-links-link:hover .pk-social-links-icon,
 .is-style-pk-social-links-bold-rounded .pk-social-links-bluesky .pk-social-links-link:hover .pk-social-links-icon {
 	background-color: #7eb0f4;
+}
+
+.pk-social-links-scheme-bold-rounded .pk-social-links-threads .pk-social-links-icon,
+.is-style-pk-social-links-bold-rounded .pk-social-links-threads .pk-social-links-icon {
+	background-color: #000000;
+}
+
+.pk-social-links-scheme-bold-rounded .pk-social-links-threads .pk-social-links-link:hover .pk-social-links-icon,
+.is-style-pk-social-links-bold-rounded .pk-social-links-threads .pk-social-links-link:hover .pk-social-links-icon {
+	background-color: #1a1919;
 }
 
 .pk-social-links-scheme-bold-rounded .pk-social-links-strava .pk-social-links-icon,

@@ -1,6 +1,6 @@
 <?php
 /**
- * Twitter block template
+ * X (Twitter) block template
  *
  * @var        $attributes - block attributes
  * @var        $options - layout options
@@ -13,7 +13,7 @@
  */
 
 $params = array(
-	'title'       => esc_html__( 'Twitter Feed', 'powerkit' ),
+	'title'       => esc_html__( 'X (Twitter) Feed', 'powerkit' ),
 	'number'      => $attributes['number'],
 	'header'      => $attributes['showHeader'],
 	'button'      => $attributes['showFollowButton'],
@@ -24,7 +24,7 @@ $params = array(
 
 echo '<div class="' . esc_attr( $attributes['className'] ) . '" ' . ( isset( $attributes['anchor'] ) ? ' id="' . esc_attr( $attributes['anchor'] ) . '"' : '' ) . '>';
 
-// Twitter output.
+// X (Twitter) output.
 powerkit_twitter_get_recent( $params );
 
 echo '</div>';

@@ -36,7 +36,7 @@ add_filter( 'powerkit_share_buttons_accounts', 'powerkit_share_buttons_add_faceb
 
 
 /**
- * Add Twitter provider.
+ * Add X (Twitter) provider.
  *
  * @param array      $accounts   Social Accounts List.
  * @param string     $share_url  Url for Share.
@@ -47,14 +47,14 @@ function powerkit_share_buttons_add_twitter( $accounts, $share_url, $post_id ) {
 	$twitter_text = null;
 	$via          = null;
 
-	/* Twitter Text */
+	/* X (Twitter) Text */
 	if ( intval( $post_id ) > 0 ) {
 		$title = html_entity_decode( get_the_title( $post_id ) );
 
 		$twitter_text = '&text=' . rawurlencode( $title );
 	}
 
-	/* Twitter Via */
+	/* X (Twitter) Via */
 	$username = get_option( 'powerkit_social_links_twitter_user' );
 
 	if ( $username ) {
@@ -62,16 +62,16 @@ function powerkit_share_buttons_add_twitter( $accounts, $share_url, $post_id ) {
 	}
 
 	/* Share text url */
-	$share_text_url = esc_url( 'https://twitter.com/share?text=--SHARETEXT--&url=' . $share_url, null, '' );
+	$share_text_url = esc_url( 'https://x.com/share?text=--SHARETEXT--&url=' . $share_url, null, '' );
 
 	/* Share url */
-	$share_url = esc_url( 'https://twitter.com/share?' . $twitter_text . $via . '&url=' . $share_url, null, '' );
+	$share_url = esc_url( 'https://x.com/share?' . $twitter_text . $via . '&url=' . $share_url, null, '' );
 
 	/* Add account */
 	$accounts['twitter'] = array(
 		'share_text_url' => $share_text_url,
 		'share_url'      => $share_url,
-		'name'           => esc_html__( 'Twitter', 'powerkit' ),
+		'name'           => esc_html__( 'X (Twitter)', 'powerkit' ),
 		'label'          => esc_html__( 'Tweet', 'powerkit' ),
 	);
 
@@ -153,10 +153,8 @@ function powerkit_share_buttons_add_pinterest( $accounts, $share_url, $post_id )
 								if ( 'class' === $attr ) {
 									$pin_exist = true;
 								}
-							} else {
-								if ( 'class' === $attr && strpos( $image[2][ $index ], 'powerkit-pinterest-cover' ) !== false ) {
+							} elseif ( 'class' === $attr && strpos( $image[2][ $index ], 'powerkit-pinterest-cover' ) !== false ) {
 									$pin_exist = true;
-								}
 							}
 						}
 

@@ -12,7 +12,7 @@
 function powerkit_get_author_fields() {
 	$fields = array(
 		'facebook'   => esc_html__( 'Facebook Profile URL', 'powerkit' ),
-		'twitter'    => esc_html__( 'Twitter Profile URL', 'powerkit' ),
+		'twitter'    => esc_html__( 'X (Twitter) Profile URL', 'powerkit' ),
 		'instagram'  => esc_html__( 'Instagram Profile URL', 'powerkit' ),
 		'pinterest'  => esc_html__( 'Pinterest Profile URL', 'powerkit' ),
 		'youtube'    => esc_html__( 'YouTube Profile URL', 'powerkit' ),
@@ -134,10 +134,8 @@ function powerkit_social_links_specific_param( $id, $key = false ) {
 			if ( $param['id'] === $id && isset( $param[ $key ] ) ) {
 				return $param[ $key ];
 			}
-		} else {
-			if ( $param['id'] === $id ) {
+		} elseif ( $param['id'] === $id ) {
 				return $param;
-			}
 		}
 	}
 }
@@ -376,7 +374,7 @@ function powerkit_social_links_appearance( $params ) {
 					?>
 					<div class="pk-social-links-item pk-social-links-<?php echo esc_attr( $id ); ?> <?php echo esc_attr( $class ); ?>" data-id="<?php echo esc_attr( $id ); ?>">
 						<a href="<?php echo esc_url( $link ); ?>" class="pk-social-links-link" target="<?php echo esc_attr( $target ); ?>" rel="<?php echo esc_attr( $rel ); ?>" aria-label="<?php echo esc_html( $title ); ?>">
-							<i class="pk-social-links-icon <?php echo sprintf( '%2$s %2$s-%1$s', esc_attr( $id ), esc_attr( $powerkit_social_links_icon_prefix ) ); ?>"></i>
+							<i class="pk-social-links-icon <?php printf( '%2$s %2$s-%1$s', esc_attr( $id ), esc_attr( $powerkit_social_links_icon_prefix ) ); ?>"></i>
 							<?php if ( $params['titles'] && $title ) { ?>
 								<span class="pk-social-links-title pk-font-heading"><?php echo esc_html( $title ); ?></span>
 							<?php } ?>
@@ -616,7 +614,7 @@ function powerkit_social_links_register_api_routes() {
 			'methods'             => WP_REST_Server::READABLE,
 			// Here we register our callback. The callback is fired when this endpoint is matched by the WP_REST_Server class.
 			'callback'            => 'powerkit_social_links_restapi',
-			'permission_callback' => function() {
+			'permission_callback' => function () {
 				return true;
 			},
 		)

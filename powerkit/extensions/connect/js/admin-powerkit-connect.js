@@ -110,7 +110,7 @@
 							<input type="text" name="powerkit_connect_twitter_feed[${uniqueId}][tweet_id]">
 						</label>
 						<label>
-							<p class="description">Copy the Twitter ID from the share link, for example: https://twitter.com/codesupplyco/status/<strong>637130509961854976</strong>?s=20</p>
+							<p class="description">Copy the X (Twitter) ID from the share link, for example: https://x.com/codesupplyco/status/<strong>637130509961854976</strong>?s=20</p>
 						</label>
 					</div>
 					<div class="pk-element-actions">

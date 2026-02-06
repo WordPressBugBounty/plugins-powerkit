@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Powerkit
  * Description:       Powerkit – essential components for every WordPress site.
- * Version:           3.0.2
+ * Version:           3.0.4
  * Author:            Code Supply Co.
  * Author URI:        https://codesupply.co
  * License:           GPL-2.0+

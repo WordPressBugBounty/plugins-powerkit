@@ -27,15 +27,15 @@ function powerkit_social_links_list( $list = array() ) {
 		),
 	);
 
-	// Twitter.
+	// X (Twitter).
 	$list['twitter'] = array(
 		'mode'   => 'counter',
 		'id'     => 'twitter',
-		'name'   => esc_html__( 'Twitter', 'powerkit' ),
+		'name'   => esc_html__( 'X (Twitter)', 'powerkit' ),
 		'label'  => esc_html__( 'Followers', 'powerkit' ),
-		'link'   => esc_url( 'https://twitter.com/%powerkit_social_links_twitter_user%' ),
+		'link'   => esc_url( 'https://x.com/%powerkit_social_links_twitter_user%' ),
 		'fields' => array(
-			'powerkit_social_links_twitter_user'     => esc_html__( 'Twitter User', 'powerkit' ),
+			'powerkit_social_links_twitter_user'     => esc_html__( 'User', 'powerkit' ),
 			'powerkit_social_links_twitter_override' => esc_html__( 'Manual Count Override', 'powerkit' ),
 		),
 	);
@@ -372,6 +372,19 @@ function powerkit_social_links_list( $list = array() ) {
 		'fields' => array(
 			'powerkit_social_links_bluesky_url'      => esc_html__( 'Bluesky URL', 'powerkit' ),
 			'powerkit_social_links_bluesky_override' => esc_html__( 'Manual Count Override', 'powerkit' ),
+		),
+	);
+
+	// Threads.
+	$list['threads'] = array(
+		'mode'   => 'simple',
+		'id'     => 'threads',
+		'name'   => esc_html__( 'Threads', 'powerkit' ),
+		'label'  => esc_html__( 'Followers', 'powerkit' ),
+		'link'   => '%powerkit_social_links_threads_url%',
+		'fields' => array(
+			'powerkit_social_links_threads_url'      => esc_html__( 'Threads URL', 'powerkit' ),
+			'powerkit_social_links_threads_override' => esc_html__( 'Manual Count Override', 'powerkit' ),
 		),
 	);
 

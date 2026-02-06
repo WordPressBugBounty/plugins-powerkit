@@ -46,7 +46,7 @@ class Powerkit_Twitter_Block {
 	public function register_block_type( $blocks ) {
 		$blocks[] = array(
 			'name'         => 'canvas/twitter',
-			'title'        => esc_html__( 'Twitter', 'powerkit' ),
+			'title'        => esc_html__( 'X (Twitter)', 'powerkit' ),
 			'description'  => esc_html__( 'The block allows you to display feed from your twitter account.', 'powerkit' ),
 			'category'     => 'canvas',
 			'keywords'     => array(),
@@ -114,7 +114,7 @@ class Powerkit_Twitter_Block {
 					)
 				)
 			),
-			'template'     => dirname( __FILE__ ) . '/block/render.php',
+			'template'     => __DIR__ . '/block/render.php',
 
 			// enqueue registered scripts/styles.
 			'editor_style' => 'powerkit-twitter-block-editor-style',

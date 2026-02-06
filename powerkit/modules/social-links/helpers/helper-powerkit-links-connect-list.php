@@ -25,10 +25,10 @@ function powerkit_connect_total( $list = array() ) {
 		'name' => esc_html__( 'Instagram', 'powerkit' ),
 	);
 
-	// Twitter.
+	// X (Twitter).
 	$list['twitter'] = array(
 		'id'   => 'twitter',
-		'name' => esc_html__( 'Twitter', 'powerkit' ),
+		'name' => esc_html__( 'X (Twitter)', 'powerkit' ),
 	);
 
 	return $list;

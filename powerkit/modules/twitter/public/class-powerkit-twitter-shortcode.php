@@ -1,6 +1,6 @@
 <?php
 /**
- * Shortcode Twitter
+ * Shortcode X (Twitter)
  *
  * @link       https://codesupply.co
  * @since      1.0.0
@@ -10,7 +10,7 @@
  */
 
 /**
- * Twitter Shortcode
+ * X (Twitter) Shortcode
  *
  * @param array  $atts      User defined attributes in shortcode tag.
  * @param string $content   Shorcode tag content.
@@ -18,7 +18,7 @@
  */
 function powerkit_twitter_shortcode( $atts, $content = '' ) {
 	$params = powerkit_shortcode_atts( shortcode_atts( array(
-		'title'    => esc_html__( 'Twitter Feed', 'powerkit' ),
+		'title'    => esc_html__( 'X (Twitter) Feed', 'powerkit' ),
 		'number'   => 5,
 		'template' => 'default',
 		'header'   => true,
@@ -34,7 +34,7 @@ function powerkit_twitter_shortcode( $atts, $content = '' ) {
 add_shortcode( 'powerkit_twitter_feed', 'powerkit_twitter_shortcode' );
 
 /**
- * Map Twitter Shortcode into the Basic Shortcodes Plugin
+ * Map X (Twitter) Shortcode into the Basic Shortcodes Plugin
  */
 if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) {
 
@@ -42,7 +42,7 @@ if ( function_exists( 'powerkit_basic_shortcodes_register' ) ) {
 
 		$shortcode_map = array(
 			'name'         => 'twitter',
-			'title'        => esc_html__( 'Twitter Feed', 'powerkit' ),
+			'title'        => esc_html__( 'X (Twitter) Feed', 'powerkit' ),
 			'priority'     => 100,
 			'base'         => 'powerkit_twitter_feed',
 			'autoregister' => false,

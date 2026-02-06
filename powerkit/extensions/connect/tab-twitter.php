@@ -10,11 +10,11 @@
 if ( powerkit_connect( 'twitter_app_oauth_token' ) ) {
 	?>
 
-	<h3><?php esc_html_e( 'Twitter Account', 'powerkit' ); ?></h3>
+	<h3><?php esc_html_e( 'X (Twitter) Account', 'powerkit' ); ?></h3>
 
-	<p><span class="tab-badge-success"><?php esc_html_e( '✓ Account', 'powerkit' ); ?> (<a href="https://twitter.com/<?php echo esc_attr( powerkit_connect( 'twitter_app_screen_name' ) ); ?>" target="_blank"><?php echo esc_attr( powerkit_connect( 'twitter_app_screen_name' ) ); ?></a>) <?php esc_html_e( 'successfully connected', 'powerkit' ); ?></span></p>
+	<p><span class="tab-badge-success"><?php esc_html_e( '✓ Account', 'powerkit' ); ?> (<a href="https://x.com/<?php echo esc_attr( powerkit_connect( 'twitter_app_screen_name' ) ); ?>" target="_blank"><?php echo esc_attr( powerkit_connect( 'twitter_app_screen_name' ) ); ?></a>) <?php esc_html_e( 'successfully connected', 'powerkit' ); ?></span></p>
 
-	<p><?php esc_html_e( 'Your Twitter User ID:', 'powerkit' ); ?> <code><?php echo esc_attr( powerkit_connect( 'twitter_app_screen_name' ) ); ?></code> <?php esc_html_e( 'Please use this ID in settings when requested.', 'powerkit' ); ?></p>
+	<p><?php esc_html_e( 'Your X (Twitter) User ID:', 'powerkit' ); ?> <code><?php echo esc_attr( powerkit_connect( 'twitter_app_screen_name' ) ); ?></code> <?php esc_html_e( 'Please use this ID in settings when requested.', 'powerkit' ); ?></p>
 
 	<form method="post" class="form-logout">
 		<?php wp_nonce_field(); ?>
@@ -26,9 +26,9 @@ if ( powerkit_connect( 'twitter_app_oauth_token' ) ) {
 		</p>
 	</form>
 <?php } else { ?>
-		<h3><?php esc_html_e( 'Twitter Account', 'powerkit' ); ?></h3>
+		<h3><?php esc_html_e( 'X (Twitter) Account', 'powerkit' ); ?></h3>
 
-		<p><?php esc_html_e( 'Connect your Twitter account to display your Twitter feed and the number of followers in Social Links.', 'powerkit' ); ?></p>
+		<p><?php esc_html_e( 'Connect your X (Twitter) account to display your X (Twitter) feed and the number of followers in Social Links.', 'powerkit' ); ?></p>
 	<?php
 }
 
@@ -36,7 +36,7 @@ if ( powerkit_connect( 'twitter_app_oauth_token' ) ) {
 
 <hr><br>
 
-<p><?php echo sprintf( __( 'You may also change the number of followers manually on <a href="%s" target="_blank">this page</a>.', 'powerkit' ), admin_url( 'options-general.php?page=powerkit_social_links' ) ); ?></p>
+<p><?php printf( __( 'You may also change the number of followers manually on <a href="%s" target="_blank">this page</a>.', 'powerkit' ), admin_url( 'options-general.php?page=powerkit_social_links' ) ); ?></p>
 
 <br>
 
@@ -137,7 +137,7 @@ if ( powerkit_connect( 'twitter_app_oauth_token' ) ) {
 								<input type="text" name="powerkit_connect_twitter_feed[<?php echo esc_attr( $key ); ?>][tweet_id]" value="<?php echo esc_attr( $element['tweet_id'] ); ?>">
 							</label>
 							<label>
-								<p class="description"><?php esc_html_e( 'Copy the Twitter ID from the share link, for example:', 'powerkit' ); ?> https://twitter.com/codesupplyco/status/<strong>637130509961854976</strong>?s=20</p>
+								<p class="description"><?php esc_html_e( 'Copy the X (Twitter) ID from the share link, for example:', 'powerkit' ); ?> https://x.com/codesupplyco/status/<strong>637130509961854976</strong>?s=20</p>
 							</label>
 						</div>
 						<div class="pk-element-actions">

@@ -1,6 +1,6 @@
 <?php
 /**
- * Helpers Twitter
+ * Helpers X (Twitter)
  *
  * @package    Powerkit
  * @subpackage Modules/Helper
@@ -70,10 +70,10 @@ function powerkit_twitter_convert_links( $links, $targetblank = true ) {
 	$links = preg_replace( '/\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[A-Z0-9+&@#\/%=~_|]/i', '<a href="\0" target="_blank">\0</a>', $links );
 
 	// Convert @ to follow.
-	$links = preg_replace( '/(@([_a-z0-9\-]+))/i', '<a href="http://twitter.com/$2" title="Follow $2" $target >$1</a>', $links );
+	$links = preg_replace( '/(@([_a-z0-9\-]+))/i', '<a href="http://x.com/$2" title="Follow $2" $target >$1</a>', $links );
 
 	// Convert # to search.
-	$links = preg_replace( '/(#([_a-z0-9\-]+))/i', '<a href="https://twitter.com/search?q=$2" title="Search $1" $target >$1</a>', $links );
+	$links = preg_replace( '/(#([_a-z0-9\-]+))/i', '<a href="https://x.com/search?q=$2" title="Search $1" $target >$1</a>', $links );
 
 	// Return links.
 	return $links;
@@ -88,7 +88,7 @@ function powerkit_twitter_convert_links( $links, $targetblank = true ) {
 function powerkit_twitter_get_recent( $params, $cache_name = 'powerkit_twitter_data' ) {
 	$params = array_merge(
 		array(
-			'title'    => esc_html__( 'Twitter Feed', 'powerkit' ),
+			'title'    => esc_html__( 'X (Twitter) Feed', 'powerkit' ),
 			'number'   => 5,
 			'template' => 'default',
 			'header'   => true,

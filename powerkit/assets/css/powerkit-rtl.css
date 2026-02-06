@@ -32,6 +32,10 @@
 	content: "\e94d";
 }
 
+.pk-icon-threads:before {
+	content: "\e94e";
+}
+
 .pk-icon-twitter:before {
 	content: "\e94c";
 }

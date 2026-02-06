@@ -27,7 +27,7 @@ class Powerkit_Twitter_Widget extends WP_Widget {
 	public function __construct() {
 
 		$this->default_settings = apply_filters( 'powerkit_twitter_widget_settings', array(
-			'title'    => esc_html__( 'Twitter Feed', 'powerkit' ),
+			'title'    => esc_html__( 'X (Twitter) Feed', 'powerkit' ),
 			'number'   => 5,
 			'template' => 'default',
 			'header'   => true,
@@ -38,7 +38,7 @@ class Powerkit_Twitter_Widget extends WP_Widget {
 			'classname'   => 'powerkit_twitter_widget',
 			'description' => esc_html__( 'A list of recent tweets.', 'powerkit' ),
 		);
-		parent::__construct( 'powerkit_twitter_widget', esc_html__( 'Twitter Feed', 'powerkit' ), $widget_details );
+		parent::__construct( 'powerkit_twitter_widget', esc_html__( 'X (Twitter) Feed', 'powerkit' ), $widget_details );
 	}
 
 	/**
@@ -110,8 +110,8 @@ class Powerkit_Twitter_Widget extends WP_Widget {
 			<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'powerkit' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $params['title'] ); ?>" /></p>
 
-			<!-- Twitter User ID -->
-			<p><label for="<?php echo esc_attr( $this->get_field_id( 'username' ) ); ?>"><?php esc_html_e( 'Twitter user ID:', 'powerkit' ); ?></label>
+			<!-- X (Twitter) User ID -->
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'username' ) ); ?>"><?php esc_html_e( 'X (Twitter) user ID:', 'powerkit' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'username' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'username' ) ); ?>" type="text" value="<?php echo esc_attr( $params['username'] ); ?>" /></p>
 
 			<!-- Number of Tweets -->
