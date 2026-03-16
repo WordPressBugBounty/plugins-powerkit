@@ -3,7 +3,7 @@ Tags: share buttons, social links, slider, gallery, lazyload
 Requires at least: 4.0
 Tested up to: 6.9
 Requires PHP: 5.4
-Stable tag: 3.0.5
+Stable tag: 3.0.6
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -83,8 +83,12 @@ Sure! Powerkit is developer-friendly. There're numerous hooks and filters, so ex
 
 == Changelog ==
 
+= 3.0.6 =
+* Improved performance: Tippy script is now loaded only for logged-in users
+
 = 3.0.5 =
-* Security fix: patched Stored XSS vulnerability in Lazy Load image processing (CVE-2026-2390). Replaced flawed regex-based HTML attribute parser with a strict pattern that only matches valid attribute names and double-quoted values.
+* Security fix: patched Stored XSS vulnerability in Lazy Load (CVE-2026-2390)
+* Fixed Post Views: Google OAuth token no longer expires every 60 minutes
 
 = 3.0.4 =
 * Updated Twitter branding to X

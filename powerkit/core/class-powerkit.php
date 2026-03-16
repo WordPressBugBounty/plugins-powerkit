@@ -223,6 +223,9 @@ if ( ! class_exists( 'Powerkit' ) ) {
 		public function wp_enqueue_scripts() {
 			$version = powerkit_get_setting( 'version' );
 
+			// Register tippy.
+			wp_register_script( 'tippy', POWERKIT_URL . 'assets/js/tippy.all.min.js', array(), $version, true );
+
 			// Scripts.
 			$dependencies = array( 'jquery' );
 
