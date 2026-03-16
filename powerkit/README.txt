@@ -3,7 +3,7 @@ Tags: share buttons, social links, slider, gallery, lazyload
 Requires at least: 4.0
 Tested up to: 6.9
 Requires PHP: 5.4
-Stable tag: 3.0.4
+Stable tag: 3.0.5
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -82,6 +82,9 @@ Sure! Powerkit is developer-friendly. There're numerous hooks and filters, so ex
 4. Custom Fonts.
 
 == Changelog ==
+
+= 3.0.5 =
+* Security fix: patched Stored XSS vulnerability in Lazy Load image processing (CVE-2026-2390). Replaced flawed regex-based HTML attribute parser with a strict pattern that only matches valid attribute names and double-quoted values.
 
 = 3.0.4 =
 * Updated Twitter branding to X

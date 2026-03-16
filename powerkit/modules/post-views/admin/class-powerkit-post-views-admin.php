@@ -19,7 +19,7 @@ class Powerkit_Post_Views_Admin extends Powerkit_Module_Admin {
 	 */
 	public function initialize() {
 
-		add_filter( 'init', function() {
+		add_filter( 'init', function () {
 			$post_types = get_post_types( array(
 				'publicly_queryable' => 1,
 				'_builtin'           => false,
@@ -105,9 +105,13 @@ class Powerkit_Post_Views_Admin extends Powerkit_Module_Admin {
 										<?php
 									} else {
 										$googleapis_auth = add_query_arg( array(
-											'client_id'     => $options['clientid'],
-											'redirect_uri'  => powerkit_get_page_url( $this->slug ),
-											'scope'         => 'https://www.googleapis.com/auth/analytics.readonly+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile&response_type=code&access_type=offline&state=init&approval_prompt=force'
+											'client_id'    => $options['clientid'],
+											'redirect_uri' => powerkit_get_page_url( $this->slug ),
+											'scope'        => 'https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile',
+											'response_type' => 'code',
+											'access_type'  => 'offline',
+											'prompt'       => 'consent',
+											'state'        => 'init',
 										), 'https://accounts.google.com/o/oauth2/v2/auth' );
 										?>
 											<tr>

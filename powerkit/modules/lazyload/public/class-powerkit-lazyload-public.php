@@ -196,18 +196,16 @@ class Powerkit_Lazyload_Public extends Powerkit_Module_Public {
 			}
 
 			// Get Attributes for the image markup.
-			if ( preg_match_all( '/\s(.*?)="(.*?)"/', $image, $matches ) ) {
-
-				$attr_data = array_shift( $matches );
+			// Use a strict regex: attribute names must be valid (word chars, hyphens, colons, dots)
+			// and values must be double-quoted. This prevents false matches inside single-quoted
+			// attributes that contain double-quote characters (CVE-2026-2390 / XSS fix).
+			if ( preg_match_all( '/\s+([\w\-:.]+)\s*=\s*"([^"]*)"/', $image, $matches ) ) {
 
 				// Get attr list of image.
 				$attr = array();
 
-				foreach ( $attr_data as $key => $fulldata ) {
-					$name  = $matches[0][ $key ];
-					$value = $matches[1][ $key ];
-
-					$attr[ $name ] = $value;
+				foreach ( $matches[1] as $key => $name ) {
+					$attr[ $name ] = $matches[2][ $key ];
 				}
 
 				/**
@@ -222,9 +220,10 @@ class Powerkit_Lazyload_Public extends Powerkit_Module_Public {
 				$new_image = '<img [attr]>';
 				$new_attr  = null;
 
-				// Build new attributes.
+				// Build new attributes. Attribute names are escaped; values are kept as-is
+				// to avoid double-encoding HTML entities (e.g. &amp; in URLs / srcset).
 				foreach ( $attr as $key => $value ) {
-					$new_attr .= sprintf( ' %s="%s" ', $key, $value );
+					$new_attr .= sprintf( ' %s="%s" ', esc_attr( $key ), $value );
 				}
 
 				// Create new image based on new attributes.

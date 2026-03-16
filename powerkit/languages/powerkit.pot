@@ -1,4 +1,4 @@
-# Copyright (C) 2025 powerkit
+# Copyright (C) 2026 powerkit
 # This file is distributed under the same license as the powerkit package.
 msgid ""
 msgstr ""
@@ -232,7 +232,7 @@ msgstr ""
 msgid "Comments count"
 msgstr ""
 
-#: core/core-powerkit-post-meta.php:29, modules/inline-posts/public/class-powerkit-inline-posts-shortcode.php:194, modules/post-views/admin/class-powerkit-post-views-admin.php:346, modules/posts/public/class-powerkit-posts-widget.php:260
+#: core/core-powerkit-post-meta.php:29, modules/inline-posts/public/class-powerkit-inline-posts-shortcode.php:194, modules/post-views/admin/class-powerkit-post-views-admin.php:350, modules/posts/public/class-powerkit-posts-widget.php:260
 msgid "Views"
 msgstr ""
 
@@ -420,7 +420,7 @@ msgstr ""
 msgid "Font successfully deleted."
 msgstr ""
 
-#: modules/class-powerkit-custom-fonts.php:646, modules/coming-soon/admin/class-powerkit-coming-soon-admin.php:217, modules/headers-footers/admin/class-powerkit-headers-footers-admin.php:105, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:408, modules/post-views/admin/class-powerkit-post-views-admin.php:231, modules/share-buttons/admin/class-powerkit-share-buttons-admin.php:623, modules/social-links/admin/class-powerkit-social-links-admin.php:303, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:155, modules/typekit-fonts/admin/class-powerkit-typekit-fonts-admin.php:240
+#: modules/class-powerkit-custom-fonts.php:646, modules/coming-soon/admin/class-powerkit-coming-soon-admin.php:217, modules/headers-footers/admin/class-powerkit-headers-footers-admin.php:105, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:408, modules/post-views/admin/class-powerkit-post-views-admin.php:235, modules/share-buttons/admin/class-powerkit-share-buttons-admin.php:623, modules/social-links/admin/class-powerkit-social-links-admin.php:303, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:155, modules/typekit-fonts/admin/class-powerkit-typekit-fonts-admin.php:240
 msgid "Settings saved."
 msgstr ""
 
@@ -436,7 +436,7 @@ msgstr ""
 msgid "The list of social network settings is empty!!!"
 msgstr ""
 
-#: extensions/connect/class-powerkit-connect.php:148, modules/coming-soon/admin/class-powerkit-coming-soon-admin.php:184, modules/headers-footers/admin/class-powerkit-headers-footers-admin.php:80, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:336, modules/post-views/admin/class-powerkit-post-views-admin.php:179, modules/share-buttons/admin/class-powerkit-share-buttons-admin.php:496, modules/social-links/admin/class-powerkit-social-links-admin.php:235, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:107
+#: extensions/connect/class-powerkit-connect.php:148, modules/coming-soon/admin/class-powerkit-coming-soon-admin.php:184, modules/headers-footers/admin/class-powerkit-headers-footers-admin.php:80, modules/opt-in-forms/admin/class-powerkit-opt-in-forms-admin.php:336, modules/post-views/admin/class-powerkit-post-views-admin.php:183, modules/share-buttons/admin/class-powerkit-share-buttons-admin.php:496, modules/social-links/admin/class-powerkit-social-links-admin.php:235, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:107
 msgid "Save changes"
 msgstr ""
 
@@ -2093,67 +2093,67 @@ msgstr ""
 msgid "Post Views Settings"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:126
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:130
 msgid "You are connected to Google Analytics with the e-mail address"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:128
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:132
 msgid "Disconnect from Google Analytics"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:130
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:134
 msgid "Empty page views cache"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:135
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:139
 msgid "GA4 Property ID"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:139
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:143
 msgid "To determine a Google Analytics 4 property Id:"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:141
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:145
 msgid "Visit Google Analytics at"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:144
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:148
 msgid "Select Admin."
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:145
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:149
 msgid "Select the Property."
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:146
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:150
 msgid "Select Property Settings."
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:147
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:151
 msgid "If the Property Settings shows a numeric \"PROPERTY ID\" such as \"123...\", this is the numeric Id of your Google Analytics 4 property."
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:153
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:157
 msgid "Start date for the analytics"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:158
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:162
 msgid "Default value when a count cannot be fetched"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:163
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:167
 msgid "Display the Views column in Posts list"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:168
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:172
 msgid "Search pageviews slugs with trailing slash"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:115
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:119
 msgid "Connect to Google Analytics"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:117
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:121
 msgid "Clear the API keys"
 msgstr ""
 
@@ -2205,27 +2205,27 @@ msgstr ""
 msgid "Client secret"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:331
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:335
 msgid "Cache flushed successfully."
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:321
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:325
 msgid "Token refreshed successfully."
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:311
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:315
 msgid "API Keys removed."
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:256
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:260
 msgid "There was something wrong with Google!"
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:389
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:393
 msgid "Google Post Views Error: "
 msgstr ""
 
-#: modules/post-views/admin/class-powerkit-post-views-admin.php:389, modules/post-views/admin/class-powerkit-post-views-admin.php:385
+#: modules/post-views/admin/class-powerkit-post-views-admin.php:393, modules/post-views/admin/class-powerkit-post-views-admin.php:389
 msgid "Update settings"
 msgstr ""
 

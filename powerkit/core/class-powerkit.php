@@ -221,19 +221,40 @@ if ( ! class_exists( 'Powerkit' ) ) {
 		 * This function will register scripts and styles
 		 */
 		public function wp_enqueue_scripts() {
+			$version = powerkit_get_setting( 'version' );
+
 			// Scripts.
+			$dependencies = array( 'jquery' );
+
+			// Enqueue only for logged-in users.
 			if ( is_user_logged_in() ) {
-				wp_enqueue_script( 'tippy', POWERKIT_URL . 'assets/js/tippy.all.min.js', array( 'jquery' ), powerkit_get_setting( 'version' ), true );
+				$dependencies[] = 'tippy';
 			}
 
-			wp_enqueue_script( 'powerkit', POWERKIT_URL . 'assets/js/_scripts.js', array( 'jquery', 'tippy' ), powerkit_get_setting( 'version' ), true );
+			wp_enqueue_script(
+				'powerkit',
+				POWERKIT_URL . 'assets/js/_scripts.js',
+				$dependencies,
+				$version,
+				true
+			);
 
 			// Icons.
-			wp_enqueue_style( 'powerkit-icons', POWERKIT_URL . 'assets/fonts/powerkit-icons.woff', array(), powerkit_get_setting( 'version' ) );
+			wp_enqueue_style(
+				'powerkit-icons',
+				POWERKIT_URL . 'assets/fonts/powerkit-icons.woff',
+				array(),
+				$version
+			);
 			wp_style_add_data( 'powerkit-icons', 'alt', 'alternate' );
 
 			// Styles.
-			wp_enqueue_style( 'powerkit', powerkit_style( POWERKIT_URL . 'assets/css/powerkit.css' ), array(), powerkit_get_setting( 'version' ) );
+			wp_enqueue_style(
+				'powerkit',
+				powerkit_style( POWERKIT_URL . 'assets/css/powerkit.css' ),
+				array(),
+				$version
+			);
 			wp_style_add_data( 'powerkit', 'rtl', 'replace' );
 		}
 
