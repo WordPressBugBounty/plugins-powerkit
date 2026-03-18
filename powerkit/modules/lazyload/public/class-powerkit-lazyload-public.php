@@ -220,10 +220,9 @@ class Powerkit_Lazyload_Public extends Powerkit_Module_Public {
 				$new_image = '<img [attr]>';
 				$new_attr  = null;
 
-				// Build new attributes. Attribute names are escaped; values are kept as-is
-				// to avoid double-encoding HTML entities (e.g. &amp; in URLs / srcset).
+				// Build new attributes. Both key and value are escaped for defense in depth.
 				foreach ( $attr as $key => $value ) {
-					$new_attr .= sprintf( ' %s="%s" ', esc_attr( $key ), $value );
+					$new_attr .= sprintf( ' %s="%s" ', esc_attr( $key ), esc_attr( $value ) );
 				}
 
 				// Create new image based on new attributes.

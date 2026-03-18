@@ -3,7 +3,7 @@ Tags: share buttons, social links, slider, gallery, lazyload
 Requires at least: 4.0
 Tested up to: 6.9
 Requires PHP: 5.4
-Stable tag: 3.0.6
+Stable tag: 3.0.7
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -82,6 +82,9 @@ Sure! Powerkit is developer-friendly. There're numerous hooks and filters, so ex
 4. Custom Fonts.
 
 == Changelog ==
+
+= 3.0.7 =
+* Security improvement: apply esc_attr() to all attribute values in Lazy Load image reconstruction (defense in depth, follow-up to CVE-2026-2390)
 
 = 3.0.6 =
 * Improved performance: Tippy script is now loaded only for logged-in users
