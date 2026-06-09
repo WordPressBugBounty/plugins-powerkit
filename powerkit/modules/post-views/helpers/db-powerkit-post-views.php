@@ -6,6 +6,11 @@
  * @subpackage Modules/DB
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Powerkit_Post_Views_DB {
 
 	/**
@@ -29,7 +34,7 @@ class Powerkit_Post_Views_DB {
 
 			$activated_blogs = array();
 			$current_blog_id = $wpdb->blogid;
-			$blogs_ids       = $wpdb->get_col( $wpdb->prepare( 'SELECT blog_id FROM ' . $wpdb->blogs, '' ) );
+			$blogs_ids       = $wpdb->get_col( "SELECT blog_id FROM {$wpdb->blogs}" );
 
 			foreach ( $blogs_ids as $blog_id ) {
 				switch_to_blog( $blog_id );
@@ -75,9 +80,9 @@ class Powerkit_Post_Views_DB {
 			global $wpdb;
 
 			$current_blog_id = $wpdb->blogid;
-			$blogs_ids       = $wpdb->get_col( $wpdb->prepare( 'SELECT blog_id FROM ' . $wpdb->blogs, '' ) );
+			$blogs_ids       = $wpdb->get_col( "SELECT blog_id FROM {$wpdb->blogs}" );
 
-			if ( ! ( $activated_blogs = get_site_option( 'pk_post_views_activated_blogs', false, false ) ) ) {
+			if ( ! ( $activated_blogs = get_site_option( 'pk_post_views_activated_blogs', false ) ) ) {
 				$activated_blogs = array();
 			}
 

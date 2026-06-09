@@ -9,6 +9,11 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
@@ -45,7 +50,7 @@ class Powerkit_Post_Views_Admin extends Powerkit_Module_Admin {
 	 * Register admin page
 	 */
 	public function register_options_page() {
-		add_options_page( esc_html__( 'Post Views', 'powerkit' ), esc_html__( 'Post Views', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'build_options_page' ) );
+		add_submenu_page( powerkit_get_page_slug( 'manager' ), esc_html__( 'Post Views', 'powerkit' ), esc_html__( 'Post Views', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'build_options_page' ) );
 	}
 
 	/**
@@ -80,7 +85,7 @@ class Powerkit_Post_Views_Admin extends Powerkit_Module_Admin {
 											<li><?php echo wp_kses( __( 'Go to "APIs &amp; Services".', 'powerkit' ), 'post' ); ?></li>
 											<li><?php echo wp_kses( __( 'On the tab "OAuth consent screen" register the application, select "User Type" (External) and click "Create".', 'powerkit' ), 'post' ); ?></li>
 											<li><?php echo wp_kses( __( 'On the tab "OAuth consent screen" enter "Application name" and add your domain.', 'powerkit' ), 'post' ); ?></li>
-											<li><?php echo wp_kses( sprintf( __( 'Then, create an OAuth Client ID in "APIs  &amp; Services > Credentials" (Select "Web application", enter this URL %s for the "Authorized redirect URIs" field). ', 'powerkit' ), '<code>' . powerkit_get_page_url( $this->slug ) . '</code>' ), 'post' ); ?></li>
+											<li><?php echo wp_kses( sprintf( /* translators: %s: Authorized redirect URI URL. */ __( 'Then, create an OAuth Client ID in "APIs  &amp; Services > Credentials" (Select "Web application", enter this URL %s for the "Authorized redirect URIs" field). ', 'powerkit' ), '<code>' . powerkit_get_page_url( $this->slug ) . '</code>' ), 'post' ); ?></li>
 											<li><?php echo wp_kses( __( 'Enter your access below and connect to Google Analytics (if you have received a notice - "This app is not verified", then you can continue by clicking on "Advanced" link and follow the instructions).', 'powerkit' ), 'post' ); ?></li>
 										</ol>
 
@@ -201,28 +206,28 @@ class Powerkit_Post_Views_Admin extends Powerkit_Module_Admin {
 
 		if ( isset( $_POST['save_settings'] ) ) { // Input var ok; sanitization ok.
 
-			if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+			if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 				return;
 			}
 
 			if ( isset( $_POST['powerkit_post_views_clientid'] ) ) { // Input var ok; sanitization ok.
-				$options['clientid'] = sanitize_text_field( $_POST['powerkit_post_views_clientid'] ); // Input var ok; sanitization ok.
+				$options['clientid'] = sanitize_text_field( wp_unslash( $_POST['powerkit_post_views_clientid'] ) ); // Input var ok; sanitization ok.
 			}
 
 			if ( isset( $_POST['powerkit_post_views_psecret'] ) ) { // Input var ok; sanitization ok.
-				$options['psecret'] = sanitize_text_field( $_POST['powerkit_post_views_psecret'] ); // Input var ok; sanitization ok.
+				$options['psecret'] = sanitize_text_field( wp_unslash( $_POST['powerkit_post_views_psecret'] ) ); // Input var ok; sanitization ok.
 			}
 
 			if ( isset( $_POST['powerkit_post_views_property_id'] ) ) { // Input var ok; sanitization ok.
-				$options['property_id'] = sanitize_text_field( $_POST['powerkit_post_views_property_id'] ); // Input var ok; sanitization ok.
+				$options['property_id'] = sanitize_text_field( wp_unslash( $_POST['powerkit_post_views_property_id'] ) ); // Input var ok; sanitization ok.
 			}
 
 			if ( isset( $_POST['powerkit_post_views_startdate'] ) ) { // Input var ok; sanitization ok.
-				$options['startdate'] = sanitize_text_field( $_POST['powerkit_post_views_startdate'] ); // Input var ok; sanitization ok.
+				$options['startdate'] = sanitize_text_field( wp_unslash( $_POST['powerkit_post_views_startdate'] ) ); // Input var ok; sanitization ok.
 			}
 
 			if ( isset( $_POST['powerkit_post_views_defaultval'] ) ) { // Input var ok; sanitization ok.
-				$options['defaultval'] = sanitize_text_field( $_POST['powerkit_post_views_defaultval'] ); // Input var ok; sanitization ok.
+				$options['defaultval'] = sanitize_text_field( wp_unslash( $_POST['powerkit_post_views_defaultval'] ) ); // Input var ok; sanitization ok.
 			}
 
 			$options['column']   = ( isset( $_POST['powerkit_post_views_column'] ) ); // Input var ok; sanitization ok.
@@ -286,7 +291,7 @@ class Powerkit_Post_Views_Admin extends Powerkit_Module_Admin {
 			}
 		} elseif ( isset( $_GET['state'] ) && 'disconnect' === $_GET['state'] ) { // Input var ok; sanitization ok.
 
-			if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( $_GET['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+			if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 				return;
 			}
 
@@ -302,7 +307,7 @@ class Powerkit_Post_Views_Admin extends Powerkit_Module_Admin {
 
 		} elseif ( isset( $_GET['state'] ) && 'clear-api' === $_GET['state'] ) { // Input var ok; sanitization ok.
 
-			if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( $_GET['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+			if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 				return;
 			}
 
@@ -316,7 +321,7 @@ class Powerkit_Post_Views_Admin extends Powerkit_Module_Admin {
 
 		} elseif ( isset( $_GET['state'] ) && 'refresh-token' === $_GET['state'] ) { // Input var ok; sanitization ok.
 
-			if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( $_GET['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+			if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 				return;
 			}
 
@@ -326,7 +331,7 @@ class Powerkit_Post_Views_Admin extends Powerkit_Module_Admin {
 
 		} elseif ( isset( $_GET['state'] ) && 'reset-cache' === $_GET['state'] ) { // Input var ok; sanitization ok.
 
-			if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( $_GET['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+			if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 				return;
 			}
 
@@ -364,7 +369,7 @@ class Powerkit_Post_Views_Admin extends Powerkit_Module_Admin {
 
 		if ( 'pk_post_views' === $column_name ) {
 
-			echo powerkit_get_post_views( $post_id, true ); // XSS.
+			echo esc_html( powerkit_get_post_views( $post_id, true ) );
 		}
 	}
 
@@ -386,7 +391,7 @@ class Powerkit_Post_Views_Admin extends Powerkit_Module_Admin {
 
 			if ( isset( $options['token'] ) && empty( $options['token'] ) ) {
 
-				echo '<div class="error"><p>' . esc_html__( 'Google Post Views Warning: You have to (re)connect the plugin to your Google account.' ) . '<br><a href="' . esc_url( powerkit_get_page_url( $this->slug ) ) . '">' . esc_html__( 'Update settings', 'powerkit' ) . ' &rarr;</a></p></div>';
+				echo '<div class="error"><p>' . esc_html__( 'Google Post Views Warning: You have to (re)connect the plugin to your Google account.', 'powerkit' ) . '<br><a href="' . esc_url( powerkit_get_page_url( $this->slug ) ) . '">' . esc_html__( 'Update settings', 'powerkit' ) . ' &rarr;</a></p></div>';
 
 			} elseif ( isset( $options['error'] ) && ! empty( $options['error'] ) ) {
 

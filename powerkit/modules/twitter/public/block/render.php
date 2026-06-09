@@ -12,6 +12,11 @@
  * @subpackage PowerKit/templates
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $params = array(
 	'title'       => esc_html__( 'X (Twitter) Feed', 'powerkit' ),
 	'number'      => $attributes['number'],

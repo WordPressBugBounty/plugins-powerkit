@@ -9,6 +9,11 @@
  * @subpackage Modules/public
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The public-facing functionality of the module.
  */
@@ -39,7 +44,7 @@ class Powerkit_Pinterest_Public extends Powerkit_Module_Public {
 	 * Register pinterest script to use it later.
 	 */
 	public function init() {
-		wp_register_script( 'powerkit-pinterest', '//assets.pinterest.com/js/pinit.js', array(), false, true );
+		wp_register_script( 'powerkit-pinterest', '//assets.pinterest.com/js/pinit.js', array(), powerkit_get_setting( 'version' ), true );
 	}
 
 	/**

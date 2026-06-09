@@ -6,6 +6,11 @@
  * @subpackage Modules/Helper
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Convert links to clickable format
  *
@@ -104,10 +109,12 @@ function powerkit_twitter_get_recent( $params, $cache_name = 'powerkit_twitter_d
 		if ( isset( $twitter_feed_manual['items'] ) && $twitter_feed_manual['items'] ) {
 			powerkit_twitter_template_handler( $params['template'], $twitter_feed_manual, $params );
 		} else {
-			powerkit_alert_warning( sprintf( __( 'The list is empty. To display the feed, add elements on the <a href="%s" target="_blank">settings page</a>.', 'powerkit' ), admin_url( 'options-general.php?page=powerkit_connect&tab=twitter' ) ) );
+			powerkit_alert_warning( sprintf( /* translators: %s: URL of the settings page. */
+		__( 'The list is empty. To display the feed, add elements on the <a href="%s" target="_blank">settings page</a>.', 'powerkit' ), admin_url( 'admin.php?page=powerkit_connect&tab=twitter' ) ) );
 		}
 	} else {
-		powerkit_alert_warning( sprintf( __( 'No data found, please fill in the fields on the <a href="%s" target="_blank">settings page</a>.', 'powerkit' ), admin_url( 'options-general.php?page=powerkit_connect&tab=twitter' ) ) );
+		powerkit_alert_warning( sprintf( /* translators: %s: URL of the settings page. */
+		__( 'No data found, please fill in the fields on the <a href="%s" target="_blank">settings page</a>.', 'powerkit' ), admin_url( 'admin.php?page=powerkit_connect&tab=twitter' ) ) );
 	}
 }
 

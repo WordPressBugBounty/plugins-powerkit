@@ -9,6 +9,11 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
@@ -76,7 +81,7 @@ class Powerkit_Post_Format_UI_Admin extends Powerkit_Module_Admin {
 			<div class="title-search">
 				<input class="search-input" name="pk-post-format-<?php echo esc_attr( $markup ); ?>" type="text" placeholder="<?php esc_html_e( 'Enter URL', 'powerkit' ); ?>" value="<?php echo esc_attr( $url ); ?>">
 			</div>
-			<div class="canvas"><?php echo $this->wp_oembed_get( $url ); // XSS. ?></div>
+			<div class="canvas"><?php echo wp_kses( $this->wp_oembed_get( $url ), powerkit_oembed_allowed_html() ); ?></div>
 		</div>
 		<?php wp_nonce_field( 'pk-post-format', 'pk-post-format' ); ?>
 		<?php
@@ -96,7 +101,7 @@ class Powerkit_Post_Format_UI_Admin extends Powerkit_Module_Admin {
 			return;
 		}
 
-		echo $this->wp_oembed_get( $url ); // XSS.
+		echo wp_kses( $this->wp_oembed_get( $url ), powerkit_oembed_allowed_html() );
 
 		die();
 	}
@@ -250,20 +255,20 @@ class Powerkit_Post_Format_UI_Admin extends Powerkit_Module_Admin {
 		$changes = null;
 
 		if ( isset( $_POST['id'] ) ) { // Input var ok; sanitization ok.
-			$attachment_id = (int) sanitize_key( $_POST['id'] ); // Input var ok; sanitization ok.
+			$attachment_id = (int) sanitize_key( wp_unslash( $_POST['id'] ) ); // Input var ok; sanitization ok.
 		}
 
 		if ( isset( $_POST['title'] ) ) {
-			$changes['title'] = sanitize_text_field( $_POST['title'] ); // Input var ok; sanitization ok.
+			$changes['title'] = sanitize_text_field( wp_unslash( $_POST['title'] ) ); // Input var ok; sanitization ok.
 		}
 		if ( isset( $_POST['caption'] ) ) {
-			$changes['caption'] = sanitize_textarea_field( $_POST['caption'] ); // Input var ok; sanitization ok.
+			$changes['caption'] = sanitize_textarea_field( wp_unslash( $_POST['caption'] ) ); // Input var ok; sanitization ok.
 		}
 		if ( isset( $_POST['description'] ) ) {
-			$changes['description'] = sanitize_textarea_field( $_POST['description'] ); // Input var ok; sanitization ok.
+			$changes['description'] = sanitize_textarea_field( wp_unslash( $_POST['description'] ) ); // Input var ok; sanitization ok.
 		}
 		if ( isset( $_POST['alt'] ) ) {
-			$changes['alt'] = sanitize_text_field( $_POST['alt'] ); // Input var ok; sanitization ok.
+			$changes['alt'] = sanitize_text_field( wp_unslash( $_POST['alt'] ) ); // Input var ok; sanitization ok.
 		}
 
 		if ( ! isset( $attachment_id ) ) {
@@ -333,17 +338,17 @@ class Powerkit_Post_Format_UI_Admin extends Powerkit_Module_Admin {
 		}
 
 		if ( isset( $_POST['pk-post-format-link'] ) ) { // Input var ok; sanitization ok.
-			update_post_meta( $post_id, 'powerkit_post_format_link', esc_url_raw( $_POST['pk-post-format-link'] ) ); // Input var ok; sanitization ok.
+			update_post_meta( $post_id, 'powerkit_post_format_link', esc_url_raw( wp_unslash( $_POST['pk-post-format-link'] ) ) ); // Input var ok; sanitization ok.
 		} else {
 			delete_post_meta( $post_id, 'powerkit_post_format_link' );
 		}
 		if ( isset( $_POST['pk-post-format-audio'] ) ) { // Input var ok; sanitization ok.
-			update_post_meta( $post_id, 'powerkit_post_format_audio', esc_url_raw( $_POST['pk-post-format-audio'] ) ); // Input var ok; sanitization ok.
+			update_post_meta( $post_id, 'powerkit_post_format_audio', esc_url_raw( wp_unslash( $_POST['pk-post-format-audio'] ) ) ); // Input var ok; sanitization ok.
 		} else {
 			delete_post_meta( $post_id, 'powerkit_post_format_audio' );
 		}
 		if ( isset( $_POST['pk-post-format-video'] ) ) { // Input var ok; sanitization ok.
-			update_post_meta( $post_id, 'powerkit_post_format_video', esc_url_raw( $_POST['pk-post-format-video'] ) ); // Input var ok; sanitization ok.
+			update_post_meta( $post_id, 'powerkit_post_format_video', esc_url_raw( wp_unslash( $_POST['pk-post-format-video'] ) ) ); // Input var ok; sanitization ok.
 		} else {
 			delete_post_meta( $post_id, 'powerkit_post_format_video' );
 		}

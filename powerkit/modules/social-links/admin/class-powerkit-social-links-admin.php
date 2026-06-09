@@ -9,10 +9,23 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
 class Powerkit_Social_Links_Admin extends Powerkit_Module_Admin {
+
+	/**
+	 * The hook suffix of the settings page.
+	 *
+	 * @var string $page_hook The settings page hook suffix.
+	 */
+	public $page_hook;
+
 	/**
 	 * Initialize
 	 */
@@ -71,7 +84,7 @@ class Powerkit_Social_Links_Admin extends Powerkit_Module_Admin {
 	 * @since 1.0.0
 	 */
 	public function register_options_page() {
-		add_options_page( esc_html__( 'Social Links', 'powerkit' ), esc_html__( 'Social Links', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'build_options_page' ) );
+		$this->page_hook = add_submenu_page( powerkit_get_page_slug( 'manager' ), esc_html__( 'Social Links', 'powerkit' ), esc_html__( 'Social Links', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'build_options_page' ) );
 	}
 
 	/**
@@ -246,7 +259,7 @@ class Powerkit_Social_Links_Admin extends Powerkit_Module_Admin {
 	 * @since 1.0.0
 	 */
 	protected function save_options_page() {
-		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 			return;
 		}
 
@@ -310,7 +323,7 @@ class Powerkit_Social_Links_Admin extends Powerkit_Module_Admin {
 	 * @param string $page Current page.
 	 */
 	public function admin_enqueue_scripts( $page ) {
-		if ( 'settings_page_' . powerkit_get_page_slug( $this->slug ) === $page ) {
+		if ( $this->page_hook && $page === $this->page_hook ) {
 
 			wp_enqueue_script( 'jquery-ui-sortable' );
 

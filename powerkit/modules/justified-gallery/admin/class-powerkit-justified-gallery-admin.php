@@ -9,6 +9,11 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
@@ -35,10 +40,10 @@ class Powerkit_Justified_Gallery_Admin extends Powerkit_Module_Admin {
 		add_settings_field( 'powerkit_justified_gallery_max_row_height', esc_html__( 'Max row height', 'powerkit' ), array( $this, 'powerkit_justified_gallery_max_row_height_callback' ), 'media', 'powerkit_justified_gallery_settings' );
 		add_settings_field( 'powerkit_justified_gallery_last_row', esc_html__( 'Last row', 'powerkit' ), array( $this, 'powerkit_justified_gallery_last_row_callback' ), 'media', 'powerkit_justified_gallery_settings' );
 
-		register_setting( 'media', 'powerkit_justified_gallery_margins' );
-		register_setting( 'media', 'powerkit_justified_gallery_row_height' );
-		register_setting( 'media', 'powerkit_justified_gallery_max_row_height' );
-		register_setting( 'media', 'powerkit_justified_gallery_last_row' );
+		register_setting( 'media', 'powerkit_justified_gallery_margins', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+		register_setting( 'media', 'powerkit_justified_gallery_row_height', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+		register_setting( 'media', 'powerkit_justified_gallery_max_row_height', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+		register_setting( 'media', 'powerkit_justified_gallery_last_row', array( 'sanitize_callback' => 'sanitize_text_field' ) );
 	}
 
 	/**

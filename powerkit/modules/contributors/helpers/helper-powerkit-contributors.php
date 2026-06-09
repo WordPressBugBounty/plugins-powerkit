@@ -6,6 +6,11 @@
  * @subpackage Modules/Helper
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Get html of contributors block
  *
@@ -28,11 +33,11 @@ function powerkit_contributors_get_html( $params, $args ) {
 	);
 
 	// Before Widget.
-	echo $args['before_widget']; // XSS.
+	echo wp_kses_post( $args['before_widget'] );
 
 	// Title.
 	if ( $params['title'] ) {
-		echo $args['before_title'] . wp_kses( $params['title'], 'pk-title' ) . $args['after_title']; // XSS.
+		echo wp_kses_post( $args['before_title'] ) . wp_kses( $params['title'], 'pk-title' ) . wp_kses_post( $args['after_title'] );
 	}
 
 	// Content.
@@ -103,7 +108,7 @@ function powerkit_contributors_get_html( $params, $args ) {
 										if ( ! empty( $author_posts ) ) {
 											?>
 											<div class="pk-author-posts">
-												<h6><?php echo sprintf( esc_html__( 'Latest from %s:', 'powerkit' ), get_the_author_meta( 'display_name', $author->ID ) ); ?></h6>
+												<h6><?php /* translators: %s: Author display name. */ echo sprintf( esc_html__( 'Latest from %s:', 'powerkit' ), esc_html( get_the_author_meta( 'display_name', $author->ID ) ) ); ?></h6>
 												<?php
 
 												foreach ( $author_posts as $post ) {
@@ -133,5 +138,5 @@ function powerkit_contributors_get_html( $params, $args ) {
 	<?php
 
 	// After Widget.
-	echo $args['after_widget']; // XSS.
+	echo wp_kses_post( $args['after_widget'] );
 }

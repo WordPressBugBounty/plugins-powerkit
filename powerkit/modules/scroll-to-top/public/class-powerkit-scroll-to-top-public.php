@@ -9,6 +9,11 @@
  * @subpackage Modules/public
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The public-facing functionality of the module.
  */
@@ -31,7 +36,7 @@ class Powerkit_Scroll_To_Top_Public extends Powerkit_Module_Public {
 				<i class="pk-icon pk-icon-up"></i>
 			</a>
 		<?php
-		echo apply_filters( 'powerkit_scroll_to_top_template', ob_get_clean() ); // XSS.
+		echo wp_kses_post( apply_filters( 'powerkit_scroll_to_top_template', ob_get_clean() ) );
 	}
 
 	/**

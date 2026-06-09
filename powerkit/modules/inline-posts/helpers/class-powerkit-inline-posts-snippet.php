@@ -6,6 +6,11 @@
  * @subpackage Modules
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Inline Posts Class
  */

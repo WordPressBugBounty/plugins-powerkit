@@ -9,6 +9,11 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
@@ -34,9 +39,9 @@ class Powerkit_Pinterest_Admin extends Powerkit_Module_Admin {
 		add_settings_field( 'powerkit_pinit_exclude_selectors', esc_html__( 'Exclude selectors', 'powerkit' ), array( $this, 'powerkit_pinit_exclude_selectors_callback' ), 'media', 'powerkit_pinit_settings' );
 		add_settings_field( 'powerkit_pinit_only_hover', esc_html__( 'Display on mouse hover only', 'powerkit' ), array( $this, 'powerkit_pinit_only_hover_callback' ), 'media', 'powerkit_pinit_settings' );
 
-		register_setting( 'media', 'powerkit_pinit_image_selectors' );
-		register_setting( 'media', 'powerkit_pinit_exclude_selectors' );
-		register_setting( 'media', 'powerkit_pinit_only_hover' );
+		register_setting( 'media', 'powerkit_pinit_image_selectors', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+		register_setting( 'media', 'powerkit_pinit_exclude_selectors', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+		register_setting( 'media', 'powerkit_pinit_only_hover', array( 'sanitize_callback' => 'sanitize_text_field' ) );
 	}
 
 	/**

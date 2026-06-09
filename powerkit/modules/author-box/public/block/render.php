@@ -12,6 +12,11 @@
  * @subpackage PowerKit/templates
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $params = array(
 	'title'                => '',
 	'author'               => $attributes['author'],

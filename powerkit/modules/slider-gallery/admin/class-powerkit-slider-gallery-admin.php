@@ -9,6 +9,11 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
@@ -34,9 +39,9 @@ class Powerkit_Slider_Gallery_Admin extends Powerkit_Module_Admin {
 		add_settings_field( 'powerkit_slider_gallery_page_info', esc_html__( 'Display page info', 'powerkit' ), array( $this, 'powerkit_slider_gallery_page_info_callback' ), 'media', 'powerkit_slider_gallery_settings' );
 		add_settings_field( 'powerkit_slider_gallery_nav', esc_html__( 'Display buttons to click to previous & next slide', 'powerkit' ), array( $this, 'powerkit_slider_gallery_nav_callback' ), 'media', 'powerkit_slider_gallery_settings' );
 
-		register_setting( 'media', 'powerkit_slider_gallery_page_dots' );
-		register_setting( 'media', 'powerkit_slider_gallery_page_info' );
-		register_setting( 'media', 'powerkit_slider_gallery_nav' );
+		register_setting( 'media', 'powerkit_slider_gallery_page_dots', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+		register_setting( 'media', 'powerkit_slider_gallery_page_info', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+		register_setting( 'media', 'powerkit_slider_gallery_nav', array( 'sanitize_callback' => 'sanitize_text_field' ) );
 	}
 
 	/**

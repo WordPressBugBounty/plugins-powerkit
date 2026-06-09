@@ -9,6 +9,11 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
@@ -34,15 +39,15 @@ class Powerkit_Facebook_Admin extends Powerkit_Module_Admin {
 		add_settings_field( 'powerkit_facebook_enable_comments', esc_html__( 'Enable Facebook Comments', 'powerkit' ), array( $this, 'powerkit_facebook_enable_comments_callback' ), 'discussion', 'powerkit_facebook_settings' );
 		add_settings_field( 'powerkit_facebook_number_comments', esc_html__( 'Number of Comments', 'powerkit' ), array( $this, 'powerkit_facebook_number_comments_callback' ), 'discussion', 'powerkit_facebook_settings' );
 
-		register_setting( 'discussion', 'powerkit_facebook_enable_comments' );
-		register_setting( 'discussion', 'powerkit_facebook_number_comments_callback' );
+		register_setting( 'discussion', 'powerkit_facebook_enable_comments', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+		register_setting( 'discussion', 'powerkit_facebook_number_comments_callback', array( 'sanitize_callback' => 'sanitize_text_field' ) );
 
 		$locations = apply_filters( 'powerkit_facebook_comments_location', array() );
 
 		// If locations > 1.
 		if ( count( (array) $locations ) > 1 ) {
 			add_settings_field( 'powerkit_facebook_location', esc_html__( 'Location', 'powerkit' ), array( $this, 'powerkit_facebook_location_callback' ), 'discussion', 'powerkit_facebook_settings' );
-			register_setting( 'discussion', 'powerkit_facebook_location' );
+			register_setting( 'discussion', 'powerkit_facebook_location', array( 'sanitize_callback' => 'sanitize_text_field' ) );
 		}
 	}
 

@@ -9,6 +9,11 @@
  * @subpackage PowerKit/templates
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 ?>
 
 <?php
@@ -17,5 +22,5 @@ if ( get_option( 'powerkit_connect_facebook_app_id' ) ) {
 		<div class="fb-comments" data-width="100%" data-href="<?php the_permalink(); ?>" data-numposts="<?php get_option( 'powerkit_facebook_number_comments', 10 ); ?>"></div>
 	<?php
 } else {
-	powerkit_alert_warning( sprintf( __( 'The Facebook App ID is not provided, please add it on the', 'powerkit' ), admin_url( 'options-general.php?page=powerkit_connect&tab=facebook' ) ) );
+	powerkit_alert_warning( sprintf( __( 'The Facebook App ID is not provided, please add it on the', 'powerkit' ), admin_url( 'admin.php?page=powerkit_connect&tab=facebook' ) ) );
 }

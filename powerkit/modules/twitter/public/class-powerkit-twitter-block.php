@@ -9,6 +9,11 @@
  * @subpackage Modules/public
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The initialize block.
  */

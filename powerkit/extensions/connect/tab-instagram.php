@@ -6,6 +6,12 @@
  * @subpackage Extensions
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+
 if ( powerkit_connect( 'instagram_app_access_token' ) ) {
 	?>
 
@@ -47,7 +53,17 @@ if ( powerkit_connect( 'instagram_app_access_token' ) ) {
 
 <hr><br>
 
-<p><?php echo sprintf( __( 'You may also change the number of followers manually on <a href="%s" target="_blank">this page</a>.', 'powerkit' ), admin_url( 'options-general.php?page=powerkit_social_links' ) ); ?></p>
+<p>
+<?php
+echo wp_kses_post(
+	sprintf(
+		/* translators: %s: URL of the Powerkit settings page. */
+		__( 'You may also change the number of followers manually on <a href="%s" target="_blank">this page</a>.', 'powerkit' ),
+		esc_url( admin_url( 'admin.php?page=powerkit_social_links' ) )
+	)
+);
+?>
+</p>
 
 <br>
 

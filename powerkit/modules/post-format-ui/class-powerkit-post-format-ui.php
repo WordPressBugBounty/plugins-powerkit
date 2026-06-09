@@ -6,6 +6,11 @@
  * @subpackage Modules
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( class_exists( 'Powerkit_Module' ) ) {
 	/**
 	 * Init module

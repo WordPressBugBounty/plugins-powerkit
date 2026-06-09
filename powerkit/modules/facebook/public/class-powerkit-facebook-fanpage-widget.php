@@ -9,6 +9,11 @@
  * @subpackage PowerKit/widgets
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Widget Facebook Fanpage Class
  */
@@ -54,7 +59,7 @@ class Powerkit_Facebook_Fanpage_Widget extends WP_Widget {
 		$params = array_merge( $this->default_settings, $instance );
 
 		// Before Widget.
-		echo $args['before_widget']; // XSS OK.
+		echo wp_kses_post( $args['before_widget'] );
 		?>
 
 		<div class="widget-body">
@@ -62,7 +67,7 @@ class Powerkit_Facebook_Fanpage_Widget extends WP_Widget {
 
 			// Title.
 			if ( $params['title'] ) {
-				echo $args['before_title'] . apply_filters( 'widget_title', wp_kses( $params['title'], 'pk-title' ), $instance, $this->id_base ) . $args['after_title']; // XSS.
+				echo wp_kses_post( $args['before_title'] ) . wp_kses_post( apply_filters( 'widget_title', wp_kses( $params['title'], 'pk-title' ), $instance, $this->id_base ) ) . wp_kses_post( $args['after_title'] );
 			}
 
 			if ( $params['href'] ) {
@@ -88,7 +93,7 @@ class Powerkit_Facebook_Fanpage_Widget extends WP_Widget {
 		<?php
 
 		// After Widget.
-		echo $args['after_widget']; // XSS OK.
+		echo wp_kses_post( $args['after_widget'] );
 	}
 
 	/**

@@ -6,6 +6,11 @@
  * @subpackage Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Admin manager class.
  */
@@ -34,7 +39,9 @@ class Admin_Powerkit_Manager {
 			$self->handler_actions();
 
 			add_action( 'admin_head', array( $self, 'manager_styles' ) );
-			add_action( 'admin_menu', array( $self, 'add_menu_page' ) );
+			// Register the top-level menu before the modules (default priority 10)
+			// so their pages can attach to it as submenus.
+			add_action( 'admin_menu', array( $self, 'add_menu_page' ), 9 );
 			add_action( 'plugin_action_links_powerkit/powerkit.php', array( $self, 'action_links' ) );
 		} );
 	}
@@ -60,6 +67,24 @@ class Admin_Powerkit_Manager {
 		$svg = 'data:image/svg+xml;base64,' . base64_encode( $svg );
 
 		add_menu_page( esc_html__( 'Powerkit', 'powerkit' ), esc_html__( 'Powerkit', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->menu_slug ), array( $this, 'settings_page' ), $svg );
+
+		// Rename the auto-generated first submenu (a duplicate of the top-level
+		// "Powerkit" title) to "Modules". Hooked late so it runs after all module
+		// submenu pages have been registered.
+		add_action( 'admin_menu', array( $this, 'rename_modules_submenu' ), 999 );
+	}
+
+	/**
+	 * Rename the first Powerkit submenu item to "Modules".
+	 */
+	public function rename_modules_submenu() {
+		global $submenu;
+
+		$menu_slug = powerkit_get_page_slug( $this->menu_slug );
+
+		if ( isset( $submenu[ $menu_slug ][0][0] ) ) {
+			$submenu[ $menu_slug ][0][0] = apply_filters( 'powerkit_admin_submenu_default_title', esc_html__( 'Modules', 'powerkit' ) );
+		}
 	}
 
 	/**
@@ -106,13 +131,13 @@ class Admin_Powerkit_Manager {
 		$page_link = powerkit_get_page_url( $this->menu_slug, 'admin' );
 
 		// Check wpnonce.
-		if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+		if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 			return;
 		}
 
 		// Filter modules.
 		if ( isset( $_REQUEST['filter'] ) ) { // Input var ok.
-			$filter = sanitize_key( $_REQUEST['filter'] ); // Input var ok.
+			$filter = sanitize_key( wp_unslash( $_REQUEST['filter'] ) ); // Input var ok.
 		}
 
 		// Output Message.
@@ -325,7 +350,7 @@ class Admin_Powerkit_Manager {
 	public function handler_actions() {
 
 		// Check wpnonce.
-		if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+		if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 			return;
 		}
 
@@ -352,7 +377,7 @@ class Admin_Powerkit_Manager {
 			return;
 		}
 
-		$slug = sanitize_key( $_REQUEST['slug'] ); // Input var ok.
+		$slug = sanitize_key( wp_unslash( $_REQUEST['slug'] ) ); // Input var ok.
 
 		// Activate module.
 		if ( 'activate' === $action && $slug ) {

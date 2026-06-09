@@ -9,6 +9,11 @@
  * @subpackage PowerKit/templates
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Default Template
  *
@@ -64,9 +69,9 @@ function powerkit_inline_posts_default_template( $posts, $settings ) {
 						} else {
 							?>
 							<div class="pk-post-meta">
-								<?php echo powerkit_get_meta_author(); // XSS. ?>
+								<?php echo wp_kses_post( powerkit_get_meta_author() ); ?>
 								<span class="sep">·</span>
-								<?php echo powerkit_get_meta_date(); // XSS. ?>
+								<?php echo wp_kses_post( powerkit_get_meta_date() ); ?>
 							</div>
 							<?php
 						}

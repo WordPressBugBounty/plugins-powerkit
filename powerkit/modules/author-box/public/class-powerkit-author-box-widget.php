@@ -9,6 +9,11 @@
  * @subpackage Powerkit/widgets
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Widget Author
  */
@@ -197,7 +202,7 @@ class Powerkit_Widget_Author_Init extends WP_Widget {
 			<!-- Author -->
 			<p><label for="<?php echo esc_attr( $this->get_field_id( 'author' ) ); ?>"><?php esc_html_e( 'Author:', 'powerkit' ); ?></label>
 				<select name="<?php echo esc_attr( $this->get_field_name( 'author' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'author' ) ); ?>" class="widefat">
-					<option value="current" <?php selected( $params['author'], 'current' ); ?>><?php esc_html_e( 'Current Post’s Author' ); ?></option>
+					<option value="current" <?php selected( $params['author'], 'current' ); ?>><?php esc_html_e( 'Current Post’s Author', 'powerkit' ); ?></option>
 					<?php
 					$authors = powerkit_get_users();
 

@@ -9,6 +9,11 @@
  * @subpackage Powerkit/shortcodes
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Table of Contents Shortcode
  *

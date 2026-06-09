@@ -12,4 +12,9 @@
  * @subpackage PowerKit/templates
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 require dirname( __FILE__ ) . '/render.php';

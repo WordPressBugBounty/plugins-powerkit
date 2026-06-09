@@ -9,6 +9,11 @@
  * @subpackage PowerKit/templates
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Default Template
  *
@@ -106,7 +111,8 @@ function powerkit_instagram_default_template( $feed, $instagram, $params ) {
 			?>
 		</div>
 	<?php } else { ?>
-		<?php powerkit_alert_warning( sprintf( __( 'The list is empty. To display the feed, add elements on the <a href="%s" target="_blank">settings page</a>.', 'powerkit' ), admin_url( 'options-general.php?page=powerkit_connect&tab=instagram' ) ) ); ?>
+		<?php powerkit_alert_warning( sprintf( /* translators: %s: URL of the settings page. */
+		__( 'The list is empty. To display the feed, add elements on the <a href="%s" target="_blank">settings page</a>.', 'powerkit' ), admin_url( 'admin.php?page=powerkit_connect&tab=instagram' ) ) ); ?>
 	<?php } ?>
 
 	<?php

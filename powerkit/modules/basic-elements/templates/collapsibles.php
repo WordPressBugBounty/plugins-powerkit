@@ -6,6 +6,11 @@
  * @subpackage Templates
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Collapsibles
  */

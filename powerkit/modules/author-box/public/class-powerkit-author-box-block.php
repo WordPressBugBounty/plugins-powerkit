@@ -9,6 +9,11 @@
  * @subpackage Modules/public
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The initialize block.
  */
@@ -58,7 +63,7 @@ class Powerkit_Author_Block {
 	public function register_block_type( $blocks ) {
 		$users         = powerkit_get_users();
 		$users_choices = array(
-			'current' => esc_html__( 'Current Post’s Author' ),
+			'current' => esc_html__( 'Current Post’s Author', 'powerkit' ),
 		);
 
 		foreach ( $users as $user ) {

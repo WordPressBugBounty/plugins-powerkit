@@ -10,6 +10,11 @@
  * @since      1.0.0
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! function_exists( 'powerkit_allowed_post_meta' ) ) {
 	/**
 	 * Allowed Post Meta

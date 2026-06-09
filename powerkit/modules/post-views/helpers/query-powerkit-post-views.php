@@ -6,6 +6,11 @@
  * @subpackage Modules/Query
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Powerkit_Post_Views_Query {
 
 	/**

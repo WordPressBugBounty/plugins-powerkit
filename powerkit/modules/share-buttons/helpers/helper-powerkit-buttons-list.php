@@ -6,6 +6,11 @@
  * @subpackage Modules/Helper
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Add Facebook provider.
  *

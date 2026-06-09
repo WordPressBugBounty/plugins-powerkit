@@ -9,6 +9,11 @@
  * @subpackage Powerkit/shortcodes
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Subscription Form Shortcode
  *

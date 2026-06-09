@@ -8,6 +8,11 @@
  * @since      1.0.0
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * This function include files to the plugin.
  *
@@ -206,24 +211,26 @@ function powerkit_get_page_slug( $slug ) {
  * @param string $type The type page.
  */
 function powerkit_get_page_url( $slug, $type = 'general' ) {
-	switch ( $type ) {
-		case 'general':
-			return admin_url( sprintf( 'options-general.php?page=%s', powerkit_get_page_slug( $slug ) ) );
-		case 'writing':
-			return admin_url( sprintf( 'options-writing.php?page=%s', powerkit_get_page_slug( $slug ) ) );
-		case 'reading':
-			return admin_url( sprintf( 'options-reading.php?page=%s', powerkit_get_page_slug( $slug ) ) );
-		case 'discussion':
-			return admin_url( sprintf( 'options-reading.php?page=%s', powerkit_get_page_slug( $slug ) ) );
-		case 'media':
-			return admin_url( sprintf( 'options-media.php?page=%s', powerkit_get_page_slug( $slug ) ) );
-		case 'permalink':
-			return admin_url( sprintf( 'options-permalink.php?page=%s', powerkit_get_page_slug( $slug ) ) );
-		case 'themes':
-			return admin_url( sprintf( 'themes.php?page=%s', powerkit_get_page_slug( $slug ) ) );
-		case 'admin':
-			return admin_url( sprintf( 'admin.php?page=%s', powerkit_get_page_slug( $slug ) ) );
-		default:
-			return admin_url( sprintf( '%s?page=%s', $type, powerkit_get_page_slug( $slug ) ) );
+	// All Powerkit screens are registered as submenus of the top-level Powerkit
+	// menu, so they all live under admin.php. The $type argument is kept for
+	// backward compatibility but no longer changes the parent file.
+	return admin_url( sprintf( 'admin.php?page=%s', powerkit_get_page_slug( $slug ) ) );
+}
+
+/**
+ * Recursively sanitize a scalar or (nested) array value as text.
+ *
+ * Used as a register_setting() sanitize_callback for options that may store
+ * arrays (e.g. connected account lists). Preserves the array structure while
+ * sanitizing every value with sanitize_text_field().
+ *
+ * @param mixed $value The value to sanitize.
+ * @return mixed Sanitized value.
+ */
+function powerkit_sanitize_recursive_text( $value ) {
+	if ( is_array( $value ) ) {
+		return map_deep( $value, 'sanitize_text_field' );
 	}
+
+	return sanitize_text_field( $value );
 }

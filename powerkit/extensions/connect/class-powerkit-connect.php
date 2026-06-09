@@ -6,11 +6,23 @@
  * @subpackage Extensions
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( class_exists( 'Powerkit_Module' ) ) {
 	/**
 	 * Init module
 	 */
 	class Powerkit_Connect extends Powerkit_Module {
+
+		/**
+		 * The hook suffix of the settings page.
+		 *
+		 * @var string $page_hook The settings page hook suffix.
+		 */
+		public $page_hook;
 
 		/**
 		 * Register module
@@ -41,7 +53,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * @since 1.0.0
 		 */
 		public function register_options_page() {
-			add_options_page( esc_html__( 'Connect', 'powerkit' ), esc_html__( 'Connect', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'build_options_page' ) );
+			$this->page_hook = add_submenu_page( powerkit_get_page_slug( 'manager' ), esc_html__( 'Connect', 'powerkit' ), esc_html__( 'Connect', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'build_options_page' ) );
 		}
 
 		/**
@@ -229,7 +241,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Settings save
 		 */
 		public function save_options_page() {
-			if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+			if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 				return;
 			}
 
@@ -272,7 +284,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 					update_option( 'powerkit_connect_instagram_custom_avatar_2x', sanitize_text_field( wp_unslash( $_POST['powerkit_connect_instagram_custom_avatar_2x'] ) ) ); // Input var ok.
 				}
 				if ( isset( $_POST['powerkit_connect_instagram_feed'] ) ) { // Input var ok.
-					update_option( 'powerkit_connect_instagram_feed', $_POST['powerkit_connect_instagram_feed'] ); // Input var ok.
+					update_option( 'powerkit_connect_instagram_feed', powerkit_sanitize_recursive_text( wp_unslash( $_POST['powerkit_connect_instagram_feed'] ) ) ); // Input var ok.
 				} else {
 					delete_option( 'powerkit_connect_instagram_feed' );
 				}
@@ -308,7 +320,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 					update_option( 'powerkit_connect_twitter_custom_avatar_2x', sanitize_text_field( wp_unslash( $_POST['powerkit_connect_twitter_custom_avatar_2x'] ) ) ); // Input var ok.
 				}
 				if ( isset( $_POST['powerkit_connect_twitter_feed'] ) ) { // Input var ok.
-					update_option( 'powerkit_connect_twitter_feed', $_POST['powerkit_connect_twitter_feed'] ); // Input var ok.
+					update_option( 'powerkit_connect_twitter_feed', powerkit_sanitize_recursive_text( wp_unslash( $_POST['powerkit_connect_twitter_feed'] ) ) ); // Input var ok.
 				} else {
 					delete_option( 'powerkit_connect_twitter_feed' );
 				}
@@ -321,7 +333,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * Logout account
 		 */
 		public function logout_account() {
-			if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+			if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 				return;
 			}
 
@@ -408,7 +420,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			powerkit_uuid_hash();
 
 			// Check wpnonce.
-			if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+			if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 				return;
 			}
 
@@ -418,7 +430,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 				return false;
 			}
 
-			$page = sanitize_key( $_REQUEST['page'] ); // Input var ok; sanitization ok.
+			$page = sanitize_key( wp_unslash( $_REQUEST['page'] ) ); // Input var ok; sanitization ok.
 
 			if ( ! isset( $list[ $page ] ) ) {
 				return false;
@@ -463,8 +475,9 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 				global $wpdb;
 
 				foreach ( $list as $option_name ) {
-					$wpdb->query( $wpdb->prepare( "DELETE FROM $wpdb->options WHERE option_name LIKE '%%%s%%'", $option_name ) ); // db call ok; no-cache ok.
-					$wpdb->query( $wpdb->prepare( "DELETE FROM $wpdb->postmeta WHERE meta_key LIKE '%%%s%%'", $option_name ) ); // db call ok; no-cache ok.
+					$like = '%' . $wpdb->esc_like( $option_name ) . '%';
+					$wpdb->query( $wpdb->prepare( "DELETE FROM $wpdb->options WHERE option_name LIKE %s", $like ) ); // db call ok; no-cache ok.
+					$wpdb->query( $wpdb->prepare( "DELETE FROM $wpdb->postmeta WHERE meta_key LIKE %s", $like ) ); // db call ok; no-cache ok.
 				}
 
 				printf( '<div id="message" class="updated fade"><p><strong>%s</strong></p></div>', esc_html__( 'Cache purged.', 'powerkit' ) );
@@ -477,7 +490,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * @param string $page Current page.
 		 */
 		public function enqueue_scripts( $page ) {
-			if ( is_customize_preview() || 'toplevel_page_powerkit_manager' === $page || 'settings_page_powerkit_connect' === $page ) {
+			if ( is_customize_preview() || 'toplevel_page_' . powerkit_get_page_slug( 'manager' ) === $page || ( $this->page_hook && $page === $this->page_hook ) ) {
 
 				wp_enqueue_script( 'jquery-ui-sortable' );
 

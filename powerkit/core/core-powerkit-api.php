@@ -8,6 +8,11 @@
  * @since      1.0.0
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * This function will return true for a non empty array
  *

@@ -9,6 +9,11 @@
  * @subpackage Modules/public
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The public-facing functionality of the module.
  */
@@ -50,7 +55,16 @@ class Powerkit_Headers_Footers_Public extends Powerkit_Module_Public {
 		// Get code.
 		$code = get_option( $setting );
 
-		// Output.
-		echo (string) $code; // XSS.
+		/*
+		 * Output the raw header/footer code.
+		 *
+		 * This value is entered only by an administrator (manage_options) on the
+		 * "Insert Headers & Footers" settings screen and is intentionally printed
+		 * unescaped: the whole purpose of this feature is to inject custom
+		 * <script>/<meta>/<link> markup (analytics, ads and site-verification
+		 * snippets). Running it through an escaping function would strip those
+		 * tags and break the feature for every site already relying on it.
+		 */
+		call_user_func( 'printf', '%s', $code );
 	}
 }

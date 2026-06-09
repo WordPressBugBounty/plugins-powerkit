@@ -9,6 +9,11 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
@@ -27,7 +32,7 @@ class Powerkit_Table_Of_Contents_Admin extends Powerkit_Module_Admin {
 	 * @since 1.0.0
 	 */
 	public function register_options_page() {
-		add_options_page( esc_html__( 'Table of Contents', 'powerkit' ), esc_html__( 'Table of Contents', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'build_options_page' ) );
+		add_submenu_page( powerkit_get_page_slug( 'manager' ), esc_html__( 'Table of Contents', 'powerkit' ), esc_html__( 'Table of Contents', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'build_options_page' ) );
 	}
 
 	/**
@@ -118,7 +123,7 @@ class Powerkit_Table_Of_Contents_Admin extends Powerkit_Module_Admin {
 	 * @since 1.0.0
 	 */
 	protected function save_options_page() {
-		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 			return;
 		}
 
@@ -129,19 +134,19 @@ class Powerkit_Table_Of_Contents_Admin extends Powerkit_Module_Admin {
 				update_option( 'powerkit_toc_enable_automatically', false );
 			}
 			if ( isset( $_POST['powerkit_toc_title'] ) ) { // Input var ok.
-				update_option( 'powerkit_toc_title', sanitize_text_field( $_POST['powerkit_toc_title'] ) ); // Input var ok; sanitization ok.
+				update_option( 'powerkit_toc_title', sanitize_text_field( wp_unslash( $_POST['powerkit_toc_title'] ) ) ); // Input var ok; sanitization ok.
 			}
 			if ( isset( $_POST['powerkit_toc_exclude'] ) ) { // Input var ok.
-				update_option( 'powerkit_toc_exclude', sanitize_text_field( $_POST['powerkit_toc_exclude'] ) ); // Input var ok; sanitization ok.
+				update_option( 'powerkit_toc_exclude', sanitize_text_field( wp_unslash( $_POST['powerkit_toc_exclude'] ) ) ); // Input var ok; sanitization ok.
 			}
 			if ( isset( $_POST['powerkit_toc_depth'] ) ) { // Input var ok.
-				update_option( 'powerkit_toc_depth', (int) sanitize_text_field( $_POST['powerkit_toc_depth'] ) ); // Input var ok; sanitization ok.
+				update_option( 'powerkit_toc_depth', (int) sanitize_text_field( wp_unslash( $_POST['powerkit_toc_depth'] ) ) ); // Input var ok; sanitization ok.
 			}
 			if ( isset( $_POST['powerkit_toc_min_count'] ) ) { // Input var ok.
-				update_option( 'powerkit_toc_min_count', (int) sanitize_text_field( $_POST['powerkit_toc_min_count'] ) ); // Input var ok; sanitization ok.
+				update_option( 'powerkit_toc_min_count', (int) sanitize_text_field( wp_unslash( $_POST['powerkit_toc_min_count'] ) ) ); // Input var ok; sanitization ok.
 			}
 			if ( isset( $_POST['powerkit_toc_min_characters'] ) ) { // Input var ok.
-				update_option( 'powerkit_toc_min_characters', (int) sanitize_text_field( $_POST['powerkit_toc_min_characters'] ) ); // Input var ok; sanitization ok.
+				update_option( 'powerkit_toc_min_characters', (int) sanitize_text_field( wp_unslash( $_POST['powerkit_toc_min_characters'] ) ) ); // Input var ok; sanitization ok.
 			}
 			if ( isset( $_POST['powerkit_toc_btn_hide'] ) ) { // Input var ok.
 				update_option( 'powerkit_toc_btn_hide', true );
@@ -149,7 +154,7 @@ class Powerkit_Table_Of_Contents_Admin extends Powerkit_Module_Admin {
 				update_option( 'powerkit_toc_btn_hide', false );
 			}
 			if ( isset( $_POST['powerkit_toc_default_state'] ) ) { // Input var ok.
-				update_option( 'powerkit_toc_default_state', sanitize_text_field( $_POST['powerkit_toc_default_state'] ) ); // Input var ok; sanitization ok.
+				update_option( 'powerkit_toc_default_state', sanitize_text_field( wp_unslash( $_POST['powerkit_toc_default_state'] ) ) ); // Input var ok; sanitization ok.
 			}
 
 			printf( '<div id="message" class="updated fade"><p><strong>%s</strong></p></div>', esc_html__( 'Settings saved.', 'powerkit' ) );

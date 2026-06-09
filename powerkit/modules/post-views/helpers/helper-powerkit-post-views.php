@@ -6,6 +6,11 @@
  * @subpackage Modules/Helper
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Google Analytics API Call
  *
@@ -23,7 +28,7 @@ function powerkit_post_views_api_call( $url, $params = array(), $type = 'GET' ) 
 
 	if ( 'POST' === $type ) {
 		$request_args = array(
-			'body'    => json_encode( $params ),
+			'body'    => wp_json_encode( $params ),
 			'headers' => array(
 				'Authorization' => 'Bearer ' . $options['token'],
 				'Content-Type'  => 'application/json',
@@ -170,7 +175,7 @@ function powerkit_post_views_options() {
 	$options['trailing']      = isset( $options['trailing'] ) ? $options['trailing'] : false;
 
 	if ( ! isset( $options['startdate'] ) ) {
-		$options['startdate'] = date( 'Y-m-d', strtotime( '-1 year' ) );
+		$options['startdate'] = gmdate( 'Y-m-d', strtotime( '-1 year' ) );
 	}
 
 	return $options;
@@ -190,7 +195,7 @@ function powerkit_post_views_get_cache_time( $post_id = false ) {
 	}
 
 	// Post age in seconds.
-	$post_age = floor( intval( date( 'U' ) ) - intval( get_post_time( 'U', true, $post_id ) ) );
+	$post_age = floor( intval( gmdate( 'U' ) ) - intval( get_post_time( 'U', true, $post_id ) ) );
 
 	$two_months_period  = apply_filters( 'powerkit_post_views_two_months', 5184000 );
 	$three_weeks_period = apply_filters( 'powerkit_post_views_three_weeks', 1814400 );
@@ -226,14 +231,16 @@ function powerkit_get_nocached_post_views( $post_id ) {
 
 	global $wpdb;
 
-	$query = 'SELECT * FROM ' . $wpdb->prefix . 'pk_post_views WHERE id = ' . $post_id . ' AND type = 1';
+	$cache_key = 'pk_post_views_nocached_' . (int) $post_id;
 
 	// Get cached data.
-	$post_views = wp_cache_get( md5( $query ), 'pk-get-no-post-views' );
+	$post_views = wp_cache_get( $cache_key, 'pk-get-no-post-views' );
 
 	// Cached data not found?
 	if ( false === $post_views ) {
-		$post_row = $wpdb->get_row( $query );
+		$post_row = $wpdb->get_row(
+			$wpdb->prepare( 'SELECT * FROM ' . $wpdb->prefix . 'pk_post_views WHERE id = %d AND type = 1', $post_id )
+		);
 
 		if ( $post_row ) {
 			$post_views = (float) $post_row->count;
@@ -241,7 +248,7 @@ function powerkit_get_nocached_post_views( $post_id ) {
 			// Set the cache expiration, 5 minutes by default.
 			$expire = absint( apply_filters( 'pk_object_cache_expire', 5 * 60, 'post-views' ) );
 
-			wp_cache_add( md5( $query ), $post_views, 'pk-get-no-post-views', $expire );
+			wp_cache_add( $cache_key, $post_views, 'pk-get-no-post-views', $expire );
 		}
 	}
 
@@ -260,22 +267,24 @@ function powerkit_get_cached_post_views( $post_id ) {
 
 	global $wpdb;
 
-	$query = 'SELECT * FROM ' . $wpdb->prefix . 'pk_post_views WHERE id = ' . $post_id . ' AND type = 1';
+	$cache_key = 'pk_post_views_cached_' . (int) $post_id;
 
 	// Get cached data.
-	$post_views = wp_cache_get( md5( $query ), 'pk-get-post-views' );
+	$post_views = wp_cache_get( $cache_key, 'pk-get-post-views' );
 
 	// Cached data not found?
 	if ( false === $post_views ) {
-		$post_row = $wpdb->get_row( $query );
+		$post_row = $wpdb->get_row(
+			$wpdb->prepare( 'SELECT * FROM ' . $wpdb->prefix . 'pk_post_views WHERE id = %d AND type = 1', $post_id )
+		);
 
-		if ( $post_row && ( intval( date( 'U' ) ) < intval( $post_row->period ) ) ) {
+		if ( $post_row && ( intval( gmdate( 'U' ) ) < intval( $post_row->period ) ) ) {
 			$post_views = (float) $post_row->count;
 
 			// Set the cache expiration, 5 minutes by default.
 			$expire = absint( apply_filters( 'pk_object_cache_expire', 5 * 60, 'post-views' ) );
 
-			wp_cache_add( md5( $query ), $post_views, 'pk-get-post-views', $expire );
+			wp_cache_add( $cache_key, $post_views, 'pk-get-post-views', $expire );
 		}
 	}
 
@@ -291,17 +300,19 @@ function powerkit_get_cached_post_views( $post_id ) {
 function powerkit_set_cached_post_views( $post_id, $count ) {
 	global $wpdb;
 
-	$period = powerkit_post_views_get_cache_time( $post_id ) + intval( date( 'U' ) );
+	$period = powerkit_post_views_get_cache_time( $post_id ) + intval( gmdate( 'U' ) );
 
 	$count = (float) $count;
 
 	return $wpdb->query(
 		$wpdb->prepare(
 			'INSERT INTO ' . $wpdb->prefix . 'pk_post_views (id, type, period, count)
-			VALUES (%1$d, %2$d, %3$s, %4$d)
-			ON DUPLICATE KEY UPDATE period = %3$s, count = %4$d',
+			VALUES (%d, %d, %s, %d)
+			ON DUPLICATE KEY UPDATE period = %s, count = %d',
 			$post_id,
 			1,
+			$period,
+			$count,
 			$period,
 			$count
 		)

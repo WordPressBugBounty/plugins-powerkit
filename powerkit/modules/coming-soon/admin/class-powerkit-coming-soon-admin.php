@@ -9,6 +9,11 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
@@ -97,7 +102,7 @@ class Powerkit_Coming_Soon_Admin extends Powerkit_Module_Admin {
 	 * @since 1.0.0
 	 */
 	public function register_options_page() {
-		add_options_page( esc_html__( 'Coming Soon', 'powerkit' ), esc_html__( 'Coming Soon', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'build_options_page' ) );
+		add_submenu_page( powerkit_get_page_slug( 'manager' ), esc_html__( 'Coming Soon', 'powerkit' ), esc_html__( 'Coming Soon', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'build_options_page' ) );
 	}
 
 	/**
@@ -195,7 +200,7 @@ class Powerkit_Coming_Soon_Admin extends Powerkit_Module_Admin {
 	 * @since 1.0.0
 	 */
 	protected function save_options_page() {
-		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 			return;
 		}
 

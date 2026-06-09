@@ -9,6 +9,11 @@
  * @subpackage Modules/public
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The public-facing functionality of the module.
  */
@@ -81,7 +86,7 @@ class Powerkit_Opt_In_Forms_Public extends Powerkit_Module_Public {
 		powerkit_uuid_hash();
 
 		// Check wpnonce.
-		if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+		if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 			return;
 		}
 

@@ -9,6 +9,11 @@
  * @subpackage Powerkit/widgets
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Contributors
  */
@@ -101,7 +106,7 @@ class Powerkit_Contributors_Widget extends WP_Widget {
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'filter_ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'filter_ids' ) ); ?>" type="text" value="<?php echo esc_attr( $params['filter_ids'] ); ?>" />
 			</p>
 
-			<p class="help"><?php esc_html_e( 'Add comma-separated list of authors IDs. For example: 1, 2, 3. Leave empty for all authors.' ); ?></p>
+			<p class="help"><?php esc_html_e( 'Add comma-separated list of authors IDs. For example: 1, 2, 3. Leave empty for all authors.', 'powerkit' ); ?></p>
 
 			<!-- Display avatar -->
 			<p><input id="<?php echo esc_attr( $this->get_field_id( 'avatar' ) ); ?>" class="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'avatar' ) ); ?>" type="checkbox" <?php checked( (bool) $params['avatar'] ); ?> />

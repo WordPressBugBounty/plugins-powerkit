@@ -8,6 +8,11 @@
  * @since      1.0.0
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Output error message.
  *
@@ -862,4 +867,36 @@ function powerkit_print_gutenberg_blocks_button( $text, $url, $target = '', $fie
 		</a>
 	</div>
 	<?php
+}
+
+/**
+ * Allowed HTML for oEmbed output.
+ *
+ * Returns the standard post HTML allowlist plus the <iframe> element used by
+ * video and other rich oEmbed providers, so trusted oEmbed markup can be
+ * printed safely with wp_kses().
+ *
+ * @return array Allowed HTML tags and attributes.
+ */
+function powerkit_oembed_allowed_html() {
+	$allowed           = wp_kses_allowed_html( 'post' );
+	$allowed['iframe'] = array(
+		'src'             => true,
+		'width'           => true,
+		'height'          => true,
+		'frameborder'     => true,
+		'marginwidth'     => true,
+		'marginheight'    => true,
+		'scrolling'       => true,
+		'title'           => true,
+		'name'            => true,
+		'class'           => true,
+		'id'              => true,
+		'style'           => true,
+		'loading'         => true,
+		'allow'           => true,
+		'allowfullscreen' => true,
+	);
+
+	return $allowed;
 }

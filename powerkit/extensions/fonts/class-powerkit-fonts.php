@@ -6,11 +6,23 @@
  * @subpackage Extensions
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( class_exists( 'Powerkit_Module' ) ) {
 	/**
 	 * Init module
 	 */
 	class Powerkit_Fonts extends Powerkit_Module {
+
+		/**
+		 * The hook suffix of the settings page.
+		 *
+		 * @var string $page_hook The settings page hook suffix.
+		 */
+		public $page_hook;
 
 		/**
 		 * Register module
@@ -39,7 +51,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * @since 1.0.0
 		 */
 		public function register_options_page() {
-			add_theme_page( esc_html__( 'Fonts', 'powerkit' ), esc_html__( 'Fonts', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'settings_page' ) );
+			$this->page_hook = add_submenu_page( powerkit_get_page_slug( 'manager' ), esc_html__( 'Fonts', 'powerkit' ), esc_html__( 'Fonts', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'settings_page' ) );
 		}
 
 		/**
@@ -52,7 +64,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			powerkit_uuid_hash();
 
 			// Check wpnonce.
-			if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+			if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 				return;
 			}
 
@@ -140,7 +152,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * @param string $page Current page.
 		 */
 		public function admin_enqueue_scripts( $page ) {
-			if ( 'appearance_page_' . powerkit_get_page_slug( $this->slug ) === $page ) {
+			if ( $this->page_hook && $page === $this->page_hook ) {
 
 				wp_enqueue_media();
 

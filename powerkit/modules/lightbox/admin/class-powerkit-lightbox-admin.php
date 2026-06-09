@@ -9,6 +9,11 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
@@ -35,10 +40,10 @@ class Powerkit_Lightbox_Admin extends Powerkit_Module_Admin {
 		add_settings_field( 'powerkit_lightbox_exclude_selectors', esc_html__( 'Exclude selectors', 'powerkit' ), array( $this, 'powerkit_lightbox_exclude_selectors_callback' ), 'media', 'powerkit_lightbox_settings' );
 		add_settings_field( 'powerkit_lightbox_zoom_icon', esc_html__( 'Display Lightbox zoom icon', 'powerkit' ), array( $this, 'powerkit_lightbox_zoom_icon_callback' ), 'media', 'powerkit_lightbox_settings' );
 
-		register_setting( 'media', 'powerkit_lightbox_single_image_selectors' );
-		register_setting( 'media', 'powerkit_lightbox_gallery_selectors' );
-		register_setting( 'media', 'powerkit_lightbox_exclude_selectors' );
-		register_setting( 'media', 'powerkit_lightbox_zoom_icon' );
+		register_setting( 'media', 'powerkit_lightbox_single_image_selectors', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+		register_setting( 'media', 'powerkit_lightbox_gallery_selectors', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+		register_setting( 'media', 'powerkit_lightbox_exclude_selectors', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+		register_setting( 'media', 'powerkit_lightbox_zoom_icon', array( 'sanitize_callback' => 'sanitize_text_field' ) );
 	}
 
 	/**

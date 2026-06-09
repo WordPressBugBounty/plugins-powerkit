@@ -9,6 +9,11 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
@@ -33,7 +38,7 @@ class Powerkit_Retina_Images_Admin extends Powerkit_Module_Admin {
 
 		add_settings_field( 'powerkit_retina_images_sizes', esc_html__( 'Sizes', 'powerkit' ), array( $this, 'powerkit_retina_images_sizes_callback' ), 'media', 'powerkit_retina_images_settings' );
 
-		register_setting( 'media', 'powerkit_retina_images_sizes' );
+		register_setting( 'media', 'powerkit_retina_images_sizes', array( 'sanitize_callback' => 'sanitize_text_field' ) );
 	}
 
 	/**

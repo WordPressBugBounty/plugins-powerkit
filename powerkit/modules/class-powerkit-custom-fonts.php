@@ -6,6 +6,11 @@
  * @subpackage Modules
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( class_exists( 'Powerkit_Module' ) ) {
 	/**
 	 * Init module
@@ -291,7 +296,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			$action = 'new';
 
 			// Check wpnonce.
-			if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+			if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 				return;
 			}
 
@@ -300,7 +305,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 				$action = sanitize_title( $_REQUEST['action'] ); // Input var ok; sanitization ok.
 
 				if ( isset( $_REQUEST['powerkit_custom_fonts_id'] ) && 'edit' === $action ) { // Input var ok.
-					$powerkit_custom_fonts_id = sanitize_key( $_REQUEST['powerkit_custom_fonts_id'] ); // Input var ok.
+					$powerkit_custom_fonts_id = sanitize_key( wp_unslash( $_REQUEST['powerkit_custom_fonts_id'] ) ); // Input var ok.
 				}
 			}
 
@@ -555,7 +560,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * @since 1.0.0
 		 */
 		protected function delete_font() {
-			if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( $_GET['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+			if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 				return;
 			}
 
@@ -564,7 +569,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			}
 
 			// ID Font.
-			$id = sanitize_key( $_GET['powerkit_custom_fonts_id'] ); // Input var ok.
+			$id = sanitize_key( wp_unslash( $_GET['powerkit_custom_fonts_id'] ) ); // Input var ok.
 
 			// Custom List.
 			$font_list = (array) get_option( 'powerkit_custom_fonts_list', array() );
@@ -597,7 +602,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 		 * @since 1.0.0
 		 */
 		protected function save_options_page() {
-			if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+			if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 				return;
 			}
 
@@ -611,7 +616,7 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 			}
 
 			// ID Font.
-			$id = sanitize_key( $_POST['powerkit_custom_fonts_id'] ); // Input var ok.
+			$id = sanitize_key( wp_unslash( $_POST['powerkit_custom_fonts_id'] ) ); // Input var ok.
 
 			// Custom List.
 			$font_list = (array) get_option( 'powerkit_custom_fonts_list', array() );
@@ -624,19 +629,19 @@ if ( class_exists( 'Powerkit_Module' ) ) {
 				$font_list[ $id ]['slug'] = sanitize_title( $_POST['powerkit_custom_fonts_name'] ); // Input var ok; sanitization ok.
 			}
 			if ( isset( $_POST['powerkit_custom_fonts_name'] ) ) { // Input var ok.
-				$font_list[ $id ]['name'] = sanitize_text_field( $_POST['powerkit_custom_fonts_name'] ); // Input var ok; sanitization ok.
+				$font_list[ $id ]['name'] = sanitize_text_field( wp_unslash( $_POST['powerkit_custom_fonts_name'] ) ); // Input var ok; sanitization ok.
 			}
 			if ( isset( $_POST['powerkit_custom_fonts_file_woff'] ) ) { // Input var ok.
-				$font_list[ $id ]['file_woff'] = sanitize_text_field( $_POST['powerkit_custom_fonts_file_woff'] ); // Input var ok; sanitization ok.
+				$font_list[ $id ]['file_woff'] = sanitize_text_field( wp_unslash( $_POST['powerkit_custom_fonts_file_woff'] ) ); // Input var ok; sanitization ok.
 			}
 			if ( isset( $_POST['powerkit_custom_fonts_file_woff2'] ) ) { // Input var ok.
-				$font_list[ $id ]['file_woff2'] = sanitize_text_field( $_POST['powerkit_custom_fonts_file_woff2'] ); // Input var ok; sanitization ok.
+				$font_list[ $id ]['file_woff2'] = sanitize_text_field( wp_unslash( $_POST['powerkit_custom_fonts_file_woff2'] ) ); // Input var ok; sanitization ok.
 			}
 			if ( isset( $_POST['powerkit_custom_fonts_weight'] ) ) { // Input var ok.
-				$font_list[ $id ]['weight'] = sanitize_text_field( $_POST['powerkit_custom_fonts_weight'] ); // Input var ok; sanitization ok.
+				$font_list[ $id ]['weight'] = sanitize_text_field( wp_unslash( $_POST['powerkit_custom_fonts_weight'] ) ); // Input var ok; sanitization ok.
 			}
 			if ( isset( $_POST['powerkit_custom_fonts_style'] ) ) { // Input var ok.
-				$font_list[ $id ]['style'] = sanitize_text_field( $_POST['powerkit_custom_fonts_style'] ); // Input var ok; sanitization ok.
+				$font_list[ $id ]['style'] = sanitize_text_field( wp_unslash( $_POST['powerkit_custom_fonts_style'] ) ); // Input var ok; sanitization ok.
 			}
 
 			// Save list.

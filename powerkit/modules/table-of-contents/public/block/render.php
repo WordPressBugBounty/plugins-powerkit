@@ -12,6 +12,11 @@
  * @subpackage PowerKit/templates
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $params = array(
 	'title'          => isset( $attributes['title'] ) ? $attributes['title'] : esc_html__( 'Table of Contents', 'powerkit' ),
 	'depth'          => isset( $attributes['depth'] ) ? $attributes['depth'] : 2,

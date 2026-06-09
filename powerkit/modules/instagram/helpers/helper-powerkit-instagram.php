@@ -6,6 +6,11 @@
  * @subpackage Modules/Helper
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Template handler
  *
@@ -193,10 +198,12 @@ function powerkit_instagram_get_recent( $params, $cache_name = null ) {
 			</div>
 			<?php
 		} else {
-			powerkit_alert_warning( sprintf( __( 'The list is empty. To display the feed, add elements on the <a href="%s" target="_blank">settings page</a>.', 'powerkit' ), admin_url( 'options-general.php?page=powerkit_connect&tab=instagram' ) ) );
+			powerkit_alert_warning( sprintf( /* translators: %s: URL of the settings page. */
+		__( 'The list is empty. To display the feed, add elements on the <a href="%s" target="_blank">settings page</a>.', 'powerkit' ), admin_url( 'admin.php?page=powerkit_connect&tab=instagram' ) ) );
 		}
 	} else {
-		powerkit_alert_warning( sprintf( __( 'No data found, please fill in the fields on the <a href="%s" target="_blank">settings page</a>.', 'powerkit' ), admin_url( 'options-general.php?page=powerkit_connect&tab=instagram' ) ) );
+		powerkit_alert_warning( sprintf( /* translators: %s: URL of the settings page. */
+		__( 'No data found, please fill in the fields on the <a href="%s" target="_blank">settings page</a>.', 'powerkit' ), admin_url( 'admin.php?page=powerkit_connect&tab=instagram' ) ) );
 	}
 }
 

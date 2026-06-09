@@ -6,6 +6,11 @@
  * @subpackage Templates
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Init module
  */
@@ -48,7 +53,7 @@ class Powerkit_Basic_Grid {
 				if ( apply_filters( 'powerkit_render_shortcodes_in_row', true, $content, $atts ) ) {
 					echo do_shortcode( $row_content );
 				} else {
-					echo $row_content; // XSS.
+					echo wp_kses_post( $row_content );
 				}
 				?>
 			</div>
@@ -77,7 +82,7 @@ class Powerkit_Basic_Grid {
 				if ( apply_filters( 'powerkit_render_shortcodes_in_column', true, $content, $atts ) ) {
 					echo do_shortcode( $column_content );
 				} else {
-					echo $column_content; // XSS.
+					echo wp_kses_post( $column_content );
 				}
 				?>
 			</div>

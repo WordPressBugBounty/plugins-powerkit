@@ -6,6 +6,11 @@
  * @subpackage Modules/Helper
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Get cache time
  *
@@ -27,7 +32,7 @@ function powerkit_share_buttons_get_cache_time( $post_id = false ) {
 	}
 
 	// Post age in seconds.
-	$post_age = floor( intval( date( 'U' ) ) - intval( get_post_time( 'U', true, $post_id ) ) );
+	$post_age = floor( intval( gmdate( 'U' ) ) - intval( get_post_time( 'U', true, $post_id ) ) );
 
 	$two_months_period  = apply_filters( 'powerkit_share_buttons_two_months', 5184000 );
 	$three_weeks_period = apply_filters( 'powerkit_share_buttons_three_weeks', 1814400 );
@@ -262,7 +267,7 @@ function powerkit_share_buttons_get_cached_account( $account, $post_id, $url = n
 		} else {
 			$share_transient = get_post_meta( intval( $post_id ), 'powerkit_share_buttons_transient_' . $account, true );
 
-			if ( intval( date( 'U' ) ) < intval( $share_transient ) ) {
+			if ( intval( gmdate( 'U' ) ) < intval( $share_transient ) ) {
 				$shares = get_post_meta( intval( $post_id ), 'powerkit_share_buttons_count_' . $account, true );
 			}
 		}
@@ -303,7 +308,7 @@ function powerkit_share_buttons_set_cache_account( $account, $post_id, $count, $
 	} else {
 
 		// Set Post Shares Count.
-		$cache_time = powerkit_share_buttons_get_cache_time( $post_id ) + intval( date( 'U' ) );
+		$cache_time = powerkit_share_buttons_get_cache_time( $post_id ) + intval( gmdate( 'U' ) );
 
 		update_post_meta( intval( $post_id ), 'powerkit_share_buttons_transient_' . $account, $cache_time );
 

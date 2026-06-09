@@ -9,6 +9,11 @@
  * @subpackage PowerKit/shortcodes
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Instagram Shortcode
  *

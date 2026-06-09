@@ -9,6 +9,11 @@
  * @subpackage Powerkit/widgets
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Widget Featured Posts
  */
@@ -126,11 +131,11 @@ class Powerkit_Featured_Posts_Widget extends WP_Widget {
 		if ( $posts->have_posts() ) {
 
 			// Before Widget.
-			echo $args['before_widget']; // XSS.
+			echo wp_kses_post( $args['before_widget'] );
 
 			// Title.
 			if ( $params['title'] ) {
-				echo $args['before_title'] . apply_filters( 'widget_title', wp_kses( $params['title'], 'pk-title' ), $instance, $this->id_base ) . $args['after_title']; // XSS.
+				echo wp_kses_post( $args['before_title'] ) . wp_kses_post( apply_filters( 'widget_title', wp_kses( $params['title'], 'pk-title' ), $instance, $this->id_base ) ) . wp_kses_post( $args['after_title'] );
 			}
 
 			// Template.
@@ -162,7 +167,7 @@ class Powerkit_Featured_Posts_Widget extends WP_Widget {
 			<?php
 
 			// After Widget.
-			echo $args['after_widget']; // XSS.
+			echo wp_kses_post( $args['after_widget'] );
 		}
 
 		wp_reset_postdata();

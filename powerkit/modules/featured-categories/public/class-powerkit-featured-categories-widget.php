@@ -9,6 +9,11 @@
  * @subpackage Powerkit/widgets
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Widget Featured Categories
  */
@@ -60,11 +65,11 @@ class Powerkit_Featured_Categories_Widget extends WP_Widget {
 		}
 
 		// Before Widget.
-		echo $args['before_widget']; // XSS.
+		echo wp_kses_post( $args['before_widget'] );
 
 		// Title.
 		if ( $params['title'] ) {
-			echo $args['before_title'] . wp_kses( $params['title'], 'pk-title') . $args['after_title']; // XSS.
+			echo wp_kses_post( $args['before_title'] ) . wp_kses( $params['title'], 'pk-title' ) . wp_kses_post( $args['after_title'] );
 		}
 
 		?>
@@ -76,7 +81,7 @@ class Powerkit_Featured_Categories_Widget extends WP_Widget {
 		<?php
 
 		// After Widget.
-		echo $args['after_widget']; // XSS.
+		echo wp_kses_post( $args['after_widget'] );
 	}
 
 	/**
@@ -134,7 +139,7 @@ class Powerkit_Featured_Categories_Widget extends WP_Widget {
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'filter_ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'filter_ids' ) ); ?>" type="text" value="<?php echo esc_attr( $params['filter_ids'] ); ?>" />
 			</p>
 
-			<p class="help"><?php esc_html_e( 'Add comma-separated list of categories IDs. For example: 1, 2, 3. Leave empty for all categories.' ); ?></p>
+			<p class="help"><?php esc_html_e( 'Add comma-separated list of categories IDs. For example: 1, 2, 3. Leave empty for all categories.', 'powerkit' ); ?></p>
 
 			<!-- Order By -->
 			<p>

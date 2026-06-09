@@ -9,6 +9,11 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
@@ -113,7 +118,7 @@ class Powerkit_Featured_Categories_Admin extends Powerkit_Module_Admin {
 		}
 
 		if ( isset( $_POST['powerkit_featured_image'] ) ) { // Input var ok; sanitization ok.
-			$powerkit_featured_image = sanitize_text_field( $_POST['powerkit_featured_image'] ); // Input var ok; sanitization ok.
+			$powerkit_featured_image = sanitize_text_field( wp_unslash( $_POST['powerkit_featured_image'] ) ); // Input var ok; sanitization ok.
 
 			update_term_meta( $term_id, 'powerkit_featured_image', $powerkit_featured_image );
 		}

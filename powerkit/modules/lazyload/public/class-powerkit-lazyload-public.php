@@ -9,6 +9,11 @@
  * @subpackage Modules/public
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The public-facing functionality of the module.
  */
@@ -417,8 +422,8 @@ class Powerkit_Lazyload_Public extends Powerkit_Module_Public {
 	 */
 	public function maybe_enqueue_scripts( $force = false ) {
 		if ( $force || $this->is_enabled() ) {
-			wp_enqueue_script( 'lazysizes.config', plugin_dir_url( __FILE__ ) . 'js/lazysizes.config.js', array( 'jquery' ), false, true );
-			wp_enqueue_script( 'lazysizes', plugin_dir_url( __FILE__ ) . 'js/lazysizes.min.js', array( 'jquery' ), false, true );
+			wp_enqueue_script( 'lazysizes.config', plugin_dir_url( __FILE__ ) . 'js/lazysizes.config.js', array( 'jquery' ), powerkit_get_setting( 'version' ), true );
+			wp_enqueue_script( 'lazysizes', plugin_dir_url( __FILE__ ) . 'js/lazysizes.min.js', array( 'jquery' ), powerkit_get_setting( 'version' ), true );
 
 			wp_enqueue_style( 'powerkit-lazyload', powerkit_style( plugin_dir_url( __FILE__ ) . 'css/public-powerkit-lazyload.css' ), array(), powerkit_get_setting( 'version' ), 'all' );
 		}

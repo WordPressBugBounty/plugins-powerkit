@@ -56,7 +56,7 @@ class Powerkit_Table_Of_Contents_Parser {
 		$return = false;
 
 		if ( $title ) {
-			$return = trim( strip_tags( $title ) );
+			$return = trim( wp_strip_all_tags( $title ) );
 
 			// Converts Cyrillic characters.
 			$return = powerkit_text_with_translit( $return );
@@ -127,7 +127,7 @@ class Powerkit_Table_Of_Contents_Parser {
 				$html .= ( $numbered_items[ $current_depth ] + 1 ) . '</span> ';
 				$numbered_items[ $current_depth ]++;
 			}
-			$html .= strip_tags( $matches[ $i ][0] ) . '</a>';
+			$html .= wp_strip_all_tags( $matches[ $i ][0] ) . '</a>';
 
 			// End lists.
 			if ( $i !== count( $matches ) - 1 ) {
@@ -213,7 +213,7 @@ class Powerkit_Table_Of_Contents_Parser {
 
 		$this->collision_collector = array();
 
-		$inner_content = strip_tags( $content );
+		$inner_content = wp_strip_all_tags( $content );
 
 		if ( isset( $params['depth'] ) && (int) $params['depth'] ) {
 			$this->options['depth'] = (int) $params['depth'];
@@ -279,7 +279,7 @@ class Powerkit_Table_Of_Contents_Parser {
 				// Remove empty headings.
 				$new_matches = array();
 				for ( $i = 0; $i < count( $matches ); $i++ ) {
-					if ( trim( strip_tags( $matches[ $i ][0] ) ) !== false ) {
+					if ( trim( wp_strip_all_tags( $matches[ $i ][0] ) ) !== false ) {
 						$new_matches[] = $matches[ $i ];
 					}
 				}
@@ -333,7 +333,7 @@ class Powerkit_Table_Of_Contents_Parser {
 							if ( $this->options['ordered_list'] ) {
 								$items .= count( $replace ) . ' ';
 							}
-							$items .= strip_tags( $match_data ) . '</a></li>';
+							$items .= wp_strip_all_tags( $match_data ) . '</a></li>';
 						}
 					}
 

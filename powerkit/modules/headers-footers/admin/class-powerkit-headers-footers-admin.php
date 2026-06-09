@@ -9,6 +9,11 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
@@ -27,7 +32,7 @@ class Powerkit_Headers_Footers_Admin extends Powerkit_Module_Admin {
 	 * @since 1.0.0
 	 */
 	public function register_options_page() {
-		add_options_page( esc_html__( 'Insert Headers & Footers', 'powerkit' ), esc_html__( 'Insert Headers & Footers', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'build_options_page' ) );
+		add_submenu_page( powerkit_get_page_slug( 'manager' ), esc_html__( 'Insert Headers & Footers', 'powerkit' ), esc_html__( 'Insert Headers & Footers', 'powerkit' ), 'manage_options', powerkit_get_page_slug( $this->slug ), array( $this, 'build_options_page' ) );
 	}
 
 	/**
@@ -59,7 +64,7 @@ class Powerkit_Headers_Footers_Admin extends Powerkit_Module_Admin {
 											<p class="description"><?php esc_html_e( 'These scripts will be printed in the &lt;head&gt; section.', 'powerkit' ); ?></p>
 										</label>
 									</th>
-									<td><textarea style="width:100%" id="powerkit_insert_header_code" name="powerkit_insert_header_code" rows="8"><?php echo (string) get_option( 'powerkit_insert_header_code' ); // XSS. ?></textarea></td>
+									<td><textarea style="width:100%" id="powerkit_insert_header_code" name="powerkit_insert_header_code" rows="8"><?php echo esc_textarea( (string) get_option( 'powerkit_insert_header_code' ) ); ?></textarea></td>
 								</tr>
 
 								<!-- Scripts in Footer -->
@@ -70,7 +75,7 @@ class Powerkit_Headers_Footers_Admin extends Powerkit_Module_Admin {
 											<p class="description"><?php esc_html_e( 'These scripts will be printed above the &lt;/body&gt; tag.', 'powerkit' ); ?></p>
 										</label>
 									</th>
-									<td><textarea style="width:100%" id="powerkit_insert_footer_code" name="powerkit_insert_footer_code" rows="8"><?php echo (string) get_option( 'powerkit_insert_footer_code' ); // XSS. ?></textarea></td>
+									<td><textarea style="width:100%" id="powerkit_insert_footer_code" name="powerkit_insert_footer_code" rows="8"><?php echo esc_textarea( (string) get_option( 'powerkit_insert_footer_code' ) ); ?></textarea></td>
 								</tr>
 							</tbody>
 						</table>
@@ -85,22 +90,42 @@ class Powerkit_Headers_Footers_Admin extends Powerkit_Module_Admin {
 	}
 
 	/**
+	 * Sanitize header/footer code before storing it.
+	 *
+	 * Users allowed to post unfiltered HTML (typically administrators on a
+	 * single site) may store raw <script>/<style> markup, which is the whole
+	 * point of this feature (analytics, ads and verification snippets). For
+	 * everyone else the value is run through wp_kses_post(). This mirrors the
+	 * behaviour of the core Custom HTML widget.
+	 *
+	 * @param string $code The submitted code.
+	 * @return string Sanitized code.
+	 */
+	protected function sanitize_code( $code ) {
+		if ( current_user_can( 'unfiltered_html' ) ) {
+			return $code;
+		}
+
+		return wp_kses_post( $code );
+	}
+
+	/**
 	 * Settings save
 	 *
 	 * @since 1.0.0
 	 */
 	protected function save_options_page() {
-		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'] ) ) { // Input var ok; sanitization ok.
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 			return;
 		}
 
 		if ( isset( $_POST['save_settings'] ) ) { // Input var ok.
 
 			if ( isset( $_POST['powerkit_insert_header_code'] ) ) { // Input var ok.
-				update_option( 'powerkit_insert_header_code', wp_unslash( $_POST['powerkit_insert_header_code'] ) ); // Input var ok. sanitization ok.
+				update_option( 'powerkit_insert_header_code', $this->sanitize_code( wp_unslash( $_POST['powerkit_insert_header_code'] ) ) ); // Input var ok.
 			}
 			if ( isset( $_POST['powerkit_insert_footer_code'] ) ) { // Input var ok.
-				update_option( 'powerkit_insert_footer_code', wp_unslash( $_POST['powerkit_insert_footer_code'] ) ); // Input var ok. sanitization ok.
+				update_option( 'powerkit_insert_footer_code', $this->sanitize_code( wp_unslash( $_POST['powerkit_insert_footer_code'] ) ) ); // Input var ok.
 			}
 			printf( '<div id="message" class="updated fade"><p><strong>%s</strong></p></div>', esc_html__( 'Settings saved.', 'powerkit' ) );
 		}

@@ -6,6 +6,11 @@
  * @subpackage Modules/Helper
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Calculate Post Reading Time in Minutes
  *
@@ -18,7 +23,7 @@ function powerkit_calculate_post_reading_time( $post_id = null ) {
 
 	$post_content     = get_post_field( 'post_content', $post_id );
 	$strip_shortcodes = strip_shortcodes( $post_content );
-	$strip_tags       = strip_tags( $strip_shortcodes );
+	$strip_tags       = wp_strip_all_tags( $strip_shortcodes );
 
 	$str        = preg_replace( '/[[:punct:]]/', '', $strip_tags );
 	$str        = preg_replace( '/[\s]+/', ' ', $str );

@@ -9,6 +9,11 @@
  * @subpackage Powerkit/widgets
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Widget About
  */
@@ -56,11 +61,11 @@ class Powerkit_Widget_About_Init extends WP_Widget {
 
 		// Title.
 		if ( $params['title'] ) {
-			$params['widget_title'] = $args['before_title'] . apply_filters( 'widget_title', wp_kses( $params['title'], 'pk-title' ), $instance, $this->id_base ) . $args['after_title'];
+			$params['widget_title'] = wp_kses_post( $args['before_title'] ) . wp_kses_post( apply_filters( 'widget_title', wp_kses( $params['title'], 'pk-title' ), $instance, $this->id_base ) ) . wp_kses_post( $args['after_title'] );
 		}
 
 		// Before Widget.
-		echo $args['before_widget']; // XSS.
+		echo wp_kses_post( $args['before_widget'] );
 
 		?>
 			<div class="widget-body pk-widget-about">
@@ -70,7 +75,7 @@ class Powerkit_Widget_About_Init extends WP_Widget {
 			</div>
 		<?php
 		// After Widget.
-		echo $args['after_widget']; // XSS.
+		echo wp_kses_post( $args['after_widget'] );
 	}
 
 	/**

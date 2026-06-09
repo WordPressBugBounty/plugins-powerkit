@@ -9,6 +9,11 @@
  * @subpackage Powerkit/widgets
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Widget Subscription Form
  */
@@ -60,10 +65,10 @@ class Powerkit_Subscription_Form_Widget extends WP_Widget {
 		$params = array_merge( $this->default_settings, $instance );
 
 		// Before Widget.
-		echo $args['before_widget']; // XSS.
+		echo wp_kses_post( $args['before_widget'] );
 
 		if ( $params['title'] ) {
-			$params['title'] = $args['before_title'] . apply_filters( 'widget_title', $params['title'], $instance, $this->id_base ) . $args['after_title'];
+			$params['title'] = wp_kses_post( $args['before_title'] ) . wp_kses_post( apply_filters( 'widget_title', $params['title'], $instance, $this->id_base ) ) . wp_kses_post( $args['after_title'] );
 		}
 		?>
 
@@ -73,7 +78,7 @@ class Powerkit_Subscription_Form_Widget extends WP_Widget {
 		<?php
 
 		// After Widget.
-		echo $args['after_widget']; // XSS.
+		echo wp_kses_post( $args['after_widget'] );
 	}
 
 	/**

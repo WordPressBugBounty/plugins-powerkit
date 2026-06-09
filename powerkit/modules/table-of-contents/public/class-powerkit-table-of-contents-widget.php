@@ -9,6 +9,11 @@
  * @subpackage PowerKit/widgets
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Widget Table of Contents Class
  */
@@ -60,13 +65,13 @@ class Powerkit_Table_Of_Contents_Widget extends WP_Widget {
 
 		if ( $toc_list ) {
 			// Before Widget.
-			echo $args['before_widget']; // XSS OK.
+			echo wp_kses_post( $args['before_widget'] );
 
 			// Content Widget.
-			echo $toc_list; // XSS OK.
+			echo wp_kses_post( $toc_list );
 
 			// After Widget.
-			echo $args['after_widget']; // XSS OK.
+			echo wp_kses_post( $args['after_widget'] );
 		}
 	}
 

@@ -6,6 +6,11 @@
  * @subpackage Core
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Migration to 2.0.7
  *

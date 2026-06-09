@@ -9,6 +9,11 @@
  * @subpackage PowerKit/templates
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Default Template
  *
@@ -19,7 +24,7 @@
  */
 function powerkit_widget_author_default_template( $author, $args, $params, $instance ) {
 	// Before Widget.
-	echo $args['before_widget']; // XSS.
+	echo wp_kses_post( $args['before_widget'] );
 
 	$avatar_size = apply_filters( 'powerkit_widget_author_avatar_size', 80 );
 	?>
@@ -35,7 +40,7 @@ function powerkit_widget_author_default_template( $author, $args, $params, $inst
 					<?php
 					// Title.
 					if ( $params['title'] ) {
-						$params['widget_title'] = $args['before_title'] . apply_filters( 'widget_title', $params['title'], $instance, 0 ) . $args['after_title']; // XSS.
+						$params['widget_title'] = wp_kses_post( $args['before_title'] ) . wp_kses_post( apply_filters( 'widget_title', $params['title'], $instance, 0 ) ) . wp_kses_post( $args['after_title'] );
 
 						echo wp_kses_post( apply_filters( 'powerkit_widget_author_title', $params['widget_title'], $params['title'] ) );
 					}
@@ -99,5 +104,5 @@ function powerkit_widget_author_default_template( $author, $args, $params, $inst
 		</div>
 	<?php
 	// After Widget.
-	echo $args['after_widget']; // XSS.
+	echo wp_kses_post( $args['after_widget'] );
 }

@@ -9,6 +9,11 @@
  * @subpackage Modules/Admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the module.
  */
@@ -30,7 +35,7 @@ class Powerkit_Lazyload_Admin extends Powerkit_Module_Admin {
 
 		add_settings_section( 'powerkit_lazyload_settings', sprintf( '<span id="%s">%s</span>', powerkit_get_page_slug( $this->slug ), esc_html__( 'Lazy Load', 'powerkit' ) ), array( $this, 'powerkit_lazyload_settings_callback' ), 'media' );
 
-		register_setting( 'media', 'powerkit_lazyload_csco_lqip' );
+		register_setting( 'media', 'powerkit_lazyload_csco_lqip', array( 'sanitize_callback' => 'sanitize_text_field' ) );
 	}
 
 	/**
