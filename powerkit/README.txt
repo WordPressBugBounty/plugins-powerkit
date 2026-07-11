@@ -3,7 +3,7 @@ Tags: share buttons, social links, slider, gallery, lazyload
 Requires at least: 4.0
 Tested up to: 7.0
 Requires PHP: 5.4
-Stable tag: 3.0.8
+Stable tag: 3.0.9
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -82,6 +82,12 @@ Sure! Powerkit is developer-friendly. There're numerous hooks and filters, so ex
 4. Custom Fonts.
 
 == Changelog ==
+
+= 3.0.9 =
+* Security fix: patched Stored XSS in the Slider and Justified Gallery shortcode attributes (attribute values are now escaped on output — same class of issue as CVE-2026-2390)
+* Security fix: added a capability check to the module activate/deactivate handler so only administrators can toggle modules
+* Security fix: added capability checks to the Opt-In Forms integration-refresh AJAX handlers (Kit, MailChimp, MailerLite)
+* Security improvement: added capability checks to the Post Format UI gallery/oEmbed AJAX handlers, restricted the Table of Contents preview REST route to editors, and escaped the Table of Contents anchor-link URL
 
 = 3.0.8 =
 * Added compatibility with WordPress 7.0

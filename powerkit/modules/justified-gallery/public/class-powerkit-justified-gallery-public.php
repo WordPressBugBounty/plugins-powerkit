@@ -64,7 +64,7 @@ class Powerkit_Justified_Gallery_Public extends Powerkit_Module_Public {
 				$data['pk-max-row-height'] = 'false';
 			}
 
-			$settings['custom_attrs'] .= sprintf( ' data-jg-margins="%s" data-jg-row-height="%s" data-jg-max-row-height="%s" data-jg-last-row="%s"', $data['pk-jg-margins'], $data['pk-jg-row-height'], $data['pk-jg-max-row-height'], $data['pk-jg-last-row'] );
+			$settings['custom_attrs'] .= sprintf( ' data-jg-margins="%s" data-jg-row-height="%s" data-jg-max-row-height="%s" data-jg-last-row="%s"', esc_attr( $data['pk-jg-margins'] ), esc_attr( $data['pk-jg-row-height'] ), esc_attr( $data['pk-jg-max-row-height'] ), esc_attr( $data['pk-jg-last-row'] ) );
 		}
 
 		return $settings;

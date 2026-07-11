@@ -93,6 +93,10 @@ class Powerkit_Post_Format_UI_Admin extends Powerkit_Module_Admin {
 	public function media_oembed() {
 		check_ajax_referer( 'nonce', 'nonce' );
 
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			wp_die( -1, 403 );
+		}
+
 		if ( isset( $_POST['url'] ) ) { // Input var ok; sanitization ok.
 			$url = $_POST['url']; // Input var ok; sanitization ok.
 		}
@@ -180,6 +184,10 @@ class Powerkit_Post_Format_UI_Admin extends Powerkit_Module_Admin {
 	 */
 	public function gallery_attachment() {
 		check_ajax_referer( 'nonce', 'nonce' );
+
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			wp_send_json_error();
+		}
 
 		if ( isset( $_POST['id'] ) ) { // Input var ok; sanitization ok.
 			$attachment_id = (int) $_POST['id']; // Input var ok; sanitization ok.

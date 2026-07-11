@@ -349,6 +349,11 @@ class Admin_Powerkit_Manager {
 	 */
 	public function handler_actions() {
 
+		// Only administrators may toggle modules, and only from the admin area.
+		if ( ! is_admin() || ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
 		// Check wpnonce.
 		if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) ) ) { // Input var ok; sanitization ok.
 			return;

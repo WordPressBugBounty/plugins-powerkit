@@ -309,7 +309,7 @@ class Powerkit_Table_Of_Contents_Parser {
 							if ( apply_filters( 'powerkit_toc_anchor_link', false ) ) {
 								$replace[] = str_replace(
 									array( $match_open ),
-									array( $match_open . sprintf( '<a class="pk-anchor-link" href="%1$s#%2$s" id="%2$s"></a>', site_url( add_query_arg( array() ) ), $anchor ) ),
+									array( $match_open . sprintf( '<a class="pk-anchor-link" href="%1$s#%2$s" id="%2$s"></a>', esc_url( site_url( add_query_arg( array() ) ) ), $anchor ) ),
 									$match_data
 								);
 								// Wrap the span inside.

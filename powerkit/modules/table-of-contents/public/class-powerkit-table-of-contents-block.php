@@ -175,7 +175,7 @@ class Powerkit_TOC_Block {
 				'methods'             => WP_REST_Server::EDITABLE,
 				'callback'            => array( $this, 'get_toc_rest' ),
 				'permission_callback' => function() {
-					return true;
+					return current_user_can( 'edit_posts' );
 				},
 			)
 		);

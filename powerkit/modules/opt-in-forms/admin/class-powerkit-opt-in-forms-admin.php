@@ -430,6 +430,11 @@ class Powerkit_Opt_In_Forms_Admin extends Powerkit_Module_Admin {
 			wp_send_json_error( 'Invalid security token' );
 		}
 
+		// Check capability. This is an administrator-only settings operation.
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( 'Insufficient permissions' );
+		}
+
 		// Check for API key.
 		if ( ! isset( $_POST['api_key'] ) || empty( $_POST['api_key'] ) ) {
 			wp_send_json_error( 'API key is required' );
@@ -459,6 +464,11 @@ class Powerkit_Opt_In_Forms_Admin extends Powerkit_Module_Admin {
 		// Check nonce.
 		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ) ) ) {
 			wp_send_json_error( 'Invalid security token' );
+		}
+
+		// Check capability. This is an administrator-only settings operation.
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( 'Insufficient permissions' );
 		}
 
 		// Check for API key.
@@ -518,6 +528,11 @@ class Powerkit_Opt_In_Forms_Admin extends Powerkit_Module_Admin {
 		// Check nonce.
 		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ) ) ) {
 			wp_send_json_error( 'Invalid security token' );
+		}
+
+		// Check capability. This is an administrator-only settings operation.
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( 'Insufficient permissions' );
 		}
 
 		// Check for API key.

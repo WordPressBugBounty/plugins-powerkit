@@ -58,7 +58,7 @@ class Powerkit_Slider_Gallery_Public extends Powerkit_Module_Public {
 
 			$data = array_merge( (array) $data, (array) $attr );
 
-			$settings['custom_attrs'] .= sprintf( ' pk-flickity="init" data-sg-page-dots="%s" data-sg-page-info="%s" data-sg-nav="%s"', $data['pk-sg-page-dots'], $data['pk-sg-page-info'], $data['pk-sg-nav'] );
+			$settings['custom_attrs'] .= sprintf( ' pk-flickity="init" data-sg-page-dots="%s" data-sg-page-info="%s" data-sg-nav="%s"', esc_attr( $data['pk-sg-page-dots'] ), esc_attr( $data['pk-sg-page-info'] ), esc_attr( $data['pk-sg-nav'] ) );
 		}
 
 		return $settings;

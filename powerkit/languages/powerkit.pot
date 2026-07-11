@@ -68,7 +68,7 @@ msgstr ""
 msgid "Module"
 msgstr ""
 
-#: admin/class-admin-powerkit-manager.php:216, modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:236
+#: admin/class-admin-powerkit-manager.php:216, modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:244
 msgid "Description"
 msgstr ""
 
@@ -76,11 +76,11 @@ msgstr ""
 msgid "No modules avaliable."
 msgstr ""
 
-#: admin/class-admin-powerkit-manager.php:405
+#: admin/class-admin-powerkit-manager.php:410
 msgid "Module deactivated."
 msgstr ""
 
-#: admin/class-admin-powerkit-manager.php:403
+#: admin/class-admin-powerkit-manager.php:408
 msgid "Module activated."
 msgstr ""
 
@@ -723,7 +723,7 @@ msgstr ""
 msgid "Background image:"
 msgstr ""
 
-#: modules/author-box/public/class-powerkit-author-box-widget.php:236, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:133, modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:172
+#: modules/author-box/public/class-powerkit-author-box-widget.php:236, modules/opt-in-forms/public/class-powerkit-subscription-form-widget.php:133, modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:176
 msgid "Add Image"
 msgstr ""
 
@@ -811,7 +811,7 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: modules/basic-elements/templates/alerts.php:88, modules/lightbox/public/class-powerkit-lightbox-public.php:75, modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:163
+#: modules/basic-elements/templates/alerts.php:88, modules/lightbox/public/class-powerkit-lightbox-public.php:75, modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:167
 msgid "Close"
 msgstr ""
 
@@ -855,7 +855,7 @@ msgstr ""
 msgid "Open in new window/tab"
 msgstr ""
 
-#: modules/basic-elements/templates/buttons.php:87, modules/basic-elements/templates/collapsibles.php:38, modules/basic-elements/templates/tabs.php:64, modules/inline-posts/public/class-powerkit-inline-posts-shortcode.php:144, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:68, modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:224, modules/social-links/admin/class-powerkit-social-links-admin.php:201, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:66, modules/table-of-contents/public/class-powerkit-table-of-contents-block.php:99, modules/table-of-contents/public/class-powerkit-table-of-contents-shortcode.php:60
+#: modules/basic-elements/templates/buttons.php:87, modules/basic-elements/templates/collapsibles.php:38, modules/basic-elements/templates/tabs.php:64, modules/inline-posts/public/class-powerkit-inline-posts-shortcode.php:144, modules/opt-in-forms/public/class-powerkit-subscription-form-shortcode.php:68, modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:232, modules/social-links/admin/class-powerkit-social-links-admin.php:201, modules/table-of-contents/admin/class-powerkit-table-of-contents-admin.php:66, modules/table-of-contents/public/class-powerkit-table-of-contents-block.php:99, modules/table-of-contents/public/class-powerkit-table-of-contents-shortcode.php:60
 msgid "Title"
 msgstr ""
 
@@ -2089,23 +2089,23 @@ msgstr ""
 msgid "Enter URL"
 msgstr ""
 
-#: modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:153
+#: modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:157
 msgid "Add to gallery"
 msgstr ""
 
-#: modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:166
+#: modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:170
 msgid "Update"
 msgstr ""
 
-#: modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:172
+#: modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:176
 msgid "Select"
 msgstr ""
 
-#: modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:228
+#: modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:236
 msgid "Caption"
 msgstr ""
 
-#: modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:232
+#: modules/post-format-ui/admin/class-powerkit-post-format-ui-admin.php:240
 msgid "Alt Text"
 msgstr ""
 
