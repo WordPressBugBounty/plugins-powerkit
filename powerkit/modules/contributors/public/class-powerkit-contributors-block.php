@@ -49,11 +49,17 @@ class Powerkit_Contributors_Block {
 	 * @return array
 	 */
 	public function register_block_type( $blocks ) {
-		$users         = powerkit_get_users();
 		$users_choices = array();
 
-		foreach ( $users as $user ) {
-			$users_choices[ $user->ID ] = $user->display_name;
+		// The user list only populates the contributor picker in the block
+		// editor; it is not needed to render the block on the front-end. Skip the
+		// query outside the editor to avoid a needless user query on every request
+		// (and a PHP 8+ fatal if another plugin registered a broken WP_User_Query
+		// callback such as pre_user_query).
+		if ( is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
+			foreach ( powerkit_get_users() as $user ) {
+				$users_choices[ $user->ID ] = $user->display_name;
+			}
 		}
 
 		$blocks[] = array(

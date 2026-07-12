@@ -61,13 +61,19 @@ class Powerkit_Author_Block {
 	 * @return array
 	 */
 	public function register_block_type( $blocks ) {
-		$users         = powerkit_get_users();
 		$users_choices = array(
 			'current' => esc_html__( 'Current Post’s Author', 'powerkit' ),
 		);
 
-		foreach ( $users as $user ) {
-			$users_choices[ $user->ID ] = $user->display_name;
+		// The user list only populates the author dropdown in the block editor.
+		// On the front-end the stored `author` attribute is used for rendering,
+		// so querying users on every request is unnecessary — and it is the
+		// trigger for a PHP 8+ fatal when another plugin has registered a broken
+		// callback on a WP_User_Query hook (e.g. pre_user_query).
+		if ( is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
+			foreach ( powerkit_get_users() as $user ) {
+				$users_choices[ $user->ID ] = $user->display_name;
+			}
 		}
 
 		$blocks[] = array(

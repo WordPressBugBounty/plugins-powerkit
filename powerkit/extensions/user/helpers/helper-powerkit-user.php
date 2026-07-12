@@ -101,7 +101,20 @@ function powerkit_get_users() {
 			unset( $args['capability'] );
 		}
 
-		$users = get_users( apply_filters( 'powerkit_get_users_args', $args ) );
+		try {
+			$users = get_users( apply_filters( 'powerkit_get_users_args', $args ) );
+		} catch ( \TypeError $e ) {
+			// PHP 8+ turns an invalid callback into a fatal TypeError (PHP 7.x
+			// only raised E_WARNING). Another plugin may have registered a broken
+			// callback on a hook that WP_User_Query fires internally (e.g.
+			// pre_user_query). Degrade to an empty list so the site stays up
+			// instead of white-screening; do NOT retry, because the same hook
+			// would throw again. The real fix is to update the offending plugin.
+			if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+				error_log( 'Powerkit: get_users() was aborted by a TypeError from another plugin\'s WP_User_Query callback. Returning an empty list. ' . $e->getMessage() );
+			}
+			$users = array();
+		}
 
 		if ( powerkit_coauthors_enabled() ) {
 

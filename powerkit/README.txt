@@ -3,7 +3,7 @@ Tags: share buttons, social links, slider, gallery, lazyload
 Requires at least: 4.0
 Tested up to: 7.0
 Requires PHP: 5.4
-Stable tag: 3.0.9
+Stable tag: 3.1.0
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -82,6 +82,10 @@ Sure! Powerkit is developer-friendly. There're numerous hooks and filters, so ex
 4. Custom Fonts.
 
 == Changelog ==
+
+= 3.1.0 =
+* Improved PHP 8.1–8.3 compatibility: prevented a fatal error that could occur when a third-party plugin registers an invalid callback on a WordPress user-query hook (e.g. pre_user_query). The user lookup now fails safe instead of taking down the site.
+* The Author Box and Contributors blocks no longer query the site's user list on front-end requests — that list is only needed for the block editor's author/contributor dropdown, so front-end pages are lighter and unaffected by that class of third-party errors.
 
 = 3.0.9 =
 * Security fix: patched Stored XSS in the Slider and Justified Gallery shortcode attributes (attribute values are now escaped on output — same class of issue as CVE-2026-2390)
